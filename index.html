@@ -1,131 +1,626 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>سوق الأصحاب</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إلى برنسس روضة ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-font-family: Arial;
-background:#f2f2f2;
-text-align:center;
+    font-family:'Cairo',sans-serif;
+    background:#05010b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* خلفية */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,0,102,.20),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(150,0,255,.20),transparent 30%),
+        radial-gradient(circle at 50% 100%,rgba(255,50,120,.12),transparent 35%);
+    z-index:-2;
+}
+
+/* نجوم */
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.5)}
+}
+
+/* قلوب طايرة */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+    z-index:5;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    10%{opacity:1}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+    animation:appear 1.5s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.crown{
+    font-size:65px;
+    animation:crownFloat 3s infinite ease-in-out;
+}
+
+@keyframes crownFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+
+.small-title{
+    color:#ff80b5;
+    font-size:18px;
+    letter-spacing:3px;
+    margin-top:10px;
 }
 
 h1{
-margin:30px;
+    font-size:clamp(60px,14vw,130px);
+    margin:5px 0;
+    background:linear-gradient(90deg,#ff4f91,#fff,#ff4f91);
+    background-size:200%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 4s infinite linear;
+}
+
+@keyframes shine{
+    from{background-position:0%}
+    to{background-position:200%}
+}
+
+.hero h2{
+    font-family:'Amiri',serif;
+    font-size:clamp(25px,5vw,45px);
+    font-weight:400;
+    color:#ffd6e6;
+}
+
+.hero p{
+    margin:25px auto;
+    max-width:650px;
+    color:#d9cbd3;
+    font-size:18px;
+    line-height:2;
+}
+
+.btn{
+    border:none;
+    padding:16px 30px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff2877,#a100ff);
+    color:white;
+    font-family:'Cairo';
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 0 30px rgba(255,0,110,.35);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 50px rgba(255,0,110,.6);
+}
+
+.scroll{
+    position:absolute;
+    bottom:25px;
+    opacity:.6;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(10px)}
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    padding:100px 25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .container{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-padding:30px;
+    width:min(1000px,100%);
+    text-align:center;
+}
+
+.section-title{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.section-title span{
+    color:#ff4f91;
+}
+
+.subtitle{
+    color:#bcaeb7;
+    margin-bottom:50px;
+}
+
+/* اعتراف */
+.confession{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+    padding:45px;
+    border-radius:35px;
+    box-shadow:0 20px 80px rgba(0,0,0,.35);
+}
+
+.confession p{
+    font-family:'Amiri',serif;
+    font-size:28px;
+    line-height:2.1;
+    color:#ffeaf2;
+}
+
+.highlight{
+    color:#ff69a5;
+    font-weight:bold;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
 }
 
 .card{
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-transition:0.3s;
-cursor:pointer;
+    padding:35px 25px;
+    border-radius:25px;
+    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
 }
 
 .card:hover{
-transform:scale(1.05);
+    transform:translateY(-10px);
+    border-color:#ff4f91;
+    box-shadow:0 20px 50px rgba(255,0,100,.15);
 }
 
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:8px;
+.card .icon{
+    font-size:50px;
+    margin-bottom:15px;
 }
 
-button{
-margin-top:10px;
-padding:8px 15px;
-border:none;
-background:#4CAF50;
-color:white;
-border-radius:5px;
-cursor:pointer;
+.card h3{
+    color:#ff80b5;
+    margin-bottom:10px;
 }
 
+.card p{
+    color:#c8bdc4;
+    line-height:1.8;
+}
+
+/* Timeline */
+.timeline{
+    max-width:700px;
+    margin:auto;
+}
+
+.line{
+    position:relative;
+    padding:20px;
+}
+
+.line::before{
+    content:"";
+    position:absolute;
+    right:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:linear-gradient(#ff4f91,#a100ff);
+}
+
+.timeline-item{
+    position:relative;
+    margin:45px 0;
+    width:50%;
+    padding:20px;
+}
+
+.timeline-item:nth-child(odd){
+    margin-right:0;
+    text-align:left;
+}
+
+.timeline-item:nth-child(even){
+    margin-right:50%;
+    text-align:right;
+}
+
+.timeline-item::after{
+    content:"❤️";
+    position:absolute;
+    top:20px;
+    right:-15px;
+    font-size:25px;
+}
+
+.timeline-item:nth-child(even)::after{
+    right:auto;
+    left:-15px;
+}
+
+.timeline-item h3{
+    color:#ff70a8;
+}
+
+/* عداد الحب */
+.counter-box{
+    padding:50px;
+    border-radius:35px;
+    background:rgba(255,255,255,.05);
+}
+
+.counter{
+    font-size:75px;
+    font-weight:800;
+    color:#ff5a9b;
+    margin:20px;
+}
+
+.counter-text{
+    font-size:20px;
+    color:#ddd;
+}
+
+/* المفاجأة */
+.surprise{
+    padding:50px;
+    border-radius:35px;
+    background:linear-gradient(135deg,rgba(255,0,100,.12),rgba(120,0,255,.12));
+}
+
+.hidden{
+    display:none;
+}
+
+.reveal{
+    animation:reveal .8s ease;
+}
+
+@keyframes reveal{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.big-message{
+    font-family:'Amiri';
+    font-size:32px;
+    line-height:2;
+    color:#ffe3ee;
+    margin-top:30px;
+}
+
+/* النهاية */
+.final{
+    min-height:100vh;
+    text-align:center;
+}
+
+.final h2{
+    font-size:clamp(40px,8vw,75px);
+    color:#ff70a8;
+}
+
+.final p{
+    font-family:'Amiri';
+    font-size:30px;
+    line-height:2;
+    margin:30px auto;
+    max-width:700px;
+}
+
+.yes{
+    background:linear-gradient(135deg,#ff176d,#ff0055,#8e00ff);
+    font-size:20px;
+    padding:20px 40px;
+}
+
+/* رسالة النهاية */
+#finalMessage{
+    margin-top:30px;
+}
+
+/* موبايل */
+@media(max-width:650px){
+
+    .confession{
+        padding:25px 18px;
+    }
+
+    .confession p{
+        font-size:23px;
+    }
+
+    .section-title{
+        font-size:35px;
+    }
+
+    .timeline-item{
+        width:100%;
+        margin:30px 0!important;
+        text-align:center!important;
+    }
+
+    .line::before{
+        display:none;
+    }
+
+    .timeline-item::after{
+        display:none;
+    }
+
+    .counter{
+        font-size:55px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<h1>😂 سوق الأصحاب</h1>
+<div class="stars" id="stars"></div>
+
+<!-- البداية -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="crown">👑</div>
+
+        <div class="small-title">
+            إلى صاحبة المكانة الاستثنائية
+        </div>
+
+        <h1>روضة</h1>
+
+        <h2>برنسس محمد ❤️</h2>
+
+        <p>
+            في حكي كثير جواتي...
+            وحسيت إنه لازم يطلع بطريقة تليق فيكي.
+            مش رسالة عادية...
+            ولا اعتراف عادي...
+            هاي محاولة صغيرة أحكيلك فيها
+            شو مكانتك عندي.
+        </p>
+
+        <button class="btn" onclick="goTo('confession')">
+            افتحي الاعتراف ❤️
+        </button>
+
+    </div>
+
+    <div class="scroll">
+        ↓ كمّلي يا برنسس ↓
+    </div>
+
+</section>
+
+
+<!-- الاعتراف -->
+<section id="confession">
 
 <div class="container">
 
-<div class="card" onclick="openProfile('person1')">
-<img src="images/person1.jpg">
-<h3>صاحب 1</h3>
-<button>عرض المواصفات</button>
-</div>
+    <h2 class="section-title">
+        طيب... <span>اسمعيني</span> ❤️
+    </h2>
 
-<div class="card" onclick="openProfile('person2')">
-<img src="images/person2.jpg">
-<h3>صاحب 2</h3>
-<button>عرض المواصفات</button>
-</div>
+    <p class="subtitle">
+        هاي المرة بدون لف ودوران...
+    </p>
 
-<div class="card" onclick="openProfile('person3')">
-<img src="images/person3.jpg">
-<h3>صاحب 3</h3>
-<button>عرض المواصفات</button>
-</div>
+    <div class="confession">
 
-<div class="card" onclick="openProfile('person4')">
-<img src="images/person4.jpg">
-<h3>صاحب 4</h3>
-<button>عرض المواصفات</button>
-</div>
+        <p>
+            يا روضة...
+            يمكن أحيانًا ما بعرف أعبّر عن اللي جواي بالطريقة الصح،
+            بس في حقيقة وحدة مستحيل أقدر أنكرها...
+            <br><br>
 
-<div class="card" onclick="openProfile('person5')">
-<img src="images/person5.jpg">
-<h3>صاحب 5</h3>
-<button>عرض المواصفات</button>
-</div>
+            <span class="highlight">
+            أنا بحبك.
+            </span>
 
-<div class="card" onclick="openProfile('person6')">
-<img src="images/person6.jpg">
-<h3>صاحب 6</h3>
-<button>عرض المواصفات</button>
-</div>
+            <br><br>
 
-<div class="card" onclick="openProfile('person7')">
-<img src="images/person7.jpg">
-<h3>صاحب 7</h3>
-<button>عرض المواصفات</button>
-</div>
+            مش لأنه لازم أحبك،
+            ولا لأنه مجرد كلام حلو ينحكى...
+            لكن لأنه وجودك صار إله معنى خاص عندي.
+            <br><br>
 
-<div class="card" onclick="openProfile('person8')">
-<img src="images/person8.jpg">
-<h3>صاحب 8</h3>
-<button>عرض المواصفات</button>
-</div>
+            صرتِ الشخص اللي وجوده بيفرق،
+            وكلامه بيفرق،
+            وزعله بيفرق،
+            وفرحته بتفرق.
+            <br><br>
 
-<div class="card" onclick="openProfile('person9')">
-<img src="images/person9.jpg">
-<h3>صاحب 9</h3>
-<button>عرض المواصفات</button>
-</div>
+            وباختصار شديد...
+            <br>
+
+            <span class="highlight">
+            إنتِ مش أي بنت يا برنسس...
+            إنتِ روضة. ❤️
+            </span>
+        </p>
+
+    </div>
 
 </div>
 
-<script>
+</section>
 
-function openProfile(person){
-localStorage.setItem("selectedPerson",person);
-window.location="profile.html";
-}
 
-</script>
+<!-- ليش هي -->
+<section>
 
-</body>
-</html>
+<div class="container">
+
+    <h2 class="section-title">
+        طيب ليش <span>روضة؟</span> 👑
+    </h2>
+
+    <p class="subtitle">
+        لأنه في أشياء ما بتنشرح بسهولة...
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">❤️</div>
+            <h3>لأنك بتفرقي</h3>
+            <p>
+                في ناس بنحكي معهم عادي،
+                وفي ناس وجودهم لحاله بغير اليوم.
+                وإنتِ من النوع الثاني.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👑</div>
+            <h3>لأنك البرنسس</h3>
+            <p>
+                مش كل حدا بنعطيه لقب برنسس...
+                بس إنتِ أخذتيه بدون منافسة 😂❤️
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>لأنك مميزة</h3>
+            <p>
+                فيكي شيء خاص،
+                شيء بخلي وجودك مختلف عن أي شخص ثاني.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- رحلة الاعتراف -->
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        من <span>البداية</span> للنهاية ❤️
+    </h2>
+
+    <div class="timeline">
+
+        <div class="line">
+
+            <div class="timeline-item">
+                <h3>أول شيء...</h3>
+                <p>
+                    ما كنت بعرف إنك رح تصيري بهالمكانة.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>وبعدين...</h3>
+                <p>
+                    صار وجودك شيء بستناه،
+                    وكلامك شيء بفرحني.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>وبعدين أكثر...</h3>
+                <p>
+                    اكتشفت إني تعلقت فيكي أكثر مما توقعت.
+               
