@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>لبرنسس روضة 👑❤️</title>
+<title>إلى روضة 👑❤️</title>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:ital,wght@0,400;1,400&display=swap');
 
 *{
     margin:0;
@@ -16,38 +15,21 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:Cairo,sans-serif;
-    background:#05030a;
+    font-family:'Cairo',sans-serif;
+    background:
+        radial-gradient(circle at top,#35105c 0%,#16051f 40%,#07030b 100%);
     color:white;
+    min-height:100vh;
     overflow-x:hidden;
 }
 
-/* ===== الخلفية ===== */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at 20% 20%,rgba(255,50,130,.18),transparent 30%),
-    radial-gradient(circle at 80% 30%,rgba(120,50,255,.16),transparent 30%),
-    radial-gradient(circle at 50% 100%,rgba(255,0,100,.15),transparent 35%);
-
-    z-index:-5;
-}
-
-/* ===== النجوم ===== */
-
+/* النجوم */
 .stars{
     position:fixed;
     inset:0;
-    z-index:-4;
+    pointer-events:none;
+    z-index:0;
 }
 
 .star{
@@ -56,889 +38,522 @@ body::before{
     height:2px;
     background:white;
     border-radius:50%;
-    animation:twinkle 3s infinite alternate;
+    opacity:.7;
+    animation:twinkle 3s infinite ease-in-out;
 }
 
 @keyframes twinkle{
-    from{
-        opacity:.2;
-        transform:scale(.5);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1.5);
-    }
+    0%,100%{opacity:.2;transform:scale(.7)}
+    50%{opacity:1;transform:scale(1.5)}
 }
 
-/* ===== القلوب ===== */
-
+/* القلوب */
 .heart{
     position:fixed;
-    bottom:-40px;
+    bottom:-30px;
+    font-size:20px;
+    opacity:.8;
     pointer-events:none;
-    z-index:50;
-    animation:heartUp linear forwards;
+    animation:floatHeart linear forwards;
+    z-index:2;
 }
 
-@keyframes heartUp{
-
+@keyframes floatHeart{
     0%{
-        transform:translateY(0) scale(.5) rotate(0);
+        transform:translateY(0) rotate(0deg);
         opacity:0;
     }
-
-    15%{
-        opacity:1;
-    }
-
+    15%{opacity:.9}
     100%{
-        transform:translateY(-110vh) scale(1.4) rotate(360deg);
+        transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
 }
 
-/* ===== الأقسام ===== */
+/* المحتوى */
+.container{
+    position:relative;
+    z-index:3;
+    width:min(900px,92%);
+    margin:auto;
+}
 
-section{
+/* الهيرو */
+.hero{
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:50px 20px;
-}
-
-.container{
-    width:min(950px,100%);
     text-align:center;
+    padding:30px 0;
 }
 
-/* ===== البداية ===== */
-
-.hero{
-    position:relative;
+.hero-box{
+    width:100%;
+    padding:50px 25px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:35px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    box-shadow:
+        0 0 50px rgba(187,70,255,.18),
+        inset 0 0 40px rgba(255,255,255,.02);
 }
 
 .crown{
-    font-size:70px;
-    animation:float 3s ease-in-out infinite;
+    font-size:55px;
+    animation:crownGlow 2s infinite alternate;
 }
 
-@keyframes float{
+@keyframes crownGlow{
+    from{filter:drop-shadow(0 0 5px #ffd700)}
+    to{filter:drop-shadow(0 0 25px #ffd700)}
+}
 
-    0%,100%{
-        transform:translateY(0);
-    }
+.hero h1{
+    font-size:clamp(45px,10vw,85px);
+    margin:10px 0;
+    background:linear-gradient(90deg,#fff,#ffb7e8,#fff);
+    -webkit-background-clip:text;
+    color:transparent;
+    text-shadow:0 0 30px rgba(255,100,220,.3);
+}
 
-    50%{
-        transform:translateY(-15px);
-    }
-
+.subtitle{
+    font-size:clamp(18px,4vw,28px);
+    color:#ffd5f2;
 }
 
 .small{
-    color:#ff82b5;
-    letter-spacing:3px;
-    margin-top:10px;
+    margin-top:20px;
+    color:#d8bfd4;
+    font-size:15px;
 }
 
-h1{
-    font-size:clamp(65px,15vw,130px);
-
-    background:linear-gradient(
-        90deg,
-        #ff4f91,
-        #fff,
-        #ff4f91
-    );
-
-    background-size:200%;
-
-    -webkit-background-clip:text;
-    color:transparent;
-
-    animation:shine 4s linear infinite;
+/* الأقسام */
+section{
+    margin:80px 0;
 }
-
-@keyframes shine{
-
-    from{
-        background-position:0%;
-    }
-
-    to{
-        background-position:200%;
-    }
-
-}
-
-.hero h2{
-    font-family:Amiri;
-    font-size:38px;
-    color:#ffd8e7;
-}
-
-.hero p{
-    max-width:650px;
-    margin:25px auto;
-    color:#c9bec6;
-    line-height:2;
-    font-size:18px;
-}
-
-/* ===== الأزرار ===== */
-
-.btn{
-    border:none;
-    cursor:pointer;
-
-    padding:17px 35px;
-
-    border-radius:50px;
-
-    font-family:Cairo;
-    font-size:17px;
-    font-weight:bold;
-
-    color:white;
-
-    background:linear-gradient(
-        135deg,
-        #ff2778,
-        #9b00ff
-    );
-
-    box-shadow:
-    0 0 25px rgba(255,0,110,.3);
-
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-5px) scale(1.05);
-
-    box-shadow:
-    0 0 45px rgba(255,0,110,.55);
-}
-
-/* ===== الكروت ===== */
 
 .card{
-    padding:45px 30px;
-
-    border-radius:35px;
-
     background:rgba(255,255,255,.055);
-
     border:1px solid rgba(255,255,255,.1);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:0 20px 70px rgba(0,0,0,.3);
-
-    margin-top:30px;
+    border-radius:28px;
+    padding:35px 25px;
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+    backdrop-filter:blur(12px);
 }
 
-.card h2{
-    color:#ff72a9;
-    font-size:38px;
-    margin-bottom:20px;
+.title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:25px;
+    color:#ffd2ed;
 }
 
-.card p{
-    font-family:Amiri;
-    font-size:28px;
-    line-height:2.1;
-    color:#ffeaf2;
+/* الجملة */
+.message{
+    text-align:center;
+    font-size:20px;
+    line-height:2;
+    color:#f5e9f3;
 }
 
-/* ===== رسالة مخفية ===== */
-
-.hidden{
-    display:none;
+.highlight{
+    color:#ff9fdb;
+    font-weight:800;
 }
 
-.show{
-    display:block;
-    animation:show .8s ease;
-}
-
-@keyframes show{
-
-    from{
-        opacity:0;
-        transform:translateY(30px) scale(.95);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
-}
-
-/* ===== رسالة خاصة ===== */
-
-.special{
-    margin-top:35px;
-
-    padding:35px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,50,130,.12),
-        rgba(120,0,255,.12)
-    );
-
-    border:1px solid rgba(255,100,170,.2);
-}
-
-.special p{
-    font-family:Amiri;
-    font-size:30px;
-    line-height:2.1;
-}
-
-/* ===== أزرار المشاعر ===== */
-
-.options{
+/* الأزرار */
+.buttons{
     display:flex;
     justify-content:center;
     gap:15px;
     flex-wrap:wrap;
-    margin-top:30px;
 }
 
-.option{
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.15);
-    color:white;
-
-    padding:15px 25px;
-
+button{
+    border:none;
+    padding:14px 23px;
     border-radius:50px;
-
+    color:white;
+    background:linear-gradient(135deg,#8b2fc9,#e83d91);
+    font-family:'Cairo',sans-serif;
+    font-size:15px;
+    font-weight:700;
     cursor:pointer;
-
-    font-family:Cairo;
-
+    box-shadow:0 8px 25px rgba(211,54,160,.25);
     transition:.3s;
 }
 
-.option:hover{
-    background:rgba(255,80,150,.2);
-    transform:translateY(-4px);
+button:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 12px 35px rgba(255,70,190,.4);
 }
 
-/* ===== النهاية ===== */
-
-.final h2{
-    font-size:clamp(45px,9vw,80px);
-    color:#ff70a8;
-}
-
-.final p{
-    font-family:Amiri;
-    font-size:31px;
-    line-height:2;
-    max-width:750px;
-    margin:25px auto;
-}
-
-.signature{
-    margin-top:40px;
-    color:#ff86b6;
+.response{
+    text-align:center;
+    margin-top:25px;
+    min-height:35px;
+    color:#ffd5ed;
     font-size:18px;
 }
 
-/* ===== موبايل ===== */
+/* الشعر */
+.poem{
+    font-family:'Amiri',serif;
+    text-align:center;
+    font-size:24px;
+    line-height:2.2;
+    color:#ffeaf7;
+}
 
+.poem .red{
+    color:#ff9ed8;
+}
+
+/* السر */
+.secret{
+    text-align:center;
+}
+
+.secret-text{
+    display:none;
+    margin-top:25px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,100,200,.08);
+    border:1px solid rgba(255,150,220,.15);
+    line-height:2;
+    color:#ffe5f4;
+    animation:appear .7s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* النهاية */
+.final{
+    text-align:center;
+    padding-bottom:80px;
+}
+
+.final .big-heart{
+    font-size:65px;
+    animation:heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.2)}
+}
+
+.final h2{
+    font-size:35px;
+    color:#ffb5e2;
+    margin:15px 0;
+}
+
+.final p{
+    color:#d8c5d5;
+    line-height:2;
+}
+
+/* موبايل */
 @media(max-width:600px){
-
-    .hero h2{
-        font-size:30px;
+    .hero-box{
+        padding:40px 18px;
     }
 
     .card{
-        padding:30px 18px;
+        padding:28px 18px;
     }
 
-    .card p{
-        font-size:24px;
+    .poem{
+        font-size:21px;
     }
 
-    .special p{
-        font-size:25px;
+    .message{
+        font-size:17px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- النجوم -->
 
 <div class="stars" id="stars"></div>
 
-
-<!-- ================= البداية ================= -->
-
-<section class="hero">
-
 <div class="container">
 
-    <div class="crown">
-        👑
-    </div>
+    <!-- البداية -->
+    <div class="hero">
 
-    <div class="small">
-        رسالة صغيرة جدًا لشخص غالي جدًا
-    </div>
+        <div class="hero-box">
 
-    <h1>
-        روضة
-    </h1>
+            <div class="crown">👑</div>
 
-    <h2>
-        البرنسس ❤️
-    </h2>
+            <h1>روضة</h1>
 
-    <p>
-        بعرف إنك هسا متضايقة...
-        ويمكن قلبك مش بأحسن حال،
-        عشان هيك ما بدي أطوّل عليكي.
-        بس بديكي تفتحي هالموقع شوي شوي...
-        لأنه معمول إلك إنتِ.
-    </p>
+            <div class="subtitle">
+                البرنسس ❤️
+            </div>
 
-    <button
-        class="btn"
-        onclick="go('message')"
-    >
-        افتحي يا برنسس ❤️
-    </button>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= الرسالة ================= -->
-
-<section id="message">
-
-<div class="container">
-
-    <div class="card">
-
-        <h2>
-            روضة... اسمعيني شوي ❤️
-        </h2>
-
-        <p>
-
-            بعرف إنك متضايقة،
-            وبعرف إن اللي صار خلاكي تزعلي وتعيطي...
-
-            <br><br>
-
-            بس بديكي تعرفي شغلة:
-
-            <br>
-
-            <strong style="color:#ff70a8">
-                مش لازم تكوني قوية طول الوقت.
-            </strong>
-
-            <br><br>
-
-            إذا بدك تبكي، ابكي.
-            وإذا بدك تسكتي، اسكتي.
-            وإذا بدك تحكي، احكي.
-
-            <br><br>
-
-            بس لا تفكري إنك لحالك.
-
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= أنا هون ================= -->
-
-<section>
-
-<div class="container">
-
-    <div class="card">
-
-        <h2>
-            في شغلة بدي أوعدك فيها ❤️
-        </h2>
-
-        <p>
-
-            يمكن ما أقدر أغيّر كل اللي صار...
-
-            <br><br>
-
-            بس بقدر أكون الشخص اللي
-            يسمعك بدون ما يحكم عليكي،
-            ويضل جنبك بالكلمة الحلوة
-            لما تكون الدنيا ثقيلة عليكي.
-
-            <br><br>
-
-            <span style="color:#ff70a8">
-                يا برنسس...
-                إنتِ مش مضطرة تواجهِي كل شيء لحالك.
-            </span>
-
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= أزرار ================= -->
-
-<section>
-
-<div class="container">
-
-    <h2 style="
-        font-size:40px;
-        color:#ff72a9;
-        margin-bottom:15px;
-    ">
-        اختاري شو بدك هسا 👀❤️
-    </h2>
-
-    <p style="
-        color:#aaa;
-        margin-bottom:30px;
-    ">
-        اضغطي على الشي اللي حاسة فيه
-    </p>
-
-
-    <div class="options">
-
-        <button
-            class="option"
-            onclick="feeling('hug')"
-        >
-            محتاجة حضن 🫂
-        </button>
-
-        <button
-            class="option"
-            onclick="feeling('talk')"
-        >
-            بدي أحكي 🥺
-        </button>
-
-        <button
-            class="option"
-            onclick="feeling('quiet')"
-        >
-            بدي أضل ساكتة 🤍
-        </button>
-
-        <button
-            class="option"
-            onclick="feeling('smile')"
-        >
-            بدي أضحك شوي 😂
-        </button>
-
-    </div>
-
-
-    <div
-        id="feeling"
-        class="special hidden"
-    ></div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= الاعتراف ================= -->
-
-<section>
-
-<div class="container">
-
-    <div class="card">
-
-        <h2>
-            وهلأ... الاعتراف الحقيقي ❤️
-        </h2>
-
-        <p>
-
-            وسط كل هالحكي،
-            في شيء ما بدي أخليه يضل مخبّى...
-
-            <br><br>
-
-            <strong style="color:#ff70a8">
-                أنا بحبك يا روضة.
-            </strong>
-
-            <br><br>
-
-            بحب وجودك،
-            وبحب تفاصيلك،
-            وبحب الطريقة اللي صار فيها
-            وجودك إشي مهم عندي.
-
-            <br><br>
-
-            وإنتِ بالنسبة إلي
-            مش مجرد شخص عادي...
-
-            <br>
-
-            <span style="color:#ff70a8">
-                إنتِ البرنسس 👑❤️
-            </span>
-
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= المفاجأة ================= -->
-
-<section>
-
-<div class="container">
-
-    <div class="special">
-
-        <h2 style="
-            color:#ff70a8;
-            font-size:38px;
-            margin-bottom:20px;
-        ">
-            لسا في رسالة أخيرة 👀
-        </h2>
-
-        <p>
-            بس لازم تضغطي الزر...
-        </p>
-
-        <br>
-
-        <button
-            class="btn"
-            onclick="secret()"
-        >
-            افتحيها يا برنسس 👑
-        </button>
-
-
-        <div
-            id="secret"
-            class="hidden"
-        >
-
-            <p style="margin-top:30px">
-
-                روضة...
-
-                <br><br>
-
-                إذا العالم كله اليوم
-                قدر يضايقك...
-
-                <br>
-
-                أنا بتمنى هالموقع
-                يكون سبب صغير يخليكي
-                تبتسمي ولو ابتسامة وحدة.
-
-                <br><br>
-
-                ما بدي منك تكوني بخير
-                غصب عنك...
-
-                <br>
-
-                بس بديكي تعرفي
-                إنك غالية.
-
-                <br><br>
-
-                <strong style="color:#ff70a8">
-                    وهاي البرنسس لازم تدلل شوي اليوم. 👑❤️
-                </strong>
-
-            </p>
+            <div class="small">
+                صفحة صغيرة... بس معمولة إلِك
+            </div>
 
         </div>
 
     </div>
 
+
+    <!-- رسالة قصيرة -->
+    <section>
+
+        <div class="card">
+
+            <div class="title">
+                روضة... 🤍
+            </div>
+
+            <div class="message">
+
+                مهما كان اليوم ثقيل،
+                <br>
+
+                لا تخلي لحظة زعل تنسيك
+                <span class="highlight">قديش إنتِ غالية.</span>
+
+                <br><br>
+
+                ابتسامتك بتليق فيك أكثر من الزعل. ❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- اختيارات -->
+    <section>
+
+        <div class="card">
+
+            <div class="title">
+                شو بدك هسا؟ 👑
+            </div>
+
+            <div class="buttons">
+
+                <button onclick="feeling('talk')">
+                    بدي أحكي 🥺
+                </button>
+
+                <button onclick="feeling('quiet')">
+                    بدي هدوء 🤍
+                </button>
+
+                <button onclick="feeling('smile')">
+                    بدي أضحك 😂
+                </button>
+
+            </div>
+
+            <div class="response" id="response"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- الشعر -->
+    <section>
+
+        <div class="card">
+
+            <div class="title">
+                وللبرنسس شعر... 👑
+            </div>
+
+            <div class="poem">
+
+                يا روضةَ القلبِ يا نبضًا أُحبُّهُ
+                <br>
+                ويا أجملَ شيءٍ في حياتي أراهُ
+
+                <br><br>
+
+                إذا ضاقَ قلبُكِ، فالودُّ مسكنُهُ
+                <br>
+                وإذا بكى الحزنُ، فقلبي مُناهُ
+
+                <br><br>
+
+                وما قلتُ أحبكِ يومًا مجاملةً
+                <br>
+                ولكنّ قلبي من زمانٍ اختارَهُ
+
+                <br><br>
+
+                يا <span class="red">برنسس</span> القلبِ، يا أجملَ حكايةٍ
+                <br>
+                أحببتُ فيكِ القلبَ قبلَ ملامحِه ❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- رسالة سرية -->
+    <section>
+
+        <div class="card secret">
+
+            <div class="title">
+                في إشي صغير إلك 🤫
+            </div>
+
+            <button onclick="showSecret()">
+                افتحي الرسالة ❤️
+            </button>
+
+            <div class="secret-text" id="secret">
+
+                روضة...
+                <br><br>
+
+                يمكن ما أقدر أغيّر كل إشي مزعلك،
+                بس بقدر أذكّرك إنك شخص غالي جدًا،
+                وإنه الزعل مهما كبر... <span class="highlight">بمر.</span>
+
+                <br><br>
+
+                فـ لا تنسي تبتسمي يا برنسس 👑❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- النهاية -->
+    <section class="final">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <h2>
+            روضة 👑
+        </h2>
+
+        <p>
+            خلي بالك من قلبك...
+            <br>
+            لأنه أغلى من كل زعل.
+            <br><br>
+            وبس... هاي الصفحة كلها إلِك ❤️
+        </p>
+
+    </section>
+
 </div>
-
-</section>
-
-
-
-<!-- ================= النهاية ================= -->
-
-<section class="final">
-
-<div class="container">
-
-    <div class="crown">
-        👑
-    </div>
-
-    <h2>
-        روضة ❤️
-    </h2>
-
-    <p>
-
-        إذا ما قدرت أغيّر يومك كله...
-
-        <br>
-
-        أتمنى قدرت أغيّر
-        آخر دقيقة منه للأحسن.
-
-        <br><br>
-
-        وإذا كل اللي بدك إياه
-        هسا هو شخص يقولك:
-
-        <br>
-
-        <strong style="color:#ff70a8">
-            "أنا هون."
-        </strong>
-
-        <br><br>
-
-        فاعتبريها وصلت.
-
-        ❤️
-
-    </p>
-
-
-    <button
-        class="btn"
-        onclick="finale()"
-    >
-        اضغطي إذا ابتسمتي شوي 🥹❤️
-    </button>
-
-
-    <div
-        id="final"
-        class="signature"
-    ></div>
-
-</div>
-
-</section>
-
 
 
 <script>
 
-/* ===== النجوم ===== */
+/* إنشاء النجوم */
+const stars = document.getElementById("stars");
 
-const stars =
-document.getElementById("stars");
+for(let i = 0; i < 120; i++){
 
-for(let i=0;i<120;i++){
+    const star = document.createElement("div");
 
-    let star =
-    document.createElement("div");
+    star.className = "star";
 
-    star.className="star";
-
-    star.style.left =
-    Math.random()*100+"%";
-
-    star.style.top =
-    Math.random()*100+"%";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
 
     star.style.animationDelay =
-    Math.random()*3+"s";
+        Math.random() * 3 + "s";
 
     stars.appendChild(star);
 }
 
 
-/* ===== التنقل ===== */
+/* القلوب الطائرة */
+function createHeart(){
 
-function go(id){
+    const heart = document.createElement("div");
 
-    document
-    .getElementById(id)
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+    heart.className = "heart";
 
-}
+    const hearts = ["❤️","💗","💕","💖","💜","🤍"];
 
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
 
-/* ===== القلوب ===== */
+    heart.style.left =
+        Math.random() * 100 + "vw";
 
-function heart(){
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
 
-    let h =
-    document.createElement("div");
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
 
-    h.className="heart";
+    document.body.appendChild(heart);
 
-    const list=[
-        "❤️",
-        "💗",
-        "💖",
-        "💕",
-        "💞",
-        "💓",
-        "👑"
-    ];
-
-    h.innerHTML =
-    list[Math.floor(
-        Math.random()*list.length
-    )];
-
-    h.style.left =
-    Math.random()*100+"%";
-
-    h.style.fontSize =
-    (18+Math.random()*25)+"px";
-
-    h.style.animationDuration =
-    (5+Math.random()*5)+"s";
-
-    document.body.appendChild(h);
-
-    setTimeout(()=>{
-        h.remove();
+    setTimeout(() => {
+        heart.remove();
     },10000);
-
 }
 
-
-/* قلوب مستمرة */
-
-setInterval(heart,800);
+setInterval(createHeart,700);
 
 
-
-/* ===== اختيار الشعور ===== */
-
+/* الاختيارات */
 function feeling(type){
 
-    let box =
-    document.getElementById("feeling");
+    const response =
+        document.getElementById("response");
 
-    box.classList.remove("hidden");
+    if(type === "talk"){
 
-    box.classList.add("show");
-
-
-    if(type==="hug"){
-
-        box.innerHTML=`
-            <p>
-            لو بإيدي أعطيكي حضن يطمن قلبك
-            بدون ولا كلمة...
-            <br><br>
-            كان أعطيتك إياه من أول ما عرفت
-            إنك متضايقة. 🫂❤️
-            </p>
-        `;
+        response.innerHTML =
+        "احكي إذا بدك... أنا بسمعك ❤️";
 
     }
 
+    if(type === "quiet"){
 
-    if(type==="talk"){
-
-        box.innerHTML=`
-            <p>
-            احكي...
-            حتى لو الكلام ملخبط،
-            حتى لو مش عارفة من وين تبدأي.
-            <br><br>
-            المهم ما تظلي شايلة كل شيء بقلبك. ❤️
-            </p>
-        `;
+        response.innerHTML =
+        "خدي راحتك يا برنسس 🤍";
 
     }
 
+    if(type === "smile"){
 
-    if(type==="quiet"){
+        response.innerHTML =
+        "هاي أهم وحدة 😂❤️ بدي أشوف ابتسامة البرنسس بس.";
 
-        box.innerHTML=`
-            <p>
-            تمام...
-            ما رح أطلب منك تحكي.
-            <br><br>
-            خدي راحتك،
-            وأنا بس بديكي تعرفي
-            إنك مش مضطرة تبرري شعورك.
-            🤍
-            </p>
-        `;
+        for(let i = 0; i < 15; i++){
 
-    }
+            setTimeout(createHeart,i * 100);
 
-
-    if(type==="smile"){
-
-        box.innerHTML=`
-            <p>
-            أوووووه أخيرًا 😂❤️
-            <br><br>
-            طيب مهمة اليوم:
-            البرنسس لازم تطلع منها
-            ابتسامة غصبًا عن الحزن 😂👑
-            <br><br>
-            يلا...
-            ابتسامة صغيرة بس.
-            </p>
-        `;
-
-        for(let i=0;i<15;i++){
-            setTimeout(heart,i*80);
         }
 
     }
@@ -946,71 +561,25 @@ function feeling(type){
 }
 
 
+/* الرسالة السرية */
+function showSecret(){
 
-/* ===== السر ===== */
+    const secret =
+        document.getElementById("secret");
 
-function secret(){
+    if(secret.style.display === "block"){
 
-    let box =
-    document.getElementById("secret");
+        secret.style.display = "none";
 
-    box.classList.remove("hidden");
+    }else{
 
-    box.classList.add("show");
+        secret.style.display = "block";
 
-    for(let i=0;i<30;i++){
+        for(let i = 0; i < 20; i++){
 
-        setTimeout(heart,i*60);
+            setTimeout(createHeart,i * 80);
 
-    }
-
-}
-
-
-
-/* ===== النهاية ===== */
-
-function finale(){
-
-    let final =
-    document.getElementById("final");
-
-    final.innerHTML=`
-
-        <div style="
-            font-size:65px;
-            margin:20px;
-        ">
-            👑❤️✨
-        </div>
-
-        <div style="
-            font-family:Amiri;
-            font-size:30px;
-            color:#ffe5ef;
-            line-height:2;
-        ">
-
-            هيك بدي إياكي...
-            حتى لو ابتسامة صغيرة. ❤️
-
-            <br>
-
-            لأن ابتسامة البرنسس
-            لحالها بتستاهل كل هالموقع. 👑
-
-            <br><br>
-
-            — محمد ❤️
-
-        </div>
-
-    `;
-
-
-    for(let i=0;i<70;i++){
-
-        setTimeout(heart,i*35);
+        }
 
     }
 
