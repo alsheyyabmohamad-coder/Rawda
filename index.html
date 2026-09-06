@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Princess Rawda 👑❤️</title>
+
+<title>روضة | البرنسس 👑❤️</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,400&family=Cairo:wght@400;600;700;800&display=swap');
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -20,16 +21,19 @@ html{
 
 body{
     font-family:"Cairo",sans-serif;
-    color:white;
-    background:
-        radial-gradient(circle at 20% 10%,#5c1b72 0,transparent 30%),
-        radial-gradient(circle at 80% 20%,#801f59 0,transparent 28%),
-        linear-gradient(135deg,#09030f,#18051f,#07020c);
+    color:#fff;
     min-height:100vh;
     overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 15% 10%,rgba(184,52,210,.35),transparent 25%),
+        radial-gradient(circle at 85% 20%,rgba(255,52,151,.25),transparent 28%),
+        radial-gradient(circle at 50% 80%,rgba(112,39,180,.25),transparent 30%),
+        linear-gradient(135deg,#06020b,#14031d,#08020d);
 }
 
-/* النجوم */
+/* ================= النجوم ================= */
+
 #stars{
     position:fixed;
     inset:0;
@@ -41,243 +45,648 @@ body{
     position:absolute;
     width:3px;
     height:3px;
-    background:white;
+    background:#fff;
     border-radius:50%;
+    box-shadow:0 0 8px #fff;
     animation:twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle{
-    from{opacity:.15;transform:scale(.5)}
-    to{opacity:1;transform:scale(1.4)}
+    from{
+        opacity:.1;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
 }
 
-/* القلوب */
-.floating-heart{
+/* ================= المؤثرات ================= */
+
+.floating{
     position:fixed;
-    bottom:-40px;
-    z-index:5;
+    bottom:-50px;
+    z-index:20;
     pointer-events:none;
-    animation:heartUp linear forwards;
+    animation:floatUp linear forwards;
 }
 
-@keyframes heartUp{
+@keyframes floatUp{
+
     0%{
-        transform:translateY(0) rotate(0);
+        transform:translateY(0) rotate(0deg) scale(.6);
         opacity:0;
     }
-    15%{opacity:1}
+
+    15%{
+        opacity:1;
+    }
+
     100%{
-        transform:translateY(-110vh) rotate(360deg);
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.2);
+
         opacity:0;
     }
 }
 
-/* المحتوى */
+.spark{
+    position:fixed;
+    pointer-events:none;
+    z-index:50;
+    font-size:25px;
+    animation:sparkle .9s forwards;
+}
+
+@keyframes sparkle{
+
+    0%{
+        transform:scale(.2);
+        opacity:0;
+    }
+
+    40%{
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1.5) translateY(-80px);
+        opacity:0;
+    }
+}
+
+/* ================= المحتوى ================= */
+
 .wrapper{
     position:relative;
     z-index:2;
-    width:min(1000px,92%);
+    width:min(1150px,93%);
     margin:auto;
 }
 
-/* شاشة البداية */
+/* ================= HERO ================= */
+
 .hero{
     min-height:100vh;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
 }
 
 .hero-card{
-    padding:55px 25px;
+    position:relative;
+    overflow:hidden;
     width:100%;
-    border-radius:40px;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.13);
-    backdrop-filter:blur(18px);
+    padding:75px 25px;
+
+    border-radius:45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,185,230,.2);
+
+    backdrop-filter:blur(20px);
+
     box-shadow:
-        0 0 80px rgba(224,65,190,.15),
-        inset 0 0 40px rgba(255,255,255,.025);
+        0 0 100px rgba(226,54,180,.18),
+        inset 0 0 60px rgba(255,255,255,.025);
+}
+
+.hero-card:before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#ff3da5;
+    filter:blur(140px);
+    opacity:.18;
+    top:-150px;
+    left:-100px;
 }
 
 .crown{
-    font-size:70px;
-    animation:crown 2s infinite alternate;
+    font-size:80px;
+    animation:crownGlow 2s infinite alternate;
 }
 
-@keyframes crown{
-    from{filter:drop-shadow(0 0 4px gold)}
-    to{filter:drop-shadow(0 0 25px gold)}
+@keyframes crownGlow{
+
+    from{
+        filter:drop-shadow(0 0 5px gold);
+        transform:translateY(0);
+    }
+
+    to{
+        filter:drop-shadow(0 0 30px gold);
+        transform:translateY(-8px);
+    }
 }
 
 .hero h1{
-    font-size:clamp(55px,13vw,110px);
+    font-size:clamp(65px,15vw,130px);
+
     margin:5px 0;
-    background:linear-gradient(90deg,#fff,#ffb5df,#fff);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff9fd6,
+            #fff,
+            #ffd1ec
+        );
+
     -webkit-background-clip:text;
     color:transparent;
+
+    text-shadow:
+        0 0 40px rgba(255,92,190,.3);
 }
 
 .hero h2{
-    color:#ffb8df;
-    font-size:clamp(20px,4vw,30px);
+    font-size:clamp(23px,5vw,34px);
+    color:#ffb9df;
 }
 
 .hero p{
-    color:#d8c8d8;
-    margin:20px auto;
-    max-width:550px;
-    line-height:2;
+    max-width:650px;
+    margin:25px auto;
+    color:#dccbdc;
+    line-height:2.2;
+    font-size:17px;
 }
 
 .main-btn{
     border:0;
-    padding:15px 30px;
-    border-radius:50px;
-    background:linear-gradient(135deg,#a833d0,#ed438f);
+    padding:16px 35px;
+
+    border-radius:60px;
+
     color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8c27c7,
+            #e82d91,
+            #ff5fb6
+        );
+
     font-family:"Cairo";
     font-weight:800;
+    font-size:16px;
+
     cursor:pointer;
-    box-shadow:0 10px 30px rgba(222,55,170,.3);
-    transition:.3s;
+
+    box-shadow:
+        0 10px 35px rgba(234,46,165,.35);
+
+    transition:.35s;
 }
 
 .main-btn:hover{
-    transform:translateY(-4px) scale(1.04);
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 45px rgba(255,55,180,.5);
 }
 
-/* الأقسام */
+/* ================= الأقسام ================= */
+
 section{
-    margin:100px 0;
+    margin:120px 0;
 }
 
 .section-title{
     text-align:center;
-    font-size:34px;
-    color:#ffc8e8;
-    margin-bottom:30px;
+    font-size:38px;
+    color:#ffc7e8;
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 25px rgba(255,105,195,.25);
+}
+
+.section-sub{
+    text-align:center;
+    color:#cdbccd;
+    margin-bottom:35px;
 }
 
 .card{
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.11);
-    border-radius:30px;
-    padding:35px 25px;
-    backdrop-filter:blur(15px);
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    position:relative;
+
+    padding:40px 30px;
+
+    border-radius:35px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid rgba(255,185,230,.13);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.3);
 }
 
-/* لعبة القلب */
+/* ================= صندوق المفاجأة ================= */
+
+.gift-area{
+    text-align:center;
+}
+
+.gift{
+    font-size:110px;
+    display:inline-block;
+    cursor:pointer;
+
+    transition:.3s;
+
+    animation:giftFloat 2s infinite ease-in-out;
+}
+
+@keyframes giftFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+}
+
+.gift:hover{
+    transform:scale(1.12);
+}
+
+.gift-message{
+    display:none;
+
+    margin:30px auto 0;
+
+    max-width:650px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,61,169,.13),
+            rgba(148,50,210,.1)
+        );
+
+    border:1px solid rgba(255,160,220,.18);
+
+    animation:appear .7s ease;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* ================= لعبة القلب ================= */
+
 .heart-game{
     text-align:center;
 }
 
 .game-heart{
-    font-size:85px;
     display:inline-block;
+
+    font-size:100px;
+
     cursor:pointer;
+
     user-select:none;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255,65,170,.55)
+        );
+
     transition:.15s;
-    filter:drop-shadow(0 0 15px rgba(255,70,170,.4));
 }
 
 .game-heart:active{
-    transform:scale(.75);
+    transform:scale(.7);
 }
 
 .score{
+    font-size:23px;
+    color:#ffb7df;
     margin-top:15px;
-    color:#ffb4df;
-    font-size:20px;
 }
 
-/* الأسئلة */
-.question{
+.progress{
+    width:90%;
+    max-width:500px;
+
+    height:13px;
+
+    margin:25px auto;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9e35d3,
+            #ff369e,
+            #ff9ed4
+        );
+
+    transition:.3s;
+}
+
+/* ================= الألعاب ================= */
+
+.games-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+}
+
+.game-card{
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,160,220,.12);
+
+    transition:.35s;
+}
+
+.game-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(255,120,200,.4);
+
+    box-shadow:
+        0 15px 50px
+        rgba(231,44,163,.15);
+}
+
+.game-icon{
+    font-size:65px;
+    margin-bottom:15px;
+}
+
+.game-card h3{
+    color:#ffb8df;
+    margin-bottom:10px;
+}
+
+.game-card p{
+    color:#cdbdce;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+/* ================= بطاقات الحب ================= */
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+
+    max-width:800px;
+
+    margin:30px auto;
+}
+
+.memory{
+
+    height:150px;
+
+    border:0;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #45105a,
+            #190622
+        );
+
+    color:white;
+
+    font-size:45px;
+
+    transition:.5s;
+
+    transform-style:preserve-3d;
+}
+
+.memory.open{
+    background:
+        linear-gradient(
+            145deg,
+            #8e287b,
+            #e4429b
+        );
+
+    transform:rotateY(180deg);
+}
+
+.memory-text{
+    font-size:16px;
+    line-height:1.5;
+}
+
+/* ================= العجلة ================= */
+
+.wheel-area{
     text-align:center;
 }
 
-.question-number{
-    color:#cdaed0;
-    margin-bottom:12px;
+.wheel{
+
+    width:240px;
+    height:240px;
+
+    margin:30px auto;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            #ff4cae 0deg 60deg,
+            #7c2eb1 60deg 120deg,
+            #d23b9a 120deg 180deg,
+            #60268d 180deg 240deg,
+            #ef62b4 240deg 300deg,
+            #8c39b8 300deg 360deg
+        );
+
+    border:
+        8px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 0 50px
+        rgba(255,66,178,.3);
+
+    transition:transform 2s cubic-bezier(.17,.67,.18,1);
 }
 
-.question-text{
-    font-size:24px;
-    color:#ffe9f6;
-    margin-bottom:25px;
+.wheel-pointer{
+    font-size:40px;
 }
 
-.answers{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    justify-content:center;
-}
+.wheel-result{
 
-.answer{
-    border:1px solid rgba(255,255,255,.15);
-    background:rgba(255,255,255,.06);
-    color:white;
-    padding:13px 20px;
-    border-radius:50px;
-    cursor:pointer;
-    font-family:"Cairo";
-    transition:.25s;
-}
+    min-height:45px;
 
-.answer:hover{
-    background:rgba(255,91,190,.2);
-    transform:translateY(-3px);
-}
+    margin-top:20px;
 
-.question-result{
-    margin-top:25px;
-    color:#ffb9df;
-    min-height:30px;
+    color:#ffb8df;
+
+    font-size:19px;
+
     font-weight:700;
 }
 
-/* مقياس الحب */
-.love-meter{
-    text-align:center;
+/* ================= حديقة الورد ================= */
+
+.garden{
+
+    min-height:320px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,63,168,.08),
+            transparent 70%
+        );
 }
 
-.meter{
-    width:100%;
-    height:25px;
-    background:rgba(255,255,255,.08);
-    border-radius:50px;
-    overflow:hidden;
-    margin:25px 0;
+.flower{
+
+    font-size:65px;
+
+    cursor:pointer;
+
+    animation:flowerSway
+        2s infinite ease-in-out;
+
+    transition:.3s;
 }
 
-.meter-fill{
-    width:0%;
-    height:100%;
-    border-radius:50px;
-    background:linear-gradient(90deg,#9d32d1,#ff3e9d,#ff9ed4);
-    transition:1.5s;
+.flower:hover{
+
+    transform:
+        scale(1.3)
+        rotate(8deg);
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255,80,190,.6)
+        );
 }
 
-.love-number{
-    font-size:28px;
-    color:#ffb7df;
+@keyframes flowerSway{
+
+    0%,100%{
+        transform:rotate(-4deg);
+    }
+
+    50%{
+        transform:rotate(4deg);
+    }
 }
 
-/* الشعر */
+/* ================= القصائد ================= */
+
 .poem{
     font-family:"Amiri",serif;
+
     text-align:center;
-    line-height:2.1;
-    font-size:23px;
-    color:#fbe9f5;
+
+    font-size:25px;
+
+    line-height:2.25;
+
+    color:#fbeaf5;
 }
 
 .poem-box{
-    padding:25px 10px;
-    border-bottom:1px solid rgba(255,255,255,.08);
+
+    padding:35px 15px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
 }
 
 .poem-box:last-child{
@@ -285,83 +694,162 @@ section{
 }
 
 .poem-title{
+
     color:#ff9fd4;
+
     font-family:"Cairo";
-    font-size:20px;
-    margin-bottom:12px;
+
+    font-size:21px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
 }
 
-/* الرسالة السرية */
-.secret{
+/* ================= رسائل ================= */
+
+.messages-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.message-card{
+
+    padding:30px 20px;
+
     text-align:center;
+
+    border-radius:28px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,160,220,.12);
+
+    cursor:pointer;
+
+    transition:.3s;
 }
 
-.secret-message{
+.message-card:hover{
+
+    transform:translateY(-7px);
+
+    background:
+        rgba(255,80,180,.08);
+}
+
+.message-card .icon{
+    font-size:50px;
+}
+
+.hidden-text{
+
     display:none;
-    margin-top:25px;
-    padding:25px;
+
+    margin-top:20px;
+
+    color:#ffd9ed;
+
     line-height:2;
-    border-radius:22px;
-    background:rgba(255,90,190,.08);
-    border:1px solid rgba(255,160,220,.12);
-    animation:appear .7s ease;
 }
 
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+/* ================= النهاية ================= */
 
-/* النهاية */
 .final{
+
     text-align:center;
-    padding-bottom:100px;
+
+    padding-bottom:150px;
 }
 
 .final-heart{
-    font-size:80px;
-    animation:pulse 1.4s infinite;
+
+    font-size:100px;
+
+    animation:heartbeat 1.3s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255,50,160,.5)
+        );
 }
 
-@keyframes pulse{
-    50%{transform:scale(1.18)}
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
 }
 
 .final h2{
-    font-size:40px;
-    color:#ffb9e0;
-    margin:15px 0;
+
+    font-size:45px;
+
+    color:#ffb8df;
+
+    margin:20px 0;
 }
 
 .final p{
-    color:#d7c7d6;
-    line-height:2;
+
+    color:#d6c6d6;
+
+    line-height:2.2;
+
+    font-size:17px;
 }
 
-/* موبايل */
-@media(max-width:600px){
+/* ================= موبايل ================= */
+
+@media(max-width:750px){
+
+    .games-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .messages-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        padding:55px 18px;
+    }
 
     .card{
-        padding:27px 16px;
+        padding:30px 17px;
     }
 
     .section-title{
-        font-size:28px;
-    }
-
-    .question-text{
-        font-size:20px;
+        font-size:30px;
     }
 
     .poem{
-        font-size:20px;
+        font-size:21px;
     }
+
+    .wheel{
+        width:200px;
+        height:200px;
+    }
+
 }
 </style>
 </head>
@@ -372,7 +860,10 @@ section{
 
 <div class="wrapper">
 
-<!-- ================= البداية ================= -->
+
+<!-- ================================================= -->
+<!-- البداية -->
+<!-- ================================================= -->
 
 <section class="hero">
 
@@ -385,14 +876,18 @@ section{
     <h2>البرنسس ❤️</h2>
 
     <p>
-        في مكان صغير هون معمول عشان يغيّر مزاجك شوي...
+        في عالم صغير معمول مخصوص إلك...
         <br>
-        ألعاب، أسئلة، شعر، ورسالة إلِك.
+        فيه ألعاب، ورود، قلوب، شعر،
+        ورسائل ما بتنفتح إلا للبرنسس.
     </p>
 
-    <button class="main-btn"
-            onclick="startSite()">
-        ادخلي يا برنسس ✨
+    <button
+        class="main-btn"
+        onclick="startSite()">
+
+        ابدئي الرحلة يا برنسس ✨
+
     </button>
 
 </div>
@@ -400,29 +895,106 @@ section{
 </section>
 
 
-<!-- ================= لعبة القلب ================= -->
+<!-- ================================================= -->
+<!-- صندوق المفاجأة -->
+<!-- ================================================= -->
+
+<section>
+
+<div class="card gift-area">
+
+    <h2 class="section-title">
+        أول مفاجأة 🎁
+    </h2>
+
+    <p class="section-sub">
+        في إشي مخبّى جوّا الصندوق...
+    </p>
+
+    <div
+        class="gift"
+        onclick="openGift()">
+
+        🎁
+
+    </div>
+
+    <div
+        class="gift-message"
+        id="giftMessage">
+
+        <div style="font-size:55px">
+            🌹🌹🌹
+        </div>
+
+        <br>
+
+        هاي الورود للبرنسس...
+        <br><br>
+
+        لأنه حتى لو كان اليوم ثقيل،
+        <br>
+
+        لازم يكون فيه إشي صغير وحلو
+        يذكّرك إنك غالية. ❤️
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- لعبة القلب -->
+<!-- ================================================= -->
 
 <section>
 
 <div class="card heart-game">
 
     <h2 class="section-title">
-        لعبة للبرنسس 👑
+        اجمعي قلوب الحب ❤️
     </h2>
 
-    <p>
-        اضغطي على القلب وشوفي كم مرة بتقدري تخلّي الصفحة تبتسم ❤️
+    <p class="section-sub">
+        اضغطي على القلب بسرعة!
+        <br>
+        وصلي لـ 20 قلب وشوفي المفاجأة 👀
     </p>
 
-    <br>
+    <div
+        class="game-heart"
+        onclick="clickHeart()">
 
-    <div class="game-heart"
-         onclick="clickHeart()">
         ❤️
+
     </div>
 
     <div class="score">
-        القلوب: <span id="score">0</span>
+
+        القلوب:
+        <span id="score">0</span>
+        / 20
+
+    </div>
+
+    <div class="progress">
+
+        <div
+            class="progress-fill"
+            id="heartProgress">
+        </div>
+
+    </div>
+
+    <div
+        id="heartResult"
+        style="
+        min-height:35px;
+        color:#ffb9df;
+        font-weight:700;
+        ">
     </div>
 
 </div>
@@ -430,112 +1002,328 @@ section{
 </section>
 
 
-<!-- ================= الأسئلة ================= -->
+<!-- ================================================= -->
+<!-- الألعاب -->
+<!-- ================================================= -->
 
 <section>
 
-<div class="card question">
+<h2 class="section-title">
+    عالم ألعاب البرنسس 🎮👑
+</h2>
 
-    <h2 class="section-title">
-        أسئلة البرنسس 💭
-    </h2>
+<p class="section-sub">
+    اختاري لعبة وافتحي المفاجأة ✨
+</p>
 
-    <div class="question-number"
-         id="questionNumber">
-        السؤال 1 من 5
+<div class="games-grid">
+
+
+<!-- لعبة 1 -->
+
+<div class="game-card">
+
+    <div class="game-icon">
+        🃏
     </div>
 
-    <div class="question-text"
-         id="questionText">
-        لو كان يومك لون... شو بتختاري؟
-    </div>
-
-    <div class="answers"
-         id="answers">
-
-        <button class="answer"
-                onclick="answerQuestion(0)">
-            🌸 وردي
-        </button>
-
-        <button class="answer"
-                onclick="answerQuestion(1)">
-            💜 بنفسجي
-        </button>
-
-        <button class="answer"
-                onclick="answerQuestion(2)">
-            🌙 أزرق
-        </button>
-
-    </div>
-
-    <div class="question-result"
-         id="questionResult">
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- ================= مقياس الحب ================= -->
-
-<section>
-
-<div class="card love-meter">
-
-    <h2 class="section-title">
-        مقياس البرنسس 👑❤️
-    </h2>
+    <h3>
+        بطاقات سرية
+    </h3>
 
     <p>
-        حرّكي المؤشر وشوفي النتيجة...
+        كل بطاقة مخبّي فيها كلمة للبرنسس.
     </p>
 
-    <div class="meter">
-        <div class="meter-fill"
-             id="meterFill">
-        </div>
+    <button
+        class="main-btn"
+        onclick="openCards()">
+
+        افتحي اللعبة 💗
+
+    </button>
+
+</div>
+
+
+<!-- لعبة 2 -->
+
+<div class="game-card">
+
+    <div class="game-icon">
+        🎡
     </div>
 
-    <div class="love-number"
-         id="loveNumber">
-        0%
+    <h3>
+        عجلة الحظ
+    </h3>
+
+    <p>
+        لفي العجلة وشوفي شو الرسالة اللي رح تطلع.
+    </p>
+
+    <button
+        class="main-btn"
+        onclick="spinWheel()">
+
+        لفي العجلة ✨
+
+    </button>
+
+</div>
+
+
+<!-- لعبة 3 -->
+
+<div class="game-card">
+
+    <div class="game-icon">
+        🌹
     </div>
 
-    <br>
+    <h3>
+        حديقة البرنسس
+    </h3>
 
-    <input
-        type="range"
-        min="0"
-        max="100"
-        value="0"
-        oninput="changeLove(this.value)"
-        style="width:90%;accent-color:#ed438f;"
-    >
+    <p>
+        ازرعي وردة، وكل وردة إلها مفاجأة.
+    </p>
+
+    <button
+        class="main-btn"
+        onclick="plantFlower()">
+
+        ازرعي وردة 🌹
+
+    </button>
+
+</div>
+
+
+<!-- لعبة 4 -->
+
+<div class="game-card">
+
+    <div class="game-icon">
+        💌
+    </div>
+
+    <h3>
+        الرسالة المخفية
+    </h3>
+
+    <p>
+        في رسالة ما بتظهر إلا لما تضغطي.
+    </p>
+
+    <button
+        class="main-btn"
+        onclick="showHiddenMessage()">
+
+        افتحي الرسالة 💌
+
+    </button>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= الشعر ================= -->
+<!-- ================================================= -->
+<!-- البطاقات -->
+<!-- ================================================= -->
+
+<section id="cardsSection">
+
+<div class="card">
+
+    <h2 class="section-title">
+        بطاقات البرنسس 🃏
+    </h2>
+
+    <p class="section-sub">
+        اضغطي على كل بطاقة
+    </p>
+
+    <div class="memory-grid">
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'قلبك يستاهل أيام حلوة ❤️')">
+            💗
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'ضحكتك أجمل من أي زعل 🌸')">
+            🌸
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'إنتِ البرنسس هون 👑')">
+            👑
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'اليوم إلِك وردة 🌹')">
+            🌹
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'وجودك لحاله حكاية ✨')">
+            ✨
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'خلي الابتسامة تربح اليوم ❤️')">
+            😊
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'إنتِ أغلى من كل الزعل 🤍')">
+            🤍
+        </button>
+
+        <button
+            class="memory"
+            onclick="flipCard(this,'برنسس وبس 👑❤️')">
+            💖
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- العجلة -->
+<!-- ================================================= -->
+
+<section>
+
+<div class="card wheel-area">
+
+    <h2 class="section-title">
+        عجلة البرنسس 🎡
+    </h2>
+
+    <p class="section-sub">
+        اضغطي وخلّي الحظ يختار رسالة إلك
+    </p>
+
+    <div class="wheel-pointer">
+        🔻
+    </div>
+
+    <div
+        class="wheel"
+        id="wheel">
+    </div>
+
+    <button
+        class="main-btn"
+        onclick="spinWheel()">
+
+        لفيها يا برنسس 🎡
+
+    </button>
+
+    <div
+        class="wheel-result"
+        id="wheelResult">
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- حديقة الورود -->
+<!-- ================================================= -->
 
 <section>
 
 <div class="card">
 
     <h2 class="section-title">
-        شعر للبرنسس 🌙
+        حديقة روضة 🌹
+    </h2>
+
+    <p class="section-sub">
+        كل ضغطة بتزرع وردة جديدة...
+    </p>
+
+    <div
+        class="garden"
+        id="garden">
+
+        <div
+            class="flower"
+            onclick="flowerClick(this)">
+            🌹
+        </div>
+
+        <div
+            class="flower"
+            onclick="flowerClick(this)">
+            🌷
+        </div>
+
+        <div
+            class="flower"
+            onclick="flowerClick(this)">
+            🌸
+        </div>
+
+    </div>
+
+    <div style="text-align:center">
+
+        <button
+            class="main-btn"
+            onclick="plantFlower()">
+
+            ازرعي وردة جديدة 🌹
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- القصائد -->
+<!-- ================================================= -->
+
+<section>
+
+<div class="card">
+
+    <h2 class="section-title">
+        قصائد للبرنسس 📜❤️
     </h2>
 
     <div class="poem">
 
+
         <div class="poem-box">
 
             <div class="poem-title">
-                قصيدة الأولى ❤️
+                إلى روضة 🌹
             </div>
 
             يا روضةَ القلبِ يا نبضًا أُحبُّهُ
@@ -546,6 +1334,11 @@ section{
             إذا ضاقَ هذا العالمُ يومًا
             <br>
             فكوني بخيرٍ... يكفيني رضاكِ
+            <br><br>
+
+            وما الحبُّ عندي كلمةٌ عابرةٌ
+            <br>
+            ولكنّهُ قلبٌ اختارَ هواكِ ❤️
 
         </div>
 
@@ -553,7 +1346,7 @@ section{
         <div class="poem-box">
 
             <div class="poem-title">
-                قصيدة الثانية 👑
+                يا برنسس 👑
             </div>
 
             أحببتُ فيكِ هدوءَ روحٍ
@@ -563,427 +1356,4 @@ section{
 
             يا برنسس القلبِ إن مرّ يومٌ ثقيل
             <br>
-            تذكّري أن الفرحَ سيعودُ لمكانَهُ
-
-        </div>
-
-
-        <div class="poem-box">
-
-            <div class="poem-title">
-                قصيدة الثالثة ✨
-            </div>
-
-            يا من لها في القلبِ بيتٌ دافئٌ
-            <br>
-            لا تهدمُ الأيامُ فيهِ أمانَهُ
-            <br><br>
-
-            أنتِ الحكايةُ والجميلةُ كلُّها
-            <br>
-            وأنتِ أجملُ ما كتبتُ زمانَهُ
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- ================= الرسالة السرية ================= -->
-
-<section>
-
-<div class="card secret">
-
-    <h2 class="section-title">
-        رسالة سرية للبرنسس 🤫❤️
-    </h2>
-
-    <button class="main-btn"
-            onclick="openSecret()">
-        افتحي الرسالة ✨
-    </button>
-
-    <div class="secret-message"
-         id="secretMessage">
-
-        روضة...
-        <br><br>
-
-        مش مطلوب منك تكوني مبسوطة طول الوقت،
-        ومش لازم كل يوم يكون حلو.
-        <br><br>
-
-        بس اليوم تحديدًا...
-        <br>
-        بدي أتركلك سبب صغير يخلي ابتسامتك ترجع. ❤️
-        <br><br>
-
-        لأنك برنسس...
-        والبرنسسات ما بخلي الزعل ياخذ كل اليوم. 👑
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- ================= النهاية ================= -->
-
-<section class="final">
-
-    <div class="final-heart">
-        💗
-    </div>
-
-    <h2>
-        إلى روضة... البرنسس 👑
-    </h2>
-
-    <p>
-        مهما كان اليوم،
-        <br>
-        خلي آخره ابتسامة صغيرة.
-        <br><br>
-        ❤️
-    </p>
-
-</section>
-
-</div>
-
-
-<script>
-
-/* ================= النجوم ================= */
-
-const stars = document.getElementById("stars");
-
-for(let i=0;i<140;i++){
-
-    const star = document.createElement("div");
-
-    star.className="star";
-
-    star.style.left =
-        Math.random()*100+"%";
-
-    star.style.top =
-        Math.random()*100+"%";
-
-    star.style.animationDelay =
-        Math.random()*3+"s";
-
-    stars.appendChild(star);
-}
-
-
-/* ================= قلوب طائرة ================= */
-
-function createHeart(){
-
-    const heart =
-        document.createElement("div");
-
-    heart.className="floating-heart";
-
-    const list=[
-        "❤️",
-        "💗",
-        "💖",
-        "💕",
-        "💜",
-        "🤍",
-        "✨"
-    ];
-
-    heart.innerHTML =
-        list[Math.floor(Math.random()*list.length)];
-
-    heart.style.left =
-        Math.random()*100+"vw";
-
-    heart.style.fontSize =
-        (15+Math.random()*25)+"px";
-
-    heart.style.animationDuration =
-        (5+Math.random()*5)+"s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },10000);
-}
-
-setInterval(createHeart,900);
-
-
-/* ================= زر البداية ================= */
-
-function startSite(){
-
-    for(let i=0;i<20;i++){
-
-        setTimeout(
-            createHeart,
-            i*80
-        );
-
-    }
-
-    document.querySelector(".heart-game")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-}
-
-
-/* ================= لعبة القلب ================= */
-
-let score=0;
-
-function clickHeart(){
-
-    score++;
-
-    document.getElementById("score")
-        .innerText=score;
-
-    const heart =
-        document.querySelector(".game-heart");
-
-    heart.style.transform="scale(.7)";
-
-    setTimeout(()=>{
-        heart.style.transform="scale(1)";
-    },120);
-
-    for(let i=0;i<3;i++){
-
-        setTimeout(createHeart,i*80);
-
-    }
-}
-
-
-/* ================= الأسئلة ================= */
-
-const questions=[
-
-    {
-        text:"لو كان يومك لون... شو بتختاري؟",
-        answers:[
-            "🌸 وردي",
-            "💜 بنفسجي",
-            "🌙 أزرق"
-        ]
-    },
-
-    {
-        text:"لو نقدر نسرق من اليوم لحظة حلوة... شو تختاري؟",
-        answers:[
-            "😂 ضحكة",
-            "🌅 غروب",
-            "🌙 قعدة هادية"
-        ]
-    },
-
-    {
-        text:"شو أقرب إشي لقلبك؟",
-        answers:[
-            "❤️ الاهتمام",
-            "😂 الضحك",
-            "🤍 الهدوء"
-        ]
-    },
-
-    {
-        text:"لو مزاجك صار أغنية... شو بدك يكون؟",
-        answers:[
-            "🎶 رومانسية",
-            "💃 مرحة",
-            "🌙 هادية"
-        ]
-    },
-
-    {
-        text:"آخر سؤال... شو لازم يصير هسا؟",
-        answers:[
-            "😊 أبتسم",
-            "😂 أضحك",
-            "👑 أرجع برنسس"
-        ]
-    }
-
-];
-
-let currentQuestion=0;
-
-function loadQuestion(){
-
-    const q=questions[currentQuestion];
-
-    document.getElementById("questionNumber")
-        .innerText=
-        `السؤال ${currentQuestion+1} من ${questions.length}`;
-
-    document.getElementById("questionText")
-        .innerText=q.text;
-
-    const answers=
-        document.getElementById("answers");
-
-    answers.innerHTML="";
-
-    q.answers.forEach((answer,index)=>{
-
-        const button=
-            document.createElement("button");
-
-        button.className="answer";
-
-        button.innerText=answer;
-
-        button.onclick=()=>{
-            answerQuestion(index);
-        };
-
-        answers.appendChild(button);
-
-    });
-
-}
-
-function answerQuestion(index){
-
-    const result=
-        document.getElementById("questionResult");
-
-    const messages=[
-
-        "اختيار حلو... واضح إن البرنسس ذوقها فخم 👑❤️",
-
-        "ههههه اختيار البرنسس 😂❤️",
-
-        "هذا الاختيار إله هيبة خاصة 👑✨"
-
-    ];
-
-    result.innerText=
-        messages[index%messages.length];
-
-    for(let i=0;i<6;i++){
-
-        setTimeout(createHeart,i*100);
-
-    }
-
-    currentQuestion++;
-
-    if(currentQuestion < questions.length){
-
-        setTimeout(()=>{
-            loadQuestion();
-            result.innerText="";
-        },900);
-
-    }else{
-
-        setTimeout(()=>{
-
-            document.getElementById("questionText")
-                .innerText=
-                "خلصت الأسئلة... والنتيجة؟ البرنسس فازت 👑❤️";
-
-            document.getElementById("answers")
-                .innerHTML=
-                '<button class="answer" onclick="restartQuestions()">نعيدها؟ 🔄</button>';
-
-            document.getElementById("questionNumber")
-                .innerText="النتيجة ✨";
-
-        },900);
-
-    }
-}
-
-function restartQuestions(){
-
-    currentQuestion=0;
-
-    loadQuestion();
-
-    document.getElementById("questionResult")
-        .innerText="";
-}
-
-
-/* ================= مقياس الحب ================= */
-
-function changeLove(value){
-
-    document.getElementById("meterFill")
-        .style.width=value+"%";
-
-    document.getElementById("loveNumber")
-        .innerText=value+"%";
-
-    if(value==100){
-
-        document.getElementById("loveNumber")
-            .innerText=
-            "100%؟ لا... البرنسس إلها مقياس ثاني 👑❤️";
-
-        for(let i=0;i<15;i++){
-
-            setTimeout(createHeart,i*80);
-
-        }
-
-    }
-
-}
-
-
-/* ================= الرسالة السرية ================= */
-
-function openSecret(){
-
-    const message=
-        document.getElementById("secretMessage");
-
-    if(message.style.display==="block"){
-
-        message.style.display="none";
-
-    }else{
-
-        message.style.display="block";
-
-        for(let i=0;i<20;i++){
-
-            setTimeout(
-                createHeart,
-                i*70
-            );
-
-        }
-
-    }
-
-}
-
-
-/* تشغيل الأسئلة أول مرة */
-
-loadQuestion();
-
-</script>
-
-</body>
-</html>
+            تذكّري أن الفر
