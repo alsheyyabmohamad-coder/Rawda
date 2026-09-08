@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -27,9 +27,9 @@ body{
     overflow-x:hidden;
 
     background:
-        radial-gradient(circle at 15% 10%,rgba(130,30,100,.35),transparent 30%),
-        radial-gradient(circle at 85% 20%,rgba(90,30,130,.35),transparent 30%),
-        linear-gradient(135deg,#050208,#11030f,#060109);
+        radial-gradient(circle at 15% 10%,rgba(150,30,110,.35),transparent 30%),
+        radial-gradient(circle at 85% 20%,rgba(100,30,150,.35),transparent 30%),
+        linear-gradient(135deg,#050208,#14030f,#060109);
 }
 
 /* ================= النجوم ================= */
@@ -56,18 +56,17 @@ body{
         opacity:.15;
         transform:scale(.5);
     }
-
     to{
         opacity:1;
         transform:scale(1.5);
     }
 }
 
-/* ================= المؤثرات ================= */
+/* ================= القلوب والورود الطائرة ================= */
 
 .floating{
     position:fixed;
-    bottom:-50px;
+    bottom:-60px;
     z-index:50;
     pointer-events:none;
 
@@ -93,6 +92,8 @@ body{
         opacity:0;
     }
 }
+
+/* ================= الشرارات ================= */
 
 .spark{
     position:fixed;
@@ -126,29 +127,29 @@ body{
 /* ================= المحتوى ================= */
 
 .wrapper{
-    width:min(1050px,92%);
+    width:min(1100px,92%);
     margin:auto;
     position:relative;
     z-index:2;
 }
 
 section{
-    margin:100px 0;
+    margin:110px 0;
 }
 
 .card{
-    padding:40px 28px;
+    padding:45px 30px;
     border-radius:35px;
 
     background:rgba(255,255,255,.045);
 
     border:
-        1px solid rgba(255,170,220,.13);
+        1px solid rgba(255,170,220,.15);
 
     backdrop-filter:blur(20px);
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,.35);
+        0 25px 80px rgba(0,0,0,.4);
 }
 
 /* ================= البداية ================= */
@@ -165,28 +166,28 @@ section{
 
 .hero-card{
     width:100%;
-    padding:75px 25px;
+    padding:80px 25px;
 
     border-radius:45px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.075),
+            rgba(255,255,255,.08),
             rgba(255,255,255,.025)
         );
 
     border:
-        1px solid rgba(255,180,225,.18);
+        1px solid rgba(255,180,225,.2);
 
     backdrop-filter:blur(22px);
 
     box-shadow:
-        0 0 100px rgba(220,50,170,.13);
+        0 0 120px rgba(220,50,170,.15);
 }
 
 .crown{
-    font-size:78px;
+    font-size:80px;
 
     animation:crown 2s infinite alternate;
 }
@@ -199,13 +200,14 @@ section{
     }
 
     to{
-        transform:translateY(-8px);
-        filter:drop-shadow(0 0 28px gold);
+        transform:translateY(-10px);
+        filter:drop-shadow(0 0 30px gold);
     }
 }
 
 .hero h1{
-    font-size:clamp(65px,15vw,125px);
+
+    font-size:clamp(65px,15vw,130px);
 
     background:
         linear-gradient(
@@ -221,12 +223,12 @@ section{
 
 .hero h2{
     color:#ffb9df;
-    font-size:28px;
+    font-size:30px;
 }
 
 .hero p{
     color:#cdbdce;
-    max-width:600px;
+    max-width:650px;
     margin:25px auto;
     line-height:2;
 }
@@ -234,9 +236,10 @@ section{
 /* ================= الأزرار ================= */
 
 .btn{
+
     border:0;
 
-    padding:15px 30px;
+    padding:16px 32px;
 
     border-radius:60px;
 
@@ -256,37 +259,42 @@ section{
         );
 
     box-shadow:
-        0 10px 35px rgba(220,40,160,.25);
+        0 10px 35px rgba(220,40,160,.3);
 
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-4px) scale(1.04);
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
 }
 
 .btn:active{
-    transform:scale(.96);
+    transform:scale(.95);
 }
 
 /* ================= العناوين ================= */
 
 .title{
+
     text-align:center;
 
     color:#ffbedf;
 
-    font-size:36px;
+    font-size:38px;
 
     margin-bottom:12px;
 }
 
 .subtitle{
+
     text-align:center;
 
     color:#bfaebf;
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 /* ================= الاعتذار ================= */
@@ -296,33 +304,37 @@ section{
 }
 
 .apology-text{
-    max-width:700px;
+
+    max-width:780px;
+
     margin:auto;
 
-    color:#e6d8e5;
+    color:#f0dfeb;
 
-    line-height:2.2;
+    line-height:2.35;
 
     font-size:18px;
 }
 
 .apology-hidden{
+
     display:none;
 
-    margin:25px auto 0;
+    margin:30px auto 0;
 
-    max-width:650px;
+    max-width:700px;
 
-    padding:25px;
+    padding:30px;
 
     border-radius:25px;
 
-    background:rgba(255,60,160,.07);
+    background:
+        rgba(255,60,160,.08);
 
     border:
-        1px solid rgba(255,150,210,.15);
+        1px solid rgba(255,150,210,.16);
 
-    line-height:2.1;
+    line-height:2.2;
 
     animation:appear .6s ease;
 }
@@ -331,7 +343,7 @@ section{
 
     from{
         opacity:0;
-        transform:translateY(15px);
+        transform:translateY(20px);
     }
 
     to{
@@ -347,9 +359,10 @@ section{
 }
 
 .big-flower{
+
     display:inline-block;
 
-    font-size:110px;
+    font-size:120px;
 
     cursor:pointer;
 
@@ -359,9 +372,13 @@ section{
 
     filter:
         drop-shadow(
-            0 0 20px
-            rgba(255,70,180,.3)
+            0 0 25px
+            rgba(255,70,180,.4)
         );
+}
+
+.big-flower:hover{
+    transform:scale(1.15);
 }
 
 @keyframes flowerFloat{
@@ -371,38 +388,43 @@ section{
     }
 
     50%{
-        transform:translateY(-12px);
+        transform:translateY(-15px);
     }
 }
 
 .flower-message{
+
     display:none;
 
-    max-width:600px;
+    max-width:650px;
 
     margin:25px auto 0;
 
-    padding:25px;
+    padding:28px;
 
     border-radius:25px;
 
-    background:rgba(255,80,180,.07);
+    background:
+        rgba(255,80,180,.08);
 
     color:#f4dfeb;
 
-    line-height:2;
+    line-height:2.2;
+
+    animation:appear .6s ease;
 }
 
-/* ================= لعبة النبض ================= */
+/* ================= لعبة القلب ================= */
 
 .heartbeat{
     text-align:center;
 }
 
 .heart{
+
     display:inline-block;
 
-    font-size:110px;
+    font-size:120px;
 
     cursor:pointer;
 
@@ -412,8 +434,8 @@ section{
 
     filter:
         drop-shadow(
-            0 0 25px
-            rgba(255,50,170,.5)
+            0 0 30px
+            rgba(255,50,170,.55)
         );
 }
 
@@ -429,27 +451,38 @@ section{
 }
 
 .heart-count{
-    font-size:23px;
+
+    font-size:24px;
+
     color:#ffb8df;
+
     margin-top:15px;
 }
 
 .heart-result{
-    min-height:35px;
+
+    min-height:40px;
+
     margin-top:15px;
+
     color:#eec6df;
 }
 
 /* ================= الرسائل ================= */
 
 .messages{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
 }
 
 .message{
-    min-height:220px;
+
+    min-height:250px;
 
     padding:30px 20px;
 
@@ -461,7 +494,8 @@ section{
         rgba(255,255,255,.04);
 
     border:
-        1px solid rgba(255,160,215,.12);
+        1px solid
+        rgba(255,160,215,.12);
 
     cursor:pointer;
 
@@ -469,22 +503,30 @@ section{
 }
 
 .message:hover{
-    transform:translateY(-8px);
+
+    transform:translateY(-10px);
 
     background:
-        rgba(255,70,170,.07);
+        rgba(255,70,170,.08);
+
+    box-shadow:
+        0 20px 50px
+        rgba(220,40,160,.15);
 }
 
 .message-icon{
-    font-size:55px;
+    font-size:60px;
 }
 
 .message h3{
+
     color:#ffb6dc;
-    margin:12px 0;
+
+    margin:15px 0;
 }
 
 .message p{
+
     display:none;
 
     color:#e7d8e5;
@@ -497,17 +539,19 @@ section{
 /* ================= القصائد ================= */
 
 .poems{
+
     font-family:"Amiri",serif;
 
     text-align:center;
 
-    font-size:24px;
+    font-size:25px;
 
-    line-height:2.3;
+    line-height:2.4;
 }
 
 .poem{
-    padding:35px 10px;
+
+    padding:40px 10px;
 
     border-bottom:
         1px solid
@@ -519,23 +563,106 @@ section{
 }
 
 .poem-title{
+
     font-family:"Cairo";
 
     color:#ff9fd4;
 
-    font-size:20px;
+    font-size:21px;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
-/* ================= قفل ================= */
+/* ================= لعبة الورد ================= */
+
+.garden{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.flower-button{
+
+    border:0;
+
+    border-radius:25px;
+
+    padding:30px 10px;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,170,220,.12);
+
+    transition:.3s;
+}
+
+.flower-button:hover{
+
+    transform:
+        translateY(-7px)
+        rotate(3deg);
+
+    background:
+        rgba(255,70,170,.1);
+}
+
+/* ================= الرسالة السرية ================= */
+
+.secret{
+
+    text-align:center;
+}
+
+.secret-box{
+
+    max-width:700px;
+
+    margin:30px auto 0;
+
+    min-height:100px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:#f3dfeb;
+
+    font-size:18px;
+
+    line-height:2;
+}
+
+/* ================= القفل ================= */
 
 .lock{
     text-align:center;
 }
 
 .lock-icon{
-    font-size:70px;
+
+    font-size:75px;
 
     cursor:pointer;
 
@@ -545,17 +672,21 @@ section{
 }
 
 .lock-icon:hover{
-    transform:scale(1.15) rotate(5deg);
+
+    transform:
+        scale(1.15)
+        rotate(5deg);
 }
 
 .lock-message{
+
     display:none;
 
-    max-width:650px;
+    max-width:700px;
 
-    margin:25px auto 0;
+    margin:30px auto 0;
 
-    padding:30px;
+    padding:32px;
 
     border-radius:25px;
 
@@ -566,43 +697,51 @@ section{
             rgba(255,70,170,.06)
         );
 
-    line-height:2.2;
+    line-height:2.3;
 
     color:#f0dfeb;
+
+    animation:appear .6s ease;
 }
 
 /* ================= النهاية ================= */
 
 .final{
+
     text-align:center;
 
-    padding-bottom:150px;
+    padding-bottom:170px;
 }
 
 .final-heart{
-    font-size:105px;
+
+    font-size:110px;
 
     animation:heartbeat 1.3s infinite;
 
     filter:
         drop-shadow(
-            0 0 25px
+            0 0 30px
             rgba(255,50,170,.5)
         );
 }
 
 .final h2{
+
     color:#ffb9df;
 
-    font-size:44px;
+    font-size:45px;
 
     margin:20px 0;
 }
 
 .final p{
+
     color:#cdbdcd;
 
-    line-height:2.2;
+    line-height:2.3;
+
+    font-size:18px;
 }
 
 /* ================= موبايل ================= */
@@ -617,6 +756,11 @@ section{
         grid-template-columns:1fr;
     }
 
+    .garden{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
     .title{
         font-size:30px;
     }
@@ -627,6 +771,14 @@ section{
 
     .final h2{
         font-size:34px;
+    }
+
+    .hero-card{
+        padding:60px 18px;
+    }
+
+    .apology-text{
+        font-size:16px;
     }
 
 }
@@ -640,9 +792,7 @@ section{
 
 <div class="wrapper">
 
-<!-- ================================================= -->
-<!-- البداية -->
-<!-- ================================================= -->
+<!-- ================= البداية ================= -->
 
 <section class="hero">
 
@@ -657,21 +807,17 @@ section{
     </h1>
 
     <h2>
-        البرنسس
+        البرنسس ❤️
     </h2>
 
     <p>
-        مش جاي أحكي كثير...
+        عملتلك هاي الصفحة مخصوص...
         <br>
-        بس جاي أقول شغلة من قلبي.
+        لأن في كلام كثير بقلبي إلك.
     </p>
 
-    <button
-        class="btn"
-        onclick="start()">
-
+    <button class="btn" onclick="start()">
         افتحي يا روضة ❤️
-
     </button>
 
 </div>
@@ -679,59 +825,74 @@ section{
 </section>
 
 
-<!-- ================================================= -->
-<!-- الاعتذار -->
-<!-- ================================================= -->
+<!-- ================= الاعتذار ================= -->
 
 <section>
 
 <div class="card apology">
 
     <h2 class="title">
-        قبل أي شيء...
+        روضة يا حياتي 🤍
     </h2>
 
     <div class="apology-text">
 
-        أنا بعرف إنك زعلانة مني،
+        روضة يا حياتي، يا حلوتي، يا أميرة حياتي إنتِ 🤍
         <br>
-        وبعرف إن بعض الأشياء مني ضايقتك.
+        يا حبي الأول والأخير، ويا أحلى وأغلى إنسانة بقلبي.
         <br><br>
 
-        ومش جاي أبرر...
+        أنا آسف إني زعلتك...
         <br>
-        جاي أعتذر.
+        والله زعلك ما بهون عليّ، وإنتِ عارفة هالشي 🤍
+        <br><br>
+
+        بس خلص، أحيانًا بغلط بشي معك وأنا مش منتبه،
+        <br>
+        وبكون آخر إشي ببالي إني أزعلك أو أضايقك.
+        <br><br>
+
+        فلازم تسامحيني هسا 😂🤍
+        <br>
+        لأن قلبك حلو زيك،
+        وإنتِ أحلى أميرة بحياتي والوحيدة 👑❤️
+        <br><br>
+
+        وبعدين قربت أجي أطلبك...
+        <br>
+        هانت، كم سنة وبصير الموضوع رسمي 😂😂
+        <br>
+        بزبطش تكوني زعلانة مني من هسا،
+        <br>
+        خليني أوصل وأنا وإنتِ متصالحين 😂❤️
+        <br><br>
+
+        بحبك يا روضة،
+        <br>
+        وزعلك آخر إشي بتمناه يكون بسببي. 🤍
 
     </div>
 
     <br>
 
-    <button
-        class="btn"
-        onclick="showApology()">
-
-        أقرأِ اعتذاري ❤️
-
+    <button class="btn" onclick="showApology()">
+        اضغطي هون ❤️
     </button>
 
-    <div
-        class="apology-hidden"
-        id="apology">
+    <div class="apology-hidden" id="apology">
 
-        حقك تزعلي،
-        <br>
-        وحقك تاخذي مساحتك.
+        ولكِ تعالي هون 😂❤️
         <br><br>
 
-        وأنا آسف على كل لحظة كنت سبب فيها بزعلك.
+        هاي الرسالة إلها تتمة...
         <br><br>
 
-        ما بدي منك قرار،
-        ولا بدي أضغط عليك بشيء.
+        لو كان بإيدي أبدّل كل لحظة زعلتك فيها
+        بضحكة منك،
+        كان عملتها بدون تفكير.
         <br><br>
 
-        بس بدي تعرفي إنك غالية عندي،
-        وإن مشاعري تجاهك صادقة. 🤍
+        لأن ضحكتك عندي أغلى من أي كلمة اعتذار. 🤍
 
     </div>
 
@@ -740,9 +901,7 @@ section{
 </section>
 
 
-<!-- ================================================= -->
-<!-- الوردة -->
-<!-- ================================================= -->
+<!-- ================= الوردة ================= -->
 
 <section>
 
@@ -753,26 +912,23 @@ section{
     </h2>
 
     <p class="subtitle">
-        اضغطي عليها
+        اضغطي على الوردة وشوفي شو مخبيلك
     </p>
 
-    <div
-        class="big-flower"
-        onclick="openFlower()">
-
+    <div class="big-flower" onclick="openFlower()">
         🌹
-
     </div>
 
-    <div
-        class="flower-message"
-        id="flowerMessage">
+    <div class="flower-message" id="flowerMessage">
 
-        بعض الورود ما بتنحكى عنها كلمات...
+        هاي الوردة إلك يا روضة 🌹
         <br><br>
 
-        بتنحط بإيد الشخص
-        اللي بنحترمه وبنقدّره. 🌹
+        مش لأنها بتشبهك...
+        <br>
+        لأنها مهما كانت حلوة،
+        <br>
+        ما بتوصل لجمالك بعيوني 😂❤️
 
     </div>
 
@@ -781,127 +937,122 @@ section{
 </section>
 
 
-<!-- ================================================= -->
-<!-- لعبة القلب -->
-<!-- ================================================= -->
+<!-- ================= لعبة القلب ================= -->
 
 <section>
 
 <div class="card heartbeat">
 
     <h2 class="title">
-        نبض البرنسس ❤️
+        اضغطي القلب ❤️
     </h2>
 
     <p class="subtitle">
-        اضغطي على القلب
+        خلينا نشوف قديه النبض 😂
     </p>
 
-    <div
-        class="heart"
-        onclick="heartClick()">
-
+    <div class="heart" onclick="heartClick()">
         ❤️
-
     </div>
 
     <div class="heart-count">
 
         النبض:
-        <span id="heartCount">0</span>
+        <span id="heartCount">
+            0
+        </span>
 
     </div>
 
-    <div
-        class="heart-result"
-        id="heartResult">
-
-    </div>
+    <div class="heart-result" id="heartResult"></div>
 
 </div>
 
 </section>
 
 
-<!-- ================================================= -->
-<!-- الرسائل الثلاث -->
-<!-- ================================================= -->
+<!-- ================= ثلاث رسائل ================= -->
 
 <section>
 
 <h2 class="title">
-    ثلاث رسائل فقط 💌
+    ثلاث رسائل للبرنسس 💌
 </h2>
 
 <p class="subtitle">
-    كل رسالة إلها معنى
+    كل وحدة مخبية كلام
 </p>
 
 <div class="messages">
 
 
-<div
-    class="message"
-    onclick="openMessage(this)">
+<div class="message" onclick="openMessage(this)">
 
     <div class="message-icon">
         🤍
     </div>
 
     <h3>
-        الأولى
+        من قلبي
     </h3>
 
     <p>
-        أنا آسف...
+
+        لو تعرفي قديه وجودك بحياتي بيفرق،
         <br>
-        مش لأنك زعلتي،
-        <br>
-        بل لأني كنت سبب بزعل قلبك.
+        كان عرفتي ليش زعلك مستحيل يكون إشي عادي عندي.
+        <br><br>
+
+        إنتِ مش أي حدا. ❤️
+
     </p>
 
 </div>
 
 
-<div
-    class="message"
-    onclick="openMessage(this)">
+<div class="message" onclick="openMessage(this)">
 
     <div class="message-icon">
         🌙
     </div>
 
     <h3>
-        الثانية
+        إلك إنتِ
     </h3>
 
     <p>
-        ما بدي أكون شخص يزيد عليكِ ثقل الأيام.
+
+        في ناس بنحكي معهم وبتنتهي السالفة،
+        <br>
+        وفي ناس وجودهم لحاله بيغير اليوم كله.
         <br><br>
-        بدي أكون شخص وجوده مريح.
+
+        وإنتِ من النوع الثاني يا روضة. 🤍
+
     </p>
 
 </div>
 
 
-<div
-    class="message"
-    onclick="openMessage(this)">
+<div class="message" onclick="openMessage(this)">
 
     <div class="message-icon">
         👑
     </div>
 
     <h3>
-        الثالثة
+        للبرنسس
     </h3>
 
     <p>
-        إنتِ روضة...
+
+        روضة...
         <br>
-        وإنتِ البرنسس.
+        اسمك لحاله صار مرتبط عندي بأشياء حلوة كثير.
         <br><br>
-        ومكانتك عندي ما بتتغير بسبب يوم صعب.
+
+        وأحلى وحدة فيهم إنك إنتِ. 👑❤️
+
     </p>
 
 </div>
@@ -912,20 +1063,64 @@ section{
 </section>
 
 
-<!-- ================================================= -->
-<!-- القصائد -->
-<!-- ================================================= -->
+<!-- ================= حديقة الورد ================= -->
 
 <section>
 
 <div class="card">
 
     <h2 class="title">
-        كلام ما عرفت أحكيه 📜
+        حديقة البرنسس 🌷
+    </h2>
+
+    <p class="subtitle">
+        كل وردة إلها رسالة 😂❤️
+    </p>
+
+    <div class="garden">
+
+        <button class="flower-button"
+                onclick="flowerMessage('أول وردة: إنتِ أحلى صدفة دخلت حياتي 🌹')">
+            🌹
+        </button>
+
+        <button class="flower-button"
+                onclick="flowerMessage('ثاني وردة: ضحكتك قادرة تغير مزاج يوم كامل ❤️')">
+            🌷
+        </button>
+
+        <button class="flower-button"
+                onclick="flowerMessage('ثالث وردة: يا أحلى أميرة، لا تزعلي مني 😂👑')">
+            🌸
+        </button>
+
+        <button class="flower-button"
+                onclick="flowerMessage('رابع وردة: هاي إلك لأنك إنتِ ببساطة روضة 🤍')">
+            🌺
+        </button>
+
+    </div>
+
+    <div class="secret-box" id="gardenMessage">
+        اختاري وردة 🌹
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= القصائد ================= -->
+
+<section>
+
+<div class="card">
+
+    <h2 class="title">
+        ولأنك بتحبي الشعر 📜
     </h2>
 
     <div class="poems">
-
 
         <div class="poem">
 
@@ -933,22 +1128,22 @@ section{
                 إلى روضة 🌹
             </div>
 
-            يا روضةَ القلبِ إن ضاقَ المساءُ بنا
+            يا روضةَ القلبِ يا معنىً أعيشُ بهِ
             <br>
 
-            فالصمتُ أحيانًا أصدقُ من الكلامِ
+            ويا حكايةَ عمرٍ ما لها ثاني
             <br><br>
 
-            أعتذرُ إن كان قلبي قد أوجعكِ
+            إن كنتُ أخطأتُ يومًا دونَما قصدٍ
             <br>
 
-            فما أردتُ لقلبكِ يومًا آلامِ
+            فالعذرُ عندي إليكِ اليومَ عنواني
             <br><br>
 
-            وما الحبُّ عندي أن أملكَ قراركِ
+            ما كان قصدي أرى في العينِ غصّتَها
             <br>
 
-            ولكن أن أصونَ لكِ الاحترامِ
+            ولا تمنيتُ يومًا منكِ أحزانِ
 
         </div>
 
@@ -959,28 +1154,50 @@ section{
                 للبرنسس 👑
             </div>
 
-            يا برنسس القلبِ يا معنىً لهُ أثرٌ
+            يا أجملَ الناسِ في عيني وفي فكري
             <br>
 
-            في كلِّ يومٍ يمرُّ بي وأراهُ
+            ويا حبيبةَ قلبي دونَما شَبَهِ
             <br><br>
 
-            إن زلَّ مني الكلامُ يومًا فسامحيني
+            إن زلَّ مني كلامٌ فاعذريني
             <br>
 
-            فالمرءُ يخطئُ، وأصدقُهُ اعتذارُهُ
+            فأنتِ أغلى من الدنيا وما فيها
             <br><br>
 
-            وإن اخترتِ البعدَ يومًا...
+            وما أريدُ سوى أن أراكِ مبتسمةً
             <br>
 
-            سأحترمُ اختياركِ،
-            <br>
-
-            فالحبُّ احترامٌ قبلَ أن يكونَ كلامًا. 🤍
+            لأن ابتسامَكِ أجملُ ما أرى. 🤍
 
         </div>
 
+
+        <div class="poem">
+
+            <div class="poem-title">
+                قصيدة صغيرة إلك ❤️
+            </div>
+
+            روضةُ يا وردةً في القلبِ منزلةً
+            <br>
+
+            ويا أميرةَ عمري كلِّهَا أبدَا
+            <br><br>
+
+            إن كانَ مني خطأٌ يومًا أزعجكِ
+            <br>
+
+            فسامحيني، فقلبي نحوكِ شهِدا
+            <br><br>
+
+            أحبُّكِ اليومَ، لا خوفًا ولا طلبًا
+            <br>
+
+            لكن لأنكِ في قلبي قد سكنتا
+
+        </div>
 
     </div>
 
@@ -989,58 +1206,78 @@ section{
 </section>
 
 
-<!-- ================================================= -->
-<!-- الرسالة المقفلة -->
-<!-- ================================================= -->
+<!-- ================= الرسالة السرية ================= -->
+
+<section>
+
+<div class="card secret">
+
+    <h2 class="title">
+        رسالة مخفية 🔮
+    </h2>
+
+    <p class="subtitle">
+        اضغطي الزر وشوفيها
+    </p>
+
+    <button class="btn" onclick="secretMessage()">
+        افتحي الرسالة ❤️
+    </button>
+
+    <div class="secret-box" id="secretBox">
+
+        الرسالة لسه مخبية 👀
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= القفل ================= -->
 
 <section>
 
 <div class="card lock">
 
     <h2 class="title">
-        آخر رسالة 🔐
+        آخر شيء 🔐
     </h2>
 
     <p class="subtitle">
-        هاي ما بتنفتح إلا بإيد البرنسس
+        هاي الرسالة إلها مكان خاص
     </p>
 
-    <div
-        class="lock-icon"
-        onclick="unlock()">
-
+    <div class="lock-icon" onclick="unlock()">
         🔐
-
     </div>
 
-    <div
-        class="lock-message"
-        id="lockMessage">
+    <div class="lock-message" id="lockMessage">
 
         روضة...
         <br><br>
 
-        أنا ما بدي أطلب منك تنسي زعلك بسرعة،
-        ولا بدي أضغط عليكِ تغيري رأيك.
+        إذا وصلتِ لهون،
+        فمعناته قرأتي كل اللي بقلبي تقريبًا 😂❤️
         <br><br>
 
-        خذي وقتك،
-        وخلي قلبك مرتاح.
+        وما عندي بعد كل هالحكي
+        إلا شغلة وحدة أحكيلك إياها:
         <br><br>
-
-        وكل اللي بدي أوصلك إياه:
-        <br>
 
         <strong>
-        أنا بحبك،
-        وبحترمك،
-        وبحترم قرارك.
+        أنا بحبك يا روضة،
+        وبدي أشوفك مبسوطة،
+        وما بدي يكون بيني وبينك زعل. 🤍
         </strong>
 
         <br><br>
 
-        وإذا رجعت الابتسامة لوجهك يومًا،
-        فهاي لحالها بالنسبة إلي أجمل نهاية. ❤️
+        وبالنسبة لموضوع إني أجي أطلبك...
+        <br>
+
+        اصبري عليّ كم سنة بس 😂😂👑
 
     </div>
 
@@ -1049,9 +1286,7 @@ section{
 </section>
 
 
-<!-- ================================================= -->
-<!-- النهاية -->
-<!-- ================================================= -->
+<!-- ================= النهاية ================= -->
 
 <section class="final">
 
@@ -1065,28 +1300,27 @@ section{
 
     <p>
 
-        ما بدي أختم الموقع بكلام كثير.
+        يمكن الموقع كله طويل...
+        <br>
+
+        بس في كلمة وحدة أهم من كل اللي انكتب:
         <br><br>
 
-        بس:
-        <br>
+        <strong>
+            آسف يا روضة 🤍
+        </strong>
 
-        آسف.
-        <br>
-        أحبك.
-        <br>
-        وبحترمك. 🤍
+        <br><br>
+
+        وبدي ضحكتك ترجع،
+        لأن مكانها أحلى من الزعل بكثير. ❤️
 
     </p>
 
     <br>
 
-    <button
-        class="btn"
-        onclick="finalEffect()">
-
-        ❤️
-
+    <button class="btn" onclick="finalEffect()">
+        اضغطي هون 👑❤️
     </button>
 
 </section>
@@ -1101,7 +1335,7 @@ section{
 const stars =
 document.getElementById("stars");
 
-for(let i=0;i<150;i++){
+for(let i=0;i<160;i++){
 
     const star =
     document.createElement("div");
@@ -1109,13 +1343,13 @@ for(let i=0;i<150;i++){
     star.className="star";
 
     star.style.left =
-    Math.random()*100+"%";
+        Math.random()*100+"%";
 
     star.style.top =
-    Math.random()*100+"%";
+        Math.random()*100+"%";
 
     star.style.animationDelay =
-    Math.random()*3+"s";
+        Math.random()*3+"s";
 
     stars.appendChild(star);
 }
@@ -1139,25 +1373,25 @@ const items=[
 function createFloating(){
 
     const element =
-    document.createElement("div");
+        document.createElement("div");
 
     element.className="floating";
 
     element.innerText =
-    items[
-        Math.floor(
-            Math.random()*items.length
-        )
-    ];
+        items[
+            Math.floor(
+                Math.random()*items.length
+            )
+        ];
 
     element.style.left =
-    Math.random()*100+"vw";
+        Math.random()*100+"vw";
 
     element.style.fontSize =
-    (18+Math.random()*28)+"px";
+        (18+Math.random()*28)+"px";
 
     element.style.animationDuration =
-    (5+Math.random()*5)+"s";
+        (5+Math.random()*5)+"s";
 
     document.body.appendChild(element);
 
@@ -1168,7 +1402,7 @@ function createFloating(){
 }
 
 
-/* ================= احتفال ================= */
+/* ================= الاحتفال ================= */
 
 function celebration(amount){
 
@@ -1177,22 +1411,22 @@ function celebration(amount){
         setTimeout(()=>{
 
             const s =
-            document.createElement("div");
+                document.createElement("div");
 
             s.className="spark";
 
             s.innerText =
-            items[
-                Math.floor(
-                    Math.random()*items.length
-                )
-            ];
+                items[
+                    Math.floor(
+                        Math.random()*items.length
+                    )
+                ];
 
             s.style.left =
-            Math.random()*100+"vw";
+                Math.random()*100+"vw";
 
             s.style.top =
-            (20+Math.random()*60)+"vh";
+                (20+Math.random()*60)+"vh";
 
             document.body.appendChild(s);
 
@@ -1201,7 +1435,7 @@ function celebration(amount){
                 1000
             );
 
-        },i*50);
+        },i*45);
     }
 }
 
@@ -1210,7 +1444,7 @@ function celebration(amount){
 
 setInterval(
     createFloating,
-    1100
+    1000
 );
 
 
@@ -1218,15 +1452,15 @@ setInterval(
 
 function start(){
 
-    celebration(35);
+    celebration(40);
 
     setTimeout(()=>{
 
         document
-        .querySelector(".apology")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+            .querySelector(".apology")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
     },400);
 }
@@ -1237,7 +1471,7 @@ function start(){
 function showApology(){
 
     const box =
-    document.getElementById("apology");
+        document.getElementById("apology");
 
     if(box.style.display==="block"){
 
@@ -1247,18 +1481,18 @@ function showApology(){
 
         box.style.display="block";
 
-        celebration(25);
+        celebration(30);
 
     }
 }
 
 
-/* ================= الوردة ================= */
+/* ================= الوردة الكبيرة ================= */
 
 function openFlower(){
 
     const box =
-    document.getElementById("flowerMessage");
+        document.getElementById("flowerMessage");
 
     if(box.style.display==="block"){
 
@@ -1268,7 +1502,7 @@ function openFlower(){
 
         box.style.display="block";
 
-        celebration(35);
+        celebration(40);
 
     }
 }
@@ -1283,31 +1517,37 @@ function heartClick(){
     count++;
 
     document
-    .getElementById("heartCount")
-    .innerText=count;
+        .getElementById("heartCount")
+        .innerText=count;
 
     const result =
-    document.getElementById("heartResult");
+        document.getElementById("heartResult");
 
     if(count<5){
 
         result.innerText=
-        "لسه في نبض... ❤️";
+            "لسه في نبض... ❤️";
 
-    }else if(count<10){
+    }
 
-        result.innerText=
-        "واضح إن القلب صاحي اليوم. 💗";
-
-    }else if(count<20){
+    else if(count<10){
 
         result.innerText=
-        "البرنسس وصلت مرحلة الخطر 😂❤️";
+            "واضح إن القلب صاحي اليوم 😂💗";
 
-    }else{
+    }
+
+    else if(count<20){
 
         result.innerText=
-        "خلص... القلب استسلم 👑❤️";
+            "البرنسس وصلت مرحلة الخطر 😂❤️";
+
+    }
+
+    else{
+
+        result.innerText=
+            "خلص... القلب استسلم 👑❤️";
 
         celebration(50);
 
@@ -1322,7 +1562,7 @@ function heartClick(){
 function openMessage(card){
 
     const text =
-    card.querySelector("p");
+        card.querySelector("p");
 
     if(text.style.display==="block"){
 
@@ -1338,12 +1578,46 @@ function openMessage(card){
 }
 
 
+/* ================= حديقة الورد ================= */
+
+function flowerMessage(message){
+
+    document
+        .getElementById("gardenMessage")
+        .innerText=message;
+
+    celebration(18);
+}
+
+
+/* ================= الرسالة السرية ================= */
+
+function secretMessage(){
+
+    const box =
+        document.getElementById("secretBox");
+
+    box.innerHTML=
+        `
+        روضة يا روضة...
+        <br><br>
+        لو كان عندي وردة بعدد المرات
+        اللي فكرت فيكِ فيها،
+        كان الموقع كله صار حديقة 😂🌹
+        <br><br>
+        وبس حبيت تعرفي إنك غالية عليّ كثير. 🤍
+        `;
+
+    celebration(35);
+}
+
+
 /* ================= القفل ================= */
 
 function unlock(){
 
     const message =
-    document.getElementById("lockMessage");
+        document.getElementById("lockMessage");
 
     if(message.style.display==="block"){
 
@@ -1353,7 +1627,7 @@ function unlock(){
 
         message.style.display="block";
 
-        celebration(50);
+        celebration(55);
 
     }
 }
@@ -1363,15 +1637,15 @@ function unlock(){
 
 function finalEffect(){
 
-    celebration(100);
+    celebration(120);
 
     setTimeout(()=>{
 
         alert(
             "روضة 👑❤️\n\n" +
             "آسف على زعلك.\n" +
-            "أحبك.\n" +
-            "وبحترمك."
+            "بحبك.\n" +
+            "وإنتِ أحلى أميرة بحياتي 🤍"
         );
 
     },700);
