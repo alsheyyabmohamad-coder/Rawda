@@ -31,7 +31,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Stars */
+/* النجوم */
 
 .star{
     position:fixed;
@@ -45,11 +45,17 @@ body{
 }
 
 @keyframes twinkle{
-    from{opacity:.2;transform:scale(.7)}
-    to{opacity:1;transform:scale(1.4)}
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.4);
+    }
 }
 
-/* Floating hearts */
+/* القلوب الطائرة */
 
 .float{
     position:fixed;
@@ -65,19 +71,25 @@ body{
         transform:translateY(0) rotate(0);
         opacity:0;
     }
-    10%{opacity:1}
+
+    10%{
+        opacity:1;
+    }
+
     100%{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
 }
 
-/* Main */
+/* الحاوية */
 
 .container{
     width:min(1000px,92%);
     margin:auto;
 }
+
+/* Hero */
 
 .hero{
     min-height:100vh;
@@ -122,6 +134,8 @@ h1{
     font-size:18px;
     margin-bottom:30px;
 }
+
+/* Buttons */
 
 .btn{
     border:none;
@@ -234,7 +248,7 @@ section{
     min-height:30px;
 }
 
-/* Counters */
+/* العدادات */
 
 .counterBox{
     max-width:700px;
@@ -278,7 +292,6 @@ section{
 
 .fill{
     height:100%;
-    width:0%;
     border-radius:30px;
     transition:width .7s cubic-bezier(.2,.8,.2,1);
 }
@@ -302,7 +315,7 @@ section{
     margin:25px auto 0;
 }
 
-/* Heart game */
+/* لعبة القلب */
 
 .heartGame{
     text-align:center;
@@ -325,7 +338,7 @@ section{
     margin-top:10px;
 }
 
-/* Flowers */
+/* الحديقة */
 
 .garden{
     display:grid;
@@ -357,7 +370,7 @@ section{
     font-size:18px;
 }
 
-/* Gift */
+/* الهدية */
 
 .giftBox{
     text-align:center;
@@ -380,7 +393,7 @@ section{
     min-height:35px;
 }
 
-/* Poems */
+/* الشعر */
 
 .poem{
     background:rgba(255,255,255,.045);
@@ -402,7 +415,7 @@ section{
     color:#eee;
 }
 
-/* Secret */
+/* السر */
 
 .secret{
     max-width:700px;
@@ -428,7 +441,7 @@ section{
     color:#ffb8e5;
 }
 
-/* Finale */
+/* النهاية */
 
 .final{
     text-align:center;
@@ -446,7 +459,7 @@ section{
     line-height:2;
 }
 
-/* Celebration */
+/* المؤثرات */
 
 .spark{
     position:fixed;
@@ -457,17 +470,20 @@ section{
 }
 
 @keyframes spark{
+
     0%{
         opacity:1;
         transform:translate(0,0) scale(1);
     }
+
     100%{
         opacity:0;
         transform:translate(var(--x),var(--y)) scale(.2);
     }
+
 }
 
-/* Responsive */
+/* الموبايل */
 
 @media(max-width:700px){
 
@@ -504,19 +520,23 @@ section{
 
 <div class="container">
 
-<!-- HERO -->
+<!-- الصفحة الرئيسية -->
 
 <section class="hero">
 
 <div class="heroBox">
 
-<div class="badge">🔐 ملف سري للغاية</div>
+<div class="badge">
+🔐 ملف سري للغاية
+</div>
 
 <h1 class="gradient">
 روضة
 </h1>
 
-<h2>الوحيدة 👑❤️</h2>
+<h2>
+الوحيدة 👑❤️
+</h2>
 
 <p class="subtitle">
 هذا الموقع أُنشئ لإثبات حقيقة واحدة فقط...
@@ -531,13 +551,15 @@ section{
 </section>
 
 
-<!-- PROOF -->
+<!-- الأدلة -->
 
 <section id="proof">
 
 <div class="sectionTitle">
 
-<h2>📁 الأدلة</h2>
+<h2>
+📁 الأدلة
+</h2>
 
 <p>
 خلينا نشوف إذا في أي احتمال لغيرك...
@@ -559,7 +581,7 @@ section{
 </button>
 
 <button class="answer" onclick="quizAnswer(false)">
-جمانة 🤨
+ولا وحدة 😭
 </button>
 
 <button class="answer" onclick="quizAnswer(true)">
@@ -567,7 +589,7 @@ section{
 </button>
 
 <button class="answer" onclick="quizAnswer(false)">
-ما بعرف 😭
+ما بعرف 🤔
 </button>
 
 </div>
@@ -579,16 +601,18 @@ section{
 </section>
 
 
-<!-- COUNTERS -->
+<!-- العدادات -->
 
 <section>
 
 <div class="sectionTitle">
 
-<h2>📊 المؤشرات الرسمية</h2>
+<h2>
+📊 المؤشرات الرسمية
+</h2>
 
 <p>
-كل ضغطة منك بتغير النتائج 😂❤️
+كل ضغطة منك بتغيّر النتائج 😂❤️
 </p>
 
 </div>
@@ -596,13 +620,15 @@ section{
 
 <div class="counterBox">
 
-<!-- Hate -->
+<!-- نسبة الزعل -->
 
 <div class="counter">
 
 <div class="counterHead">
 
-<span>😤 نسبة الزعل</span>
+<span>
+😤 نسبة الزعل
+</span>
 
 <span class="percent" id="hatePercent">
 100%
@@ -612,7 +638,8 @@ section{
 
 <div class="bar">
 
-<div class="fill hateFill" id="hateBar"></div>
+<div class="fill hateFill" id="hateBar">
+</div>
 
 </div>
 
@@ -623,13 +650,15 @@ section{
 </div>
 
 
-<!-- Love -->
+<!-- نسبة الحب -->
 
 <div class="counter">
 
 <div class="counterHead">
 
-<span>❤️ نسبة حب محمد لروضة</span>
+<span>
+❤️ نسبة حب محمد لروضة
+</span>
 
 <span class="percent" id="lovePercent">
 0%
@@ -639,12 +668,13 @@ section{
 
 <div class="bar">
 
-<div class="fill loveFill" id="loveBar"></div>
+<div class="fill loveFill" id="loveBar">
+</div>
 
 </div>
 
 <div class="counterNote" id="loveText">
-لسه العداد بالبداية... بس المشكلة إن الحب ما إله نهاية 😂❤️
+لسه العداد بالبداية... بس الحب ما إله نهاية 😂❤️
 </div>
 
 </div>
@@ -659,15 +689,19 @@ section{
 </section>
 
 
-<!-- THREE THINGS -->
+<!-- الحقائق -->
 
 <section>
 
 <div class="sectionTitle">
 
-<h2>❤️ ثلاث حقائق</h2>
+<h2>
+❤️ ثلاث حقائق
+</h2>
 
-<p>اضغطي على كل وحدة</p>
+<p>
+اضغطي على كل وحدة
+</p>
 
 </div>
 
@@ -676,9 +710,13 @@ section{
 
 <div class="card" onclick="openCard(1)">
 
-<div class="icon">👑</div>
+<div class="icon">
+👑
+</div>
 
-<h3>الأولى</h3>
+<h3>
+الأولى
+</h3>
 
 <p id="card1">
 اضغطي لكشف الحقيقة
@@ -689,9 +727,13 @@ section{
 
 <div class="card" onclick="openCard(2)">
 
-<div class="icon">❤️</div>
+<div class="icon">
+❤️
+</div>
 
-<h3>الثانية</h3>
+<h3>
+الثانية
+</h3>
 
 <p id="card2">
 اضغطي لكشف الحقيقة
@@ -702,9 +744,13 @@ section{
 
 <div class="card" onclick="openCard(3)">
 
-<div class="icon">🔐</div>
+<div class="icon">
+🔐
+</div>
 
-<h3>الثالثة</h3>
+<h3>
+الثالثة
+</h3>
 
 <p id="card3">
 اضغطي لكشف الحقيقة
@@ -717,13 +763,15 @@ section{
 </section>
 
 
-<!-- HEART GAME -->
+<!-- لعبة القلب -->
 
 <section>
 
 <div class="sectionTitle">
 
-<h2>💓 اختبار القلب</h2>
+<h2>
+💓 اختبار القلب
+</h2>
 
 <p>
 شوفي كم مرة قلب محمد اختارك 😂
@@ -751,16 +799,18 @@ section{
 </section>
 
 
-<!-- GARDEN -->
+<!-- الحديقة -->
 
 <section>
 
 <div class="sectionTitle">
 
-<h2>🌹 حديقة روضة</h2>
+<h2>
+🌹 حديقة روضة
+</h2>
 
 <p>
-كل وردة مخبية رسالة
+كل وردة مخبّيّة رسالة
 </p>
 
 </div>
@@ -768,26 +818,43 @@ section{
 
 <div class="garden">
 
-<div class="flower" onclick="flower(1)">🌹</div>
-<div class="flower" onclick="flower(2)">🌷</div>
-<div class="flower" onclick="flower(3)">🌹</div>
-<div class="flower" onclick="flower(4)">🌷</div>
-<div class="flower" onclick="flower(5)">🌹</div>
+<div class="flower" onclick="flower(1)">
+🌹
+</div>
+
+<div class="flower" onclick="flower(2)">
+🌷
+</div>
+
+<div class="flower" onclick="flower(3)">
+🌹
+</div>
+
+<div class="flower" onclick="flower(4)">
+🌷
+</div>
+
+<div class="flower" onclick="flower(5)">
+🌹
+</div>
 
 </div>
 
-<div class="flowerMessage" id="flowerMessage"></div>
+<div class="flowerMessage" id="flowerMessage">
+</div>
 
 </section>
 
 
-<!-- GIFT -->
+<!-- الهدية -->
 
 <section>
 
 <div class="sectionTitle">
 
-<h2>🎁 في إشي مخبي</h2>
+<h2>
+🎁 في إشي مخبّى
+</h2>
 
 <p>
 بس بدك تفتحيه...
@@ -802,20 +869,23 @@ section{
 🎁
 </div>
 
-<div class="giftText" id="giftText"></div>
+<div class="giftText" id="giftText">
+</div>
 
 </div>
 
 </section>
 
 
-<!-- POEMS -->
+<!-- القصائد -->
 
 <section>
 
 <div class="sectionTitle">
 
-<h2>📜 من كلام القلب</h2>
+<h2>
+📜 من كلام القلب
+</h2>
 
 <p>
 لأن روضة بتحب الشعر ❤️
@@ -826,7 +896,9 @@ section{
 
 <div class="poem">
 
-<h3>الأولى 👑</h3>
+<h3>
+الأولى 👑
+</h3>
 
 <div class="poemText">
 
@@ -845,7 +917,9 @@ section{
 
 <div class="poem">
 
-<h3>الثانية 🌙</h3>
+<h3>
+الثانية 🌙
+</h3>
 
 <div class="poemText">
 
@@ -863,7 +937,9 @@ section{
 
 <div class="poem">
 
-<h3>الثالثة ❤️</h3>
+<h3>
+الثالثة ❤️
+</h3>
 
 <div class="poemText">
 
@@ -881,7 +957,7 @@ section{
 </section>
 
 
-<!-- SECRET -->
+<!-- الرسالة السرية -->
 
 <section>
 
@@ -889,7 +965,9 @@ section{
 
 <div class="sectionTitle">
 
-<h2>🔐 الرسالة السرية</h2>
+<h2>
+🔐 الرسالة السرية
+</h2>
 
 <p>
 اضغطي على القفل
@@ -903,14 +981,15 @@ section{
 </div>
 
 
-<div class="secretMessage" id="secretMessage"></div>
+<div class="secretMessage" id="secretMessage">
+</div>
 
 </div>
 
 </section>
 
 
-<!-- FINAL -->
+<!-- النهاية -->
 
 <section class="final">
 
@@ -921,12 +1000,15 @@ section{
 <p>
 
 روضة هي روضة...<br>
+
 والبرنسس هي البرنسس...<br>
+
 والمكان اللي أخذتيه بقلبي مش منافسة عشان ينافسك فيه أحد. ❤️
 
 <br><br>
 
 إنتِ مش رقم واحد بين كثير...<br>
+
 <strong style="color:#ffb9e5;font-size:24px;">
 إنتِ الوحيدة.
 </strong>
@@ -934,6 +1016,7 @@ section{
 <br><br>
 
 وإذا الموقع كله ما قدر يثبتلك هالشي...<br>
+
 خلي أفعالي هي اللي تثبته. ❤️
 
 </p>
@@ -951,7 +1034,7 @@ section{
 
 <script>
 
-/* Stars */
+/* النجوم */
 
 for(let i=0;i<120;i++){
 
@@ -960,6 +1043,7 @@ for(let i=0;i<120;i++){
     star.className="star";
 
     star.style.left=Math.random()*100+"vw";
+
     star.style.top=Math.random()*100+"vh";
 
     star.style.animationDelay=Math.random()*3+"s";
@@ -969,7 +1053,7 @@ for(let i=0;i<120;i++){
 }
 
 
-/* Floating hearts */
+/* القلوب الطائرة */
 
 setInterval(()=>{
 
@@ -977,13 +1061,21 @@ setInterval(()=>{
 
     f.className="float";
 
-    const emojis=["❤️","🤍","💗","👑","✨"];
+    const emojis=[
+        "❤️",
+        "🤍",
+        "💗",
+        "👑",
+        "✨"
+    ];
 
-    f.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    f.textContent=
+        emojis[Math.floor(Math.random()*emojis.length)];
 
     f.style.left=Math.random()*100+"vw";
 
-    f.style.fontSize=(15+Math.random()*20)+"px";
+    f.style.fontSize=
+        (15+Math.random()*20)+"px";
 
     document.body.appendChild(f);
 
@@ -994,7 +1086,7 @@ setInterval(()=>{
 },1000);
 
 
-/* Scroll */
+/* النزول للقسم */
 
 function scrollToSection(id){
 
@@ -1005,92 +1097,133 @@ function scrollToSection(id){
 }
 
 
-/* Quiz */
+/* الاختبار */
 
 function quizAnswer(correct){
 
-    const result=document.getElementById("quizResult");
+    const result=
+        document.getElementById("quizResult");
 
     if(correct){
 
-        result.innerHTML="صح عليكِ 😂❤️ واضح إنكِ عارفة الجواب.";
+        result.innerHTML=
+            "صح عليكِ 😂❤️ واضح إنكِ عارفة الجواب.";
 
         celebration(20);
 
         increaseLove(8);
+
         decreaseHate(8);
 
     }else{
 
-        result.innerHTML="لااااا 😂 جربي مرة ثانية.";
+        result.innerHTML=
+            "لااااا 😂 جربي مرة ثانية.";
 
     }
 
 }
 
 
-/* Counters */
+/* العدادات */
 
 let hate=100;
+
 let love=0;
+
 
 function updateCounters(){
 
-    document.getElementById("hatePercent").textContent=hate+"%";
+    document.getElementById("hatePercent").textContent=
+        hate+"%";
 
-    document.getElementById("lovePercent").textContent=love+"%";
-
-    document.getElementById("hateBar").style.width=hate+"%";
-
-    document.getElementById("loveBar").style.width=love+"%";
+    document.getElementById("lovePercent").textContent=
+        love+"%";
 
 
-    const hateText=document.getElementById("hateText");
+    document.getElementById("hateBar").style.width=
+        hate+"%";
+
+    document.getElementById("loveBar").style.width=
+        love+"%";
+
+
+    const hateText=
+        document.getElementById("hateText");
+
 
     if(hate>75){
 
-        hateText.textContent="الوضع خطير... روضة زعلانة 😭";
+        hateText.textContent=
+            "الوضع خطير... روضة زعلانة 😭";
 
-    }else if(hate>50){
+    }
 
-        hateText.textContent="بدأنا نهدّي الأمور... شوي شوي 😂";
+    else if(hate>50){
 
-    }else if(hate>25){
+        hateText.textContent=
+            "بدأنا نهدّي الأمور... شوي شوي 😂";
 
-        hateText.textContent="الزعل قاعد يختفي ❤️";
+    }
 
-    }else if(hate>0){
+    else if(hate>25){
 
-        hateText.textContent="قربنا... باقي شوية زعل بس 👀❤️";
+        hateText.textContent=
+            "الزعل قاعد يختفي ❤️";
 
-    }else{
+    }
 
-        hateText.textContent="🚨 الزعل اختفى تماماً! 🚨";
+    else if(hate>0){
+
+        hateText.textContent=
+            "قربنا... باقي شوية زعل بس 👀❤️";
+
+    }
+
+    else{
+
+        hateText.textContent=
+            "🚨 الزعل اختفى تماماً! 🚨";
 
     }
 
 
-    const loveText=document.getElementById("loveText");
+    const loveText=
+        document.getElementById("loveText");
+
 
     if(love<30){
 
-        loveText.textContent="لسه العداد بالبداية... والحب أكبر من العداد ❤️";
+        loveText.textContent=
+            "لسه العداد بالبداية... والحب أكبر من العداد ❤️";
 
-    }else if(love<60){
+    }
 
-        loveText.textContent="الحب قاعد يكبر... 👀❤️";
+    else if(love<60){
 
-    }else if(love<90){
+        loveText.textContent=
+            "الحب قاعد يكبر... 👀❤️";
 
-        loveText.textContent="المؤشر دخل المنطقة الخطيرة 😂❤️";
+    }
 
-    }else if(love<100){
+    else if(love<90){
 
-        loveText.textContent="تقريباً وصلنا للآخر... بس الحب ما إله آخر.";
+        loveText.textContent=
+            "المؤشر دخل المنطقة الخطيرة 😂❤️";
 
-    }else{
+    }
 
-        loveText.textContent="100%؟ مستحيل 😂❤️ حب محمد لروضة ما إله نهاية.";
+    else if(love<100){
+
+        loveText.textContent=
+            "تقريباً وصلنا للآخر... بس الحب ما إله آخر.";
+
+    }
+
+    else{
+
+        loveText.textContent=
+            "100%؟ مستحيل 😂❤️ حب محمد لروضة ما إله نهاية.";
 
     }
 
@@ -1101,7 +1234,11 @@ function decreaseHate(amount){
 
     hate-=amount;
 
-    if(hate<0) hate=0;
+    if(hate<0){
+
+        hate=0;
+
+    }
 
     updateCounters();
 
@@ -1112,25 +1249,36 @@ function increaseLove(amount){
 
     love+=amount;
 
-    if(love>100) love=100;
+    if(love>100){
+
+        love=100;
+
+    }
 
     updateCounters();
 
 }
 
 
+/* زر تحسين الوضع */
+
 function makeItBetter(){
 
     decreaseHate(10);
+
     increaseLove(12);
 
     celebration(12);
+
 
     if(hate===0){
 
         setTimeout(()=>{
 
-            alert("🎉 مبروك يا روضة! نسبة الزعل وصلت 0% ❤️👑");
+            alert(
+                "🎉 مبروك يا روضة!\n\n" +
+                "نسبة الزعل وصلت 0% ❤️👑"
+            );
 
         },500);
 
@@ -1139,17 +1287,20 @@ function makeItBetter(){
 }
 
 
-/* Heart */
+/* لعبة القلب */
 
 let hearts=0;
+
 
 function heartClick(){
 
     hearts++;
 
-    document.getElementById("heartCount").textContent=hearts;
+    document.getElementById("heartCount").textContent=
+        hearts;
 
     decreaseHate(1);
+
     increaseLove(2);
 
     celebration(3);
@@ -1157,41 +1308,53 @@ function heartClick(){
 }
 
 
-/* Cards */
+/* البطاقات */
 
 function openCard(card){
 
     const messages={
 
-        1:"إنتِ مش وحدة من كثير... إنتِ الشخص اللي إله مكانه الخاص عندي. 👑❤️",
+        1:
+        "إنتِ مش وحدة من كثير... إنتِ الشخص اللي إله مكانه الخاص عندي. 👑❤️",
 
-        2:"لو في شيء بدي أوضحه، فهو إن وجودك بحياتي مش شيء عابر أبداً. ❤️",
+        2:
+        "لو في شيء بدي أوضحه، فهو إن وجودك بحياتي مش شيء عابر أبداً. ❤️",
 
-        3:"ما بديكِ تصدقي كلام مكتوب بموقع... بدي أفعالي هي اللي تثبتلك إنكِ الوحيدة. 🔐❤️"
+        3:
+        "ما بديكِ تصدقي كلام مكتوب بموقع... بدي أفعالي هي اللي تثبتلك إنكِ الوحيدة. 🔐❤️"
 
     };
 
-    document.getElementById("card"+card).textContent=messages[card];
+
+    document.getElementById("card"+card).textContent=
+        messages[card];
+
 
     decreaseHate(5);
+
     increaseLove(5);
 
 }
 
 
-/* Flowers */
+/* الورود */
 
 const flowerMessages={
 
-    1:"🌹 لأنكِ من الأشياء الجميلة اللي ما بدي أخسرها.",
+    1:
+        "🌹 لأنكِ من الأشياء الجميلة اللي ما بدي أخسرها.",
 
-    2:"🌷 لو للحب لون... يمكن يكون لون هالوردة.",
+    2:
+        "🌷 لو للحب لون... يمكن يكون لون هالوردة.",
 
-    3:"🌹 روضة، اسمك لحاله كفاية يخلي المكان أجمل.",
+    3:
+        "🌹 روضة، اسمك لحاله كفاية يخلي المكان أجمل.",
 
-    4:"🌷 إنتِ مش بديلة عن أحد... إنتِ الأصل.",
+    4:
+        "🌷 إنتِ مش بديلة عن أحد... إنتِ الأصل.",
 
-    5:"🌹 آخر وردة، بس أكيد مش آخر الكلام عنكِ ❤️"
+    5:
+        "🌹 آخر وردة، بس أكيد مش آخر الكلام عنكِ ❤️"
 
 };
 
@@ -1201,20 +1364,25 @@ function flower(number){
     document.getElementById("flowerMessage").textContent=
         flowerMessages[number];
 
+
     decreaseHate(4);
+
     increaseLove(4);
 
 }
 
 
-/* Gift */
+/* الهدية */
 
 function openGift(){
 
     document.getElementById("giftText").innerHTML=
+
         "🎁 المفاجأة: لو بقدر أحطلكِ إشي داخل هالعلبة، بحط فيها كل مرة اخترتكِ فيها من قلبي. ❤️👑";
 
+
     decreaseHate(7);
+
     increaseLove(10);
 
     celebration(20);
@@ -1222,16 +1390,29 @@ function openGift(){
 }
 
 
-/* Secret */
+/* القفل */
 
 function secret(){
 
-    const box=document.getElementById("secretMessage");
+    const box=
+        document.getElementById("secretMessage");
+
 
     box.innerHTML=
-        "إنتِ مش رقم واحد بين كثير...<br><strong>إنتِ الوحيدة. 👑❤️</strong><br><br>وما بديكِ تصدقي هالكلام بس لأنه مكتوب هون؛ بدي أفعالي هي اللي تثبتلك إياه.";
+
+        "إنتِ مش رقم واحد بين كثير...<br>" +
+
+        "<strong>إنتِ الوحيدة. 👑❤️</strong>" +
+
+        "<br><br>" +
+
+        "وما بديكِ تصدقي هالكلام بس لأنه مكتوب هون؛ " +
+
+        "بدي أفعالي هي اللي تثبتلك إياه.";
+
 
     decreaseHate(10);
+
     increaseLove(10);
 
     celebration(30);
@@ -1239,21 +1420,27 @@ function secret(){
 }
 
 
-/* Finale */
+/* النهاية */
 
 function finale(){
 
     decreaseHate(20);
+
     increaseLove(20);
 
     celebration(60);
 
+
     setTimeout(()=>{
 
         alert(
+
             "👑❤️ روضة هي روضة...\n\n" +
+
             "والبرنسس هي البرنسس...\n\n" +
+
             "وما إلها بديل."
+
         );
 
     },500);
@@ -1261,7 +1448,7 @@ function finale(){
 }
 
 
-/* Celebration */
+/* الاحتفال */
 
 function celebration(amount){
 
@@ -1269,32 +1456,57 @@ function celebration(amount){
 
         setTimeout(()=>{
 
-            const s=document.createElement("div");
+            const s=
+                document.createElement("div");
 
             s.className="spark";
 
-            const emojis=["❤️","💗","✨","👑","🌹","🤍"];
+
+            const emojis=[
+                "❤️",
+                "💗",
+                "✨",
+                "👑",
+                "🌹",
+                "🤍"
+            ];
+
 
             s.textContent=
-                emojis[Math.floor(Math.random()*emojis.length)];
+                emojis[
+                    Math.floor(
+                        Math.random()*emojis.length
+                    )
+                ];
 
-            s.style.left=(40+Math.random()*20)+"vw";
-            s.style.top=(40+Math.random()*20)+"vh";
+
+            s.style.left=
+                (40+Math.random()*20)+"vw";
+
+
+            s.style.top=
+                (40+Math.random()*20)+"vh";
+
 
             s.style.setProperty(
                 "--x",
                 ((Math.random()-.5)*500)+"px"
             );
 
+
             s.style.setProperty(
                 "--y",
                 ((Math.random()-.5)*500)+"px"
             );
 
+
             document.body.appendChild(s);
 
+
             setTimeout(()=>{
+
                 s.remove();
+
             },1200);
 
         },i*20);
@@ -1304,7 +1516,7 @@ function celebration(amount){
 }
 
 
-/* Start */
+/* تشغيل العدادات */
 
 updateCounters();
 
