@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>روضة | الوحيدة 👑❤️</title>
+<title>روضة | الحكاية التي لا تنتهي 👑❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -22,16 +22,15 @@ html{
 
 body{
     font-family:"Cairo",sans-serif;
-    background:
-        radial-gradient(circle at 20% 20%,rgba(150,50,120,.18),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(70,50,150,.18),transparent 30%),
-        linear-gradient(135deg,#070711,#12091c,#080812);
     color:white;
-    min-height:100vh;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(255,80,170,.16),transparent 30%),
+        radial-gradient(circle at 85% 75%,rgba(120,70,255,.17),transparent 32%),
+        linear-gradient(135deg,#05050d,#100817,#070711);
     overflow-x:hidden;
 }
 
-/* النجوم */
+/* ================= النجوم ================= */
 
 .star{
     position:fixed;
@@ -39,34 +38,34 @@ body{
     height:2px;
     background:white;
     border-radius:50%;
-    opacity:.7;
-    animation:twinkle 3s infinite alternate;
+    opacity:.5;
     z-index:-1;
+    animation:twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle{
     from{
-        opacity:.2;
+        opacity:.15;
         transform:scale(.7);
     }
     to{
         opacity:1;
-        transform:scale(1.4);
+        transform:scale(1.5);
     }
 }
 
-/* القلوب الطائرة */
+/* ================= القلوب ================= */
 
 .float{
     position:fixed;
-    bottom:-40px;
-    font-size:20px;
-    animation:floatUp 7s linear forwards;
+    bottom:-50px;
     pointer-events:none;
     z-index:20;
+    animation:floatUp 8s linear forwards;
 }
 
 @keyframes floatUp{
+
     0%{
         transform:translateY(0) rotate(0);
         opacity:0;
@@ -80,16 +79,35 @@ body{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
+
 }
 
-/* الحاوية */
+/* ================= عام ================= */
 
 .container{
-    width:min(1000px,92%);
+    width:min(1050px,92%);
     margin:auto;
 }
 
-/* Hero */
+section{
+    padding:100px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:clamp(30px,5vw,45px);
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#aaa;
+}
+
+/* ================= Hero ================= */
 
 .hero{
     min-height:100vh;
@@ -97,85 +115,105 @@ body{
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:40px 0;
 }
 
 .heroBox{
-    background:rgba(255,255,255,.05);
+    width:min(850px,100%);
+    padding:65px 30px;
+    border-radius:40px;
+    background:rgba(255,255,255,.045);
     border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(15px);
-    border-radius:35px;
-    padding:55px 30px;
-    box-shadow:0 0 80px rgba(180,70,160,.15);
+    backdrop-filter:blur(18px);
+    box-shadow:
+        0 0 100px rgba(210,60,170,.12),
+        inset 0 0 40px rgba(255,255,255,.02);
 }
 
-.badge{
+.secretLabel{
     display:inline-block;
-    padding:8px 18px;
+    padding:8px 20px;
     border-radius:30px;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.07);
     color:#ddd;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-h1{
-    font-size:clamp(45px,10vw,85px);
-    margin-bottom:10px;
+.hero h1{
+    font-size:clamp(55px,12vw,110px);
+    margin-bottom:5px;
 }
 
 .gradient{
-    background:linear-gradient(90deg,#fff,#ff9ddf,#d7b5ff);
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ff9fdf,
+        #d0aaff,
+        #fff
+    );
+    background-size:200%;
     -webkit-background-clip:text;
     color:transparent;
+    animation:shine 4s linear infinite;
 }
 
-.subtitle{
-    color:#bbb;
+@keyframes shine{
+    to{
+        background-position:200%;
+    }
+}
+
+.hero h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.heroText{
+    color:#aaa;
     font-size:18px;
-    margin-bottom:30px;
+    line-height:2;
+    max-width:650px;
+    margin:auto auto 30px;
 }
-
-/* Buttons */
 
 .btn{
-    border:none;
-    cursor:pointer;
+    border:0;
     color:white;
     font-family:inherit;
-    font-size:16px;
     font-weight:700;
-    padding:14px 25px;
+    font-size:16px;
+    padding:15px 28px;
     border-radius:18px;
-    background:linear-gradient(135deg,#9b3c91,#5c3caa);
-    box-shadow:0 10px 30px rgba(120,50,150,.3);
-    transition:.25s;
+    cursor:pointer;
+    background:linear-gradient(135deg,#a63d91,#6144b5);
+    box-shadow:0 10px 35px rgba(120,50,160,.25);
+    transition:.3s;
 }
 
 .btn:hover{
     transform:translateY(-4px) scale(1.03);
 }
 
-/* Sections */
+/* ================= رسالة ================= */
 
-section{
-    padding:90px 0;
-}
-
-.sectionTitle{
+.messageBox{
+    max-width:850px;
+    margin:auto;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    line-height:2.1;
+    color:#ddd;
     text-align:center;
-    margin-bottom:40px;
 }
 
-.sectionTitle h2{
-    font-size:35px;
-    margin-bottom:10px;
+.highlight{
+    color:#ffacdF;
+    font-weight:800;
 }
 
-.sectionTitle p{
-    color:#aaa;
-}
-
-/* Cards */
+/* ================= بطاقات ================= */
 
 .grid{
     display:grid;
@@ -184,224 +222,239 @@ section{
 }
 
 .card{
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:25px;
-    padding:28px;
+    padding:30px;
+    border-radius:27px;
     text-align:center;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
     transition:.3s;
     cursor:pointer;
 }
 
 .card:hover{
-    transform:translateY(-7px);
-    background:rgba(255,255,255,.08);
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.075);
 }
 
-.icon{
-    font-size:45px;
-    margin-bottom:15px;
+.cardIcon{
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:12px;
 }
 
 .card p{
-    color:#bbb;
-    line-height:1.8;
-    margin-top:10px;
+    color:#aaa;
+    line-height:1.9;
 }
 
-/* Quiz */
+/* ================= العداد ================= */
+
+.infinityBox{
+    max-width:800px;
+    margin:auto;
+    padding:40px 25px;
+    border-radius:35px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    text-align:center;
+}
+
+.infinity{
+    font-size:120px;
+    line-height:1;
+    background:linear-gradient(135deg,#ff72b7,#b989ff,#7fc8ff);
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.loveNumber{
+    font-size:45px;
+    font-weight:800;
+    margin:15px 0;
+}
+
+.loveText{
+    color:#aaa;
+    line-height:2;
+}
+
+/* ================= اختبار ================= */
 
 .quiz{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
-    background:rgba(255,255,255,.05);
     padding:35px;
+    background:rgba(255,255,255,.045);
     border-radius:30px;
+    border:1px solid rgba(255,255,255,.1);
     text-align:center;
+}
+
+.question{
+    font-size:21px;
+    margin-bottom:25px;
 }
 
 .answers{
     display:grid;
     gap:12px;
-    margin-top:25px;
 }
 
 .answer{
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.1);
-    color:white;
     padding:15px;
-    border-radius:15px;
-    cursor:pointer;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.06);
+    color:white;
     font-family:inherit;
-    transition:.2s;
+    cursor:pointer;
+    transition:.25s;
 }
 
 .answer:hover{
-    background:rgba(255,255,255,.12);
     transform:scale(1.02);
-}
-
-#quizResult{
-    margin-top:20px;
-    font-weight:700;
-    min-height:30px;
-}
-
-/* العدادات */
-
-.counterBox{
-    max-width:700px;
-    margin:auto;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:30px;
-    padding:35px;
-}
-
-.counter{
-    margin-bottom:35px;
-}
-
-.counter:last-child{
-    margin-bottom:0;
-}
-
-.counterHead{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
-}
-
-.counterHead span:first-child{
-    font-weight:700;
-}
-
-.percent{
-    font-size:28px;
-    font-weight:800;
-}
-
-.bar{
-    height:22px;
     background:rgba(255,255,255,.1);
-    border-radius:30px;
-    overflow:hidden;
 }
 
-.fill{
-    height:100%;
-    border-radius:30px;
-    transition:width .7s cubic-bezier(.2,.8,.2,1);
+.quizResult{
+    margin-top:20px;
+    min-height:35px;
+    color:#ffb6df;
+    font-weight:700;
 }
 
-.hateFill{
-    background:linear-gradient(90deg,#ff496e,#ff8b5e);
+/* ================= الخط الزمني ================= */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+    position:relative;
 }
 
-.loveFill{
-    background:linear-gradient(90deg,#ff5fa2,#b57cff,#73b7ff);
+.timeline:before{
+    content:"";
+    position:absolute;
+    right:20px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:linear-gradient(
+        transparent,
+        #c05aaf,
+        transparent
+    );
 }
 
-.counterNote{
+.timeItem{
+    position:relative;
+    margin-bottom:30px;
+    padding-right:55px;
+}
+
+.dot{
+    position:absolute;
+    right:11px;
+    top:5px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#e47bc2;
+    box-shadow:0 0 20px #e47bc2;
+}
+
+.timeCard{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:25px;
+}
+
+.timeCard h3{
+    margin-bottom:8px;
+}
+
+.timeCard p{
     color:#aaa;
-    margin-top:10px;
-    font-size:14px;
+    line-height:1.9;
 }
 
-.counterButton{
-    display:block;
-    margin:25px auto 0;
-}
-
-/* لعبة القلب */
+/* ================= لعبة القلب ================= */
 
 .heartGame{
     text-align:center;
 }
 
 .bigHeart{
-    font-size:100px;
-    display:inline-block;
+    font-size:120px;
     cursor:pointer;
+    display:inline-block;
     user-select:none;
-    transition:.15s;
+    transition:.12s;
 }
 
 .bigHeart:active{
-    transform:scale(.8);
+    transform:scale(.78);
 }
 
-#heartCount{
-    font-size:28px;
+.heartCount{
+    font-size:32px;
     margin-top:10px;
 }
 
-/* الحديقة */
+/* ================= الرسائل المخفية ================= */
 
-.garden{
+.hiddenGrid{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:15px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.flower{
-    height:150px;
+.secretCard{
+    min-height:180px;
+    padding:30px;
     border-radius:25px;
-    background:rgba(255,255,255,.05);
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    text-align:center;
+    cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:65px;
-    cursor:pointer;
     transition:.3s;
 }
 
-.flower:hover{
-    transform:translateY(-7px) rotate(2deg);
+.secretCard:hover{
+    transform:translateY(-7px);
 }
 
-.flowerMessage{
-    text-align:center;
-    margin-top:25px;
-    min-height:35px;
-    color:#ffb9e5;
-    font-size:18px;
+.secretContent{
+    color:#ffb6df;
+    line-height:2;
 }
 
-/* الهدية */
-
-.giftBox{
-    text-align:center;
-}
-
-.gift{
-    font-size:100px;
-    cursor:pointer;
-    display:inline-block;
-    transition:.3s;
-}
-
-.gift:hover{
-    transform:scale(1.1) rotate(-5deg);
-}
-
-.giftText{
-    margin-top:20px;
-    color:#ffb8e5;
-    min-height:35px;
-}
-
-/* الشعر */
+/* ================= الشعر ================= */
 
 .poem{
+    max-width:850px;
+    margin:0 auto 25px;
+    padding:40px 25px;
+    text-align:center;
+    border-radius:30px;
     background:rgba(255,255,255,.045);
     border:1px solid rgba(255,255,255,.09);
-    border-radius:30px;
-    padding:35px;
-    margin-bottom:20px;
-    text-align:center;
 }
 
 .poem h3{
@@ -410,63 +463,78 @@ section{
 
 .poemText{
     font-family:"Amiri",serif;
-    font-size:24px;
+    font-size:25px;
     line-height:2;
-    color:#eee;
 }
 
-/* السر */
+/* ================= وعد ================= */
 
-.secret{
-    max-width:700px;
+.promise{
+    max-width:850px;
     margin:auto;
     text-align:center;
+    padding:45px 30px;
+    border-radius:35px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,100,180,.08),
+            rgba(100,80,220,.08)
+        );
+    border:1px solid rgba(255,255,255,.1);
 }
 
-.lock{
-    font-size:80px;
-    cursor:pointer;
-    display:inline-block;
-    transition:.3s;
-}
-
-.lock:hover{
-    transform:scale(1.1);
-}
-
-.secretMessage{
-    margin-top:25px;
-    font-size:22px;
-    line-height:2;
-    color:#ffb8e5;
-}
-
-/* النهاية */
-
-.final{
-    text-align:center;
-    padding-bottom:120px;
-}
-
-.final h2{
-    font-size:42px;
+.promise h3{
+    font-size:30px;
     margin-bottom:20px;
 }
 
-.final p{
-    color:#aaa;
-    font-size:18px;
+.promise p{
+    color:#ccc;
     line-height:2;
+    font-size:18px;
 }
 
-/* المؤثرات */
+/* ================= النهاية ================= */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.finalBox{
+    max-width:850px;
+}
+
+.final h2{
+    font-size:clamp(40px,7vw,70px);
+    margin-bottom:20px;
+}
+
+.finalText{
+    color:#bbb;
+    font-size:19px;
+    line-height:2.2;
+}
+
+.finalWord{
+    margin-top:30px;
+    font-family:"Amiri",serif;
+    font-size:35px;
+    color:#ffb5df;
+}
+
+/* ================= الانفجار ================= */
 
 .spark{
     position:fixed;
     pointer-events:none;
-    font-size:25px;
-    animation:spark 1.2s forwards;
     z-index:100;
+    font-size:25px;
+    animation:spark 1.3s forwards;
 }
 
 @keyframes spark{
@@ -478,37 +546,41 @@ section{
 
     100%{
         opacity:0;
-        transform:translate(var(--x),var(--y)) scale(.2);
+        transform:
+            translate(var(--x),var(--y))
+            scale(.1);
     }
 
 }
 
-/* الموبايل */
+/* ================= Responsive ================= */
 
 @media(max-width:700px){
 
-    .grid{
+    section{
+        padding:70px 0;
+    }
+
+    .grid,
+    .hiddenGrid{
         grid-template-columns:1fr;
     }
 
-    .garden{
-        grid-template-columns:repeat(2,1fr);
-    }
-
     .heroBox{
-        padding:40px 20px;
+        padding:45px 20px;
     }
 
-    section{
-        padding:65px 0;
+    .messageBox,
+    .promise{
+        padding:30px 20px;
     }
 
-    .counterBox{
-        padding:25px 18px;
+    .infinity{
+        font-size:90px;
     }
 
     .poemText{
-        font-size:21px;
+        font-size:22px;
     }
 
 }
@@ -520,14 +592,14 @@ section{
 
 <div class="container">
 
-<!-- الصفحة الرئيسية -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="heroBox">
 
-<div class="badge">
-🔐 ملف سري للغاية
+<div class="secretLabel">
+🔐 رسالة لا تُفتح إلا لروضة
 </div>
 
 <h1 class="gradient">
@@ -535,15 +607,19 @@ section{
 </h1>
 
 <h2>
-الوحيدة 👑❤️
+الحكاية التي لا تنتهي 👑❤️
 </h2>
 
-<p class="subtitle">
-هذا الموقع أُنشئ لإثبات حقيقة واحدة فقط...
+<p class="heroText">
+يمكن كثير ناس يحكولك إن العلاقات ما بتدوم،
+وإن كل كلمة حلوة بالنهاية بتطلع كذب...
+عشان هيك أنا ما عملتلك هالموقع عشان أطلب منك تصدقي الكلام.
+<br>
+عملته عشان تعرفي شو موجود بقلبي.
 </p>
 
-<button class="btn" onclick="scrollToSection('proof')">
-افتحي الملف 🔓
+<button class="btn" onclick="scrollToId('truth')">
+ابدئي من هون ❤️
 </button>
 
 </div>
@@ -551,166 +627,82 @@ section{
 </section>
 
 
-<!-- الأدلة -->
+<!-- ================= الحقيقة ================= -->
 
-<section id="proof">
+<section id="truth">
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
-📁 الأدلة
+قبل أي شيء...
 </h2>
 
 <p>
-خلينا نشوف إذا في أي احتمال لغيرك...
+في شيء لازم يكون واضح
 </p>
 
 </div>
 
+<div class="messageBox">
 
-<div class="quiz">
+أنا بعرف إنكِ ممكن تسمعي من صاحباتك أو بنات خالاتك
+إن العلاقات ما بتدوم،
+وإن الشب ممكن يحكي كلام حلو وبعدين يتغير.
 
-<h3>
-مين صاحبة المكان الخاص بقلب محمد؟ 👀
-</h3>
+<br><br>
 
-<div class="answers">
+وأنا ما بدي أقولك:
+<strong class="highlight">
+"لا تصدقيهم وصدقي كلامي."
+</strong>
 
-<button class="answer" onclick="quizAnswer(false)">
-أي بنت ثانية 😂
-</button>
+لأني بالنهاية الكلام سهل.
 
-<button class="answer" onclick="quizAnswer(false)">
-ولا وحدة 😭
-</button>
+<br><br>
 
-<button class="answer" onclick="quizAnswer(true)">
-روضة 👑❤️
-</button>
+أنا بديكِ تتركي الأيام هي اللي تحكم.
 
-<button class="answer" onclick="quizAnswer(false)">
-ما بعرف 🤔
-</button>
+<br><br>
 
-</div>
+كل اللي بقدر أقوله اليوم هو:
 
-<div id="quizResult"></div>
+<strong class="highlight">
+أنا دخلت هالعلاقة وأنا صادق معك،
+ومش شايفك مرحلة مؤقتة بحياتي.
+</strong>
+
+<br><br>
+
+وإذا الأيام أثبتت شيء،
+بدي يكون إن الكلام اللي حكيته لكِ
+كان أصدق شيء قلته.
 
 </div>
 
 </section>
 
 
-<!-- العدادات -->
+<!-- ================= ثلاث حقائق ================= -->
 
 <section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
-📊 المؤشرات الرسمية
+ثلاث أشياء عني وعن روضة ❤️
 </h2>
 
 <p>
-كل ضغطة منك بتغيّر النتائج 😂❤️
+اضغطي على كل بطاقة
 </p>
 
 </div>
-
-
-<div class="counterBox">
-
-<!-- نسبة الزعل -->
-
-<div class="counter">
-
-<div class="counterHead">
-
-<span>
-😤 نسبة الزعل
-</span>
-
-<span class="percent" id="hatePercent">
-100%
-</span>
-
-</div>
-
-<div class="bar">
-
-<div class="fill hateFill" id="hateBar">
-</div>
-
-</div>
-
-<div class="counterNote" id="hateText">
-الوضع خطير... روضة زعلانة 😭
-</div>
-
-</div>
-
-
-<!-- نسبة الحب -->
-
-<div class="counter">
-
-<div class="counterHead">
-
-<span>
-❤️ نسبة حب محمد لروضة
-</span>
-
-<span class="percent" id="lovePercent">
-0%
-</span>
-
-</div>
-
-<div class="bar">
-
-<div class="fill loveFill" id="loveBar">
-</div>
-
-</div>
-
-<div class="counterNote" id="loveText">
-لسه العداد بالبداية... بس الحب ما إله نهاية 😂❤️
-</div>
-
-</div>
-
-
-<button class="btn counterButton" onclick="makeItBetter()">
-اضغطي هون ❤️
-</button>
-
-</div>
-
-</section>
-
-
-<!-- الحقائق -->
-
-<section>
-
-<div class="sectionTitle">
-
-<h2>
-❤️ ثلاث حقائق
-</h2>
-
-<p>
-اضغطي على كل وحدة
-</p>
-
-</div>
-
 
 <div class="grid">
 
-<div class="card" onclick="openCard(1)">
+<div class="card" onclick="revealCard(1)">
 
-<div class="icon">
+<div class="cardIcon">
 👑
 </div>
 
@@ -718,16 +710,16 @@ section{
 الأولى
 </h3>
 
-<p id="card1">
-اضغطي لكشف الحقيقة
+<p id="c1">
+اضغطي لكشفها
 </p>
 
 </div>
 
 
-<div class="card" onclick="openCard(2)">
+<div class="card" onclick="revealCard(2)">
 
-<div class="icon">
+<div class="cardIcon">
 ❤️
 </div>
 
@@ -735,25 +727,25 @@ section{
 الثانية
 </h3>
 
-<p id="card2">
-اضغطي لكشف الحقيقة
+<p id="c2">
+اضغطي لكشفها
 </p>
 
 </div>
 
 
-<div class="card" onclick="openCard(3)">
+<div class="card" onclick="revealCard(3)">
 
-<div class="icon">
-🔐
+<div class="cardIcon">
+∞
 </div>
 
 <h3>
 الثالثة
 </h3>
 
-<p id="card3">
-اضغطي لكشف الحقيقة
+<p id="c3">
+اضغطي لكشفها
 </p>
 
 </div>
@@ -763,18 +755,200 @@ section{
 </section>
 
 
-<!-- لعبة القلب -->
+<!-- ================= الحب اللانهائي ================= -->
 
 <section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
-💓 اختبار القلب
+عداد الحب الرسمي ❤️
 </h2>
 
 <p>
-شوفي كم مرة قلب محمد اختارك 😂
+حاولنا نحسبه... وفشل النظام 😂
+</p>
+
+</div>
+
+<div class="infinityBox">
+
+<div class="infinity">
+∞
+</div>
+
+<div class="loveNumber" id="loveNumber">
+0%
+</div>
+
+<p class="loveText" id="loveText">
+
+هذا العداد مجرد لعبة...
+لأن الحب الحقيقي ما بنقاس بالنسبة المئوية.
+
+<br>
+
+كل ما تحاولي توصلي للنهاية،
+بتكتشفي إنه ما إلها نهاية أصلاً. ❤️
+
+</p>
+
+<button class="btn" style="margin-top:25px" onclick="increaseLove()">
+زيدي الحب ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= الاختبار ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🧠 اختبار صغير لروضة
+</h2>
+
+<p>
+نشوف إذا عارفة الجواب 👀
+</p>
+
+</div>
+
+
+<div class="quiz">
+
+<div class="question">
+إذا سألنا قلب محمد: مين كانت البداية ومين النهاية؟
+</div>
+
+<div class="answers">
+
+<button class="answer" onclick="answer(false)">
+مجرد مرحلة
+</button>
+
+<button class="answer" onclick="answer(false)">
+شيء مؤقت
+</button>
+
+<button class="answer" onclick="answer(true)">
+روضة ❤️
+</button>
+
+<button class="answer" onclick="answer(false)">
+ما بعرف 😂
+</button>
+
+</div>
+
+<div class="quizResult" id="quizResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= الخط الزمني ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+⏳ لو الأيام كتبت قصتنا...
+</h2>
+
+<p>
+مش مهم شو بصير اليوم، المهم شو بيضل مع الوقت.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeItem">
+
+<div class="dot"></div>
+
+<div class="timeCard">
+
+<h3>
+اليوم ❤️
+</h3>
+
+<p>
+أنا بحكيلك إني أحبك،
+وإنتِ إلك كامل الحق تصدقي أو تستني وتشوفي.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeItem">
+
+<div class="dot"></div>
+
+<div class="timeCard">
+
+<h3>
+بعد فترة 🌙
+</h3>
+
+<p>
+إذا بقيت كلماتي مثل ما هي،
+وصارت أفعالي تؤكدها،
+وقتها الكلام بصير أقل أهمية.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeItem">
+
+<div class="dot"></div>
+
+<div class="timeCard">
+
+<h3>
+بعد سنين ♾️
+</h3>
+
+<p>
+إذا رجعنا نشوف هالموقع بعد سنين،
+بتمنى نضحك ونقول:
+"شوفي قديش كان محمد يحاول يثبتلك إنه جاد." 😂❤️
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= لعبة القلب ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+💓 اسمعي قلب محمد
+</h2>
+
+<p>
+كل ضغطة إلها معنى
 </p>
 
 </div>
@@ -786,12 +960,12 @@ section{
 ❤️
 </div>
 
-<div id="heartCount">
+<div class="heartCount" id="heartCount">
 0
 </div>
 
-<p style="color:#aaa;margin-top:10px;">
-اضغطي على القلب
+<p style="color:#aaa;margin-top:10px">
+اضغطي وشوفي كم مرة رح يختار روضة.
 </p>
 
 </div>
@@ -799,77 +973,52 @@ section{
 </section>
 
 
-<!-- الحديقة -->
+<!-- ================= الرسائل السرية ================= -->
 
 <section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
-🌹 حديقة روضة
+🔐 ثلاث رسائل ما بتفتح إلا بالضغط
 </h2>
 
 <p>
-كل وردة مخبّيّة رسالة
+كل وحدة فيها شيء مختلف
 </p>
 
 </div>
 
 
-<div class="garden">
+<div class="hiddenGrid">
 
-<div class="flower" onclick="flower(1)">
-🌹
-</div>
+<div class="secretCard" onclick="secretCard(1)">
 
-<div class="flower" onclick="flower(2)">
-🌷
-</div>
-
-<div class="flower" onclick="flower(3)">
-🌹
-</div>
-
-<div class="flower" onclick="flower(4)">
-🌷
-</div>
-
-<div class="flower" onclick="flower(5)">
-🌹
+<div class="secretContent" id="s1">
+🔒<br>
+الرسالة الأولى
 </div>
 
 </div>
 
-<div class="flowerMessage" id="flowerMessage">
+
+<div class="secretCard" onclick="secretCard(2)">
+
+<div class="secretContent" id="s2">
+🔒<br>
+الرسالة الثانية
 </div>
-
-</section>
-
-
-<!-- الهدية -->
-
-<section>
-
-<div class="sectionTitle">
-
-<h2>
-🎁 في إشي مخبّى
-</h2>
-
-<p>
-بس بدك تفتحيه...
-</p>
 
 </div>
 
 
-<div class="giftBox">
+<div class="secretCard" onclick="secretCard(3)">
 
-<div class="gift" onclick="openGift()">
-🎁
+<div class="secretContent" id="s3">
+🔒<br>
+الرسالة الثالثة
 </div>
 
-<div class="giftText" id="giftText">
 </div>
 
 </div>
@@ -877,18 +1026,18 @@ section{
 </section>
 
 
-<!-- القصائد -->
+<!-- ================= الشعر ================= -->
 
 <section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
-📜 من كلام القلب
+📜 لأن الكلام العادي ما بكفي
 </h2>
 
 <p>
-لأن روضة بتحب الشعر ❤️
+لروضة، أول الحكاية وآخرها
 </p>
 
 </div>
@@ -902,13 +1051,12 @@ section{
 
 <div class="poemText">
 
-يا روضةَ القلبِ يا معنىً أعيشُ بهِ<br>
-ويا حكايةَ حبٍّ ليس تنتهِي<br>
-إن ظننتِ بأن قلبي قد يرى بدلاً<br>
-فالقلبُ يعرفُ من يهواهُ من أزلِ<br>
-ما كلُّ وجهٍ يمرُّ بنا لهُ أثرٌ<br>
-بعضُ الوجوهِ تمرُّ...<br>
-وأنتِ تسكنينَ القلبَ والمُقَلِ ❤️
+روضةُ، يا أولَ الأسماءِ في مُهَجي<br>
+ويا آخرَ الحلمِ إن طالَ بي السهرُ<br>
+ما جئتُ أطلبُ من الدنيا سوى أثرٍ<br>
+يبقى من الودِّ إن مرّت بنا العُمُرُ<br>
+فإن سألوني: من اختارَها القلبُ؟<br>
+أقولُ: التي في فؤادي ما لها بدلُ ❤️
 
 </div>
 
@@ -923,12 +1071,14 @@ section{
 
 <div class="poemText">
 
-وإن سألتِ القلبَ يوماً من أحبّ؟<br>
-سيقولُ روضةَ دونَ تردّدِ<br>
-فما تبدّلَ في الهوى متقلّباً<br>
-ولا رأى في الناسِ غيرَكِ مقصدِ<br>
-أنتِ الحكايةُ والختامُ لبدايتي<br>
-وأنتِ معنى الحبِّ حينَ يُعبَّدِ ❤️
+أحببتُ فيكِ من الأشياءِ أجملَها<br>
+صوتَ الحضورِ، وصدقَ القلبِ، والنظرا<br>
+وإن تغيّرَتِ الأيامُ من حولنا<br>
+يبقى لكِ في فؤادي منزلٌ أبدَا<br>
+ما كنتُ أبحثُ عن حبٍّ يمرُّ بنا<br>
+بل كنتُ أبحثُ عن شيءٍ لهُ أثرا<br>
+فجئتِ أنتِ... وصارَ القلبُ يعرفُهُ<br>
+وصارَ بعدَكِ لا يرضى لهُ بدلا ❤️
 
 </div>
 
@@ -938,17 +1088,17 @@ section{
 <div class="poem">
 
 <h3>
-الثالثة ❤️
+الثالثة ♾️
 </h3>
 
 <div class="poemText">
 
-لا تسألي قلبي أيرغبُ غيرَها<br>
-فالحبُّ إن سكنَ الفؤادَ توطّنا<br>
-روضةُ هيَ الاسمُ الذي إن ذُكرَ الهوى<br>
-صارَ الفؤادُ من الفرحِ مُعلنا<br>
-ما كنتُ أبحثُ عن كثيرٍ حولنا<br>
-يكفينيَ أن تكونيَ أنتِ لنا ❤️
+وإن قالَ قائلٌ: إن الهوى ينتهي<br>
+أقولُ: بعضُ الهوى عمرٌ لهُ أمدُ<br>
+لكنَّ حبًّا سكنَ القلبَ من صدقٍ<br>
+لا تنتهي فيهِ الأيامُ والعددُ<br>
+روضةُ، إذا كانَ للحبِّ أولُهُ<br>
+فأنتِ عندي نهاياتٌ لها أبدُ ❤️
 
 </div>
 
@@ -957,75 +1107,107 @@ section{
 </section>
 
 
-<!-- الرسالة السرية -->
+<!-- ================= الوعد ================= -->
 
 <section>
 
-<div class="secret">
+<div class="promise">
 
-<div class="sectionTitle">
-
-<h2>
-🔐 الرسالة السرية
-</h2>
-
-<p>
-اضغطي على القفل
-</p>
-
-</div>
-
-
-<div class="lock" onclick="secret()">
-🔒
-</div>
-
-
-<div class="secretMessage" id="secretMessage">
-</div>
-
-</div>
-
-</section>
-
-
-<!-- النهاية -->
-
-<section class="final">
-
-<h2>
-الحكم النهائي 👑
-</h2>
+<h3>
+🤍 شيء واحد بوعدك فيه
+</h3>
 
 <p>
 
-روضة هي روضة...<br>
-
-والبرنسس هي البرنسس...<br>
-
-والمكان اللي أخذتيه بقلبي مش منافسة عشان ينافسك فيه أحد. ❤️
+مش بوعدك إني أعرف شو رح يصير بعد سنة أو خمس سنين،
+لأن محدا بيعرف المستقبل.
 
 <br><br>
 
-إنتِ مش رقم واحد بين كثير...<br>
+بس بوعدك إني ما أتعامل مع مشاعرك كأنها لعبة،
+ولا أعتبر وجودك شيء مضمون،
+ولا أخلي كلام الناس يكون هو اللي يحددلك مين أنا.
 
-<strong style="color:#ffb9e5;font-size:24px;">
-إنتِ الوحيدة.
+<br><br>
+
+<strong style="color:#ffb4df">
+خلي الأيام تحكم عليّ.
 </strong>
 
 <br><br>
 
-وإذا الموقع كله ما قدر يثبتلك هالشي...<br>
-
-خلي أفعالي هي اللي تثبته. ❤️
+لأن إذا كان كلامي صادق،
+رح تلاقي أفعالي مع الوقت بتحكي نفس الكلام.
 
 </p>
 
+</div>
+
+</section>
+
+
+<!-- ================= النهاية ================= -->
+
+<section class="final">
+
+<div class="finalBox">
+
+<h2 class="gradient">
+حبيبتي الأولى والأخيرة ❤️
+</h2>
+
+<p class="finalText">
+
+روضة...
+
+<br><br>
+
+أنا ما بقدر أطلب منكِ تصدقي كلامي لمجرد إني حكيته.
+
 <br>
 
-<button class="btn" onclick="finale()">
-اضغطي للنهاية 👑
+ولا بقدر أضمنلك شو رح يصير بالمستقبل.
+
+<br><br>
+
+بس بقدر أحكيلك شو موجود بقلبي اليوم:
+
+<br>
+
+<strong style="color:#ffb5df">
+إنتِ أول حب دخل قلبي بالطريقة هاي،
+وإنتِ الشخص اللي ما بشوفه كمرحلة وتنتهي.
+</strong>
+
+<br><br>
+
+ومهما مر الوقت،
+ما رح أنسى إنكِ كنتِ جزءًا من أجمل فصل بحياتي.
+
+<br><br>
+
+وإذا الأيام أعطتنا فرصة نكمل،
+فأنا ما بدي أكون الشخص اللي قال كلامًا حلوًا ثم اختفى...
+
+<br>
+
+<strong style="color:#ffb5df">
+بدي أكون الشخص اللي بقيت أفعاله تشبه كلامه.
+</strong>
+
+</p>
+
+<div class="finalWord">
+روضة... ما كانت مرحلة. كانت الحكاية. ♾️❤️
+</div>
+
+<br><br>
+
+<button class="btn" onclick="finalSurprise()">
+آخر مفاجأة 👑
 </button>
+
+</div>
 
 </section>
 
@@ -1034,9 +1216,9 @@ section{
 
 <script>
 
-/* النجوم */
+/* ================= النجوم ================= */
 
-for(let i=0;i<120;i++){
+for(let i=0;i<130;i++){
 
     const star=document.createElement("div");
 
@@ -1046,14 +1228,15 @@ for(let i=0;i<120;i++){
 
     star.style.top=Math.random()*100+"vh";
 
-    star.style.animationDelay=Math.random()*3+"s";
+    star.style.animationDelay=
+        Math.random()*3+"s";
 
     document.body.appendChild(star);
 
 }
 
 
-/* القلوب الطائرة */
+/* ================= القلوب الطائرة ================= */
 
 setInterval(()=>{
 
@@ -1072,34 +1255,109 @@ setInterval(()=>{
     f.textContent=
         emojis[Math.floor(Math.random()*emojis.length)];
 
-    f.style.left=Math.random()*100+"vw";
+    f.style.left=
+        Math.random()*100+"vw";
 
     f.style.fontSize=
-        (15+Math.random()*20)+"px";
+        (15+Math.random()*22)+"px";
 
     document.body.appendChild(f);
 
     setTimeout(()=>{
         f.remove();
-    },7000);
+    },8000);
 
-},1000);
+},1100);
 
 
-/* النزول للقسم */
+/* ================= التنقل ================= */
 
-function scrollToSection(id){
+function scrollToId(id){
 
-    document.getElementById(id).scrollIntoView({
+    document.getElementById(id)
+    .scrollIntoView({
         behavior:"smooth"
     });
 
 }
 
 
-/* الاختبار */
+/* ================= البطاقات ================= */
 
-function quizAnswer(correct){
+function revealCard(n){
+
+    const messages={
+
+        1:
+        "بالنسبة إليكِ، إنتِ مش مجرد شخص حبيته... إنتِ الشخص اللي أخذ مكانًا خاصًا بقلبي. 👑",
+
+        2:
+        "أنا ما بديكِ تصدقي كلامي لأن الموقع حلو؛ بدي الأيام والأفعال هي اللي تخليكِ تصدقيه.",
+
+        3:
+        "إذا الحب له بداية، فبدايتي كانت معكِ. وإذا له نهاية، فأنا ما شايفها. ♾️❤️"
+
+    };
+
+    document.getElementById("c"+n).textContent=
+        messages[n];
+
+    celebration(8);
+
+}
+
+
+/* ================= عداد الحب ================= */
+
+let love=0;
+
+function increaseLove(){
+
+    love+=10;
+
+    if(love>100){
+        love=100;
+    }
+
+    document.getElementById("loveNumber").textContent=
+        love+"%";
+
+    if(love<30){
+
+        document.getElementById("loveText").innerHTML=
+        "لسه بالبداية... ❤️";
+
+    }
+
+    else if(love<70){
+
+        document.getElementById("loveText").innerHTML=
+        "المؤشر ارتفع... بس واضح إنه ما رح يقدر يقيسه فعليًا 😂❤️";
+
+    }
+
+    else if(love<100){
+
+        document.getElementById("loveText").innerHTML=
+        "قربنا من 100%... والمشكلة إن الحب الحقيقي أكبر من الرقم. ❤️";
+
+    }
+
+    else{
+
+        document.getElementById("loveText").innerHTML=
+        "100%؟ 😂 هذا بس الحد الأعلى للعداد... أما الحب الحقيقي فـ ♾️❤️";
+
+    }
+
+    celebration(5);
+
+}
+
+
+/* ================= الاختبار ================= */
+
+function answer(correct){
 
     const result=
         document.getElementById("quizResult");
@@ -1107,420 +1365,20 @@ function quizAnswer(correct){
     if(correct){
 
         result.innerHTML=
-            "صح عليكِ 😂❤️ واضح إنكِ عارفة الجواب.";
+            "صح 😂❤️ من البداية للنهاية: روضة.";
 
-        celebration(20);
-
-        increaseLove(8);
-
-        decreaseHate(8);
+        celebration(18);
 
     }else{
 
         result.innerHTML=
-            "لااااا 😂 جربي مرة ثانية.";
+            "لاااا 😂 ركزي شوي... الجواب أسهل مما تتخيلي.";
 
     }
 
 }
 
 
-/* العدادات */
+/* ================= القلب ================= */
 
-let hate=100;
-
-let love=0;
-
-
-function updateCounters(){
-
-    document.getElementById("hatePercent").textContent=
-        hate+"%";
-
-    document.getElementById("lovePercent").textContent=
-        love+"%";
-
-
-    document.getElementById("hateBar").style.width=
-        hate+"%";
-
-    document.getElementById("loveBar").style.width=
-        love+"%";
-
-
-    const hateText=
-        document.getElementById("hateText");
-
-
-    if(hate>75){
-
-        hateText.textContent=
-            "الوضع خطير... روضة زعلانة 😭";
-
-    }
-
-    else if(hate>50){
-
-        hateText.textContent=
-            "بدأنا نهدّي الأمور... شوي شوي 😂";
-
-    }
-
-    else if(hate>25){
-
-        hateText.textContent=
-            "الزعل قاعد يختفي ❤️";
-
-    }
-
-    else if(hate>0){
-
-        hateText.textContent=
-            "قربنا... باقي شوية زعل بس 👀❤️";
-
-    }
-
-    else{
-
-        hateText.textContent=
-            "🚨 الزعل اختفى تماماً! 🚨";
-
-    }
-
-
-    const loveText=
-        document.getElementById("loveText");
-
-
-    if(love<30){
-
-        loveText.textContent=
-            "لسه العداد بالبداية... والحب أكبر من العداد ❤️";
-
-    }
-
-    else if(love<60){
-
-        loveText.textContent=
-            "الحب قاعد يكبر... 👀❤️";
-
-    }
-
-    else if(love<90){
-
-        loveText.textContent=
-            "المؤشر دخل المنطقة الخطيرة 😂❤️";
-
-    }
-
-    else if(love<100){
-
-        loveText.textContent=
-            "تقريباً وصلنا للآخر... بس الحب ما إله آخر.";
-
-    }
-
-    else{
-
-        loveText.textContent=
-            "100%؟ مستحيل 😂❤️ حب محمد لروضة ما إله نهاية.";
-
-    }
-
-}
-
-
-function decreaseHate(amount){
-
-    hate-=amount;
-
-    if(hate<0){
-
-        hate=0;
-
-    }
-
-    updateCounters();
-
-}
-
-
-function increaseLove(amount){
-
-    love+=amount;
-
-    if(love>100){
-
-        love=100;
-
-    }
-
-    updateCounters();
-
-}
-
-
-/* زر تحسين الوضع */
-
-function makeItBetter(){
-
-    decreaseHate(10);
-
-    increaseLove(12);
-
-    celebration(12);
-
-
-    if(hate===0){
-
-        setTimeout(()=>{
-
-            alert(
-                "🎉 مبروك يا روضة!\n\n" +
-                "نسبة الزعل وصلت 0% ❤️👑"
-            );
-
-        },500);
-
-    }
-
-}
-
-
-/* لعبة القلب */
-
-let hearts=0;
-
-
-function heartClick(){
-
-    hearts++;
-
-    document.getElementById("heartCount").textContent=
-        hearts;
-
-    decreaseHate(1);
-
-    increaseLove(2);
-
-    celebration(3);
-
-}
-
-
-/* البطاقات */
-
-function openCard(card){
-
-    const messages={
-
-        1:
-        "إنتِ مش وحدة من كثير... إنتِ الشخص اللي إله مكانه الخاص عندي. 👑❤️",
-
-        2:
-        "لو في شيء بدي أوضحه، فهو إن وجودك بحياتي مش شيء عابر أبداً. ❤️",
-
-        3:
-        "ما بديكِ تصدقي كلام مكتوب بموقع... بدي أفعالي هي اللي تثبتلك إنكِ الوحيدة. 🔐❤️"
-
-    };
-
-
-    document.getElementById("card"+card).textContent=
-        messages[card];
-
-
-    decreaseHate(5);
-
-    increaseLove(5);
-
-}
-
-
-/* الورود */
-
-const flowerMessages={
-
-    1:
-        "🌹 لأنكِ من الأشياء الجميلة اللي ما بدي أخسرها.",
-
-    2:
-        "🌷 لو للحب لون... يمكن يكون لون هالوردة.",
-
-    3:
-        "🌹 روضة، اسمك لحاله كفاية يخلي المكان أجمل.",
-
-    4:
-        "🌷 إنتِ مش بديلة عن أحد... إنتِ الأصل.",
-
-    5:
-        "🌹 آخر وردة، بس أكيد مش آخر الكلام عنكِ ❤️"
-
-};
-
-
-function flower(number){
-
-    document.getElementById("flowerMessage").textContent=
-        flowerMessages[number];
-
-
-    decreaseHate(4);
-
-    increaseLove(4);
-
-}
-
-
-/* الهدية */
-
-function openGift(){
-
-    document.getElementById("giftText").innerHTML=
-
-        "🎁 المفاجأة: لو بقدر أحطلكِ إشي داخل هالعلبة، بحط فيها كل مرة اخترتكِ فيها من قلبي. ❤️👑";
-
-
-    decreaseHate(7);
-
-    increaseLove(10);
-
-    celebration(20);
-
-}
-
-
-/* القفل */
-
-function secret(){
-
-    const box=
-        document.getElementById("secretMessage");
-
-
-    box.innerHTML=
-
-        "إنتِ مش رقم واحد بين كثير...<br>" +
-
-        "<strong>إنتِ الوحيدة. 👑❤️</strong>" +
-
-        "<br><br>" +
-
-        "وما بديكِ تصدقي هالكلام بس لأنه مكتوب هون؛ " +
-
-        "بدي أفعالي هي اللي تثبتلك إياه.";
-
-
-    decreaseHate(10);
-
-    increaseLove(10);
-
-    celebration(30);
-
-}
-
-
-/* النهاية */
-
-function finale(){
-
-    decreaseHate(20);
-
-    increaseLove(20);
-
-    celebration(60);
-
-
-    setTimeout(()=>{
-
-        alert(
-
-            "👑❤️ روضة هي روضة...\n\n" +
-
-            "والبرنسس هي البرنسس...\n\n" +
-
-            "وما إلها بديل."
-
-        );
-
-    },500);
-
-}
-
-
-/* الاحتفال */
-
-function celebration(amount){
-
-    for(let i=0;i<amount;i++){
-
-        setTimeout(()=>{
-
-            const s=
-                document.createElement("div");
-
-            s.className="spark";
-
-
-            const emojis=[
-                "❤️",
-                "💗",
-                "✨",
-                "👑",
-                "🌹",
-                "🤍"
-            ];
-
-
-            s.textContent=
-                emojis[
-                    Math.floor(
-                        Math.random()*emojis.length
-                    )
-                ];
-
-
-            s.style.left=
-                (40+Math.random()*20)+"vw";
-
-
-            s.style.top=
-                (40+Math.random()*20)+"vh";
-
-
-            s.style.setProperty(
-                "--x",
-                ((Math.random()-.5)*500)+"px"
-            );
-
-
-            s.style.setProperty(
-                "--y",
-                ((Math.random()-.5)*500)+"px"
-            );
-
-
-            document.body.appendChild(s);
-
-
-            setTimeout(()=>{
-
-                s.remove();
-
-            },1200);
-
-        },i*20);
-
-    }
-
-}
-
-
-/* تشغيل العدادات */
-
-updateCounters();
-
-</script>
-
-</body>
-</html>
+let h
