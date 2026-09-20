@@ -10,6 +10,35 @@
 
 <style>
 
+/* =====================================================
+   الألوان الأساسية
+   كحلي عميق + خمري غامق
+===================================================== */
+
+:root{
+    --navy:#071525;
+    --navy2:#0b1d32;
+    --navy3:#102943;
+
+    --burgundy:#4b101f;
+    --burgundy2:#68182b;
+    --wine:#8b2942;
+
+    --gold:#d8b477;
+    --light:#f5e7d5;
+
+    --white:#f8f5f1;
+    --muted:#aeb8c4;
+
+    --glass:rgba(255,255,255,.045);
+    --border:rgba(216,180,119,.16);
+}
+
+
+/* =====================================================
+   الأساس
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -22,52 +51,95 @@ html{
 
 body{
     font-family:"Cairo",sans-serif;
-    color:white;
+    color:var(--white);
+
     background:
-        radial-gradient(circle at 15% 15%,rgba(255,80,170,.16),transparent 30%),
-        radial-gradient(circle at 85% 75%,rgba(120,70,255,.17),transparent 32%),
-        linear-gradient(135deg,#05050d,#100817,#070711);
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(104,24,43,.38),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(15,48,78,.55),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #030a12 0%,
+            var(--navy) 45%,
+            #180a12 100%
+        );
+
     overflow-x:hidden;
 }
 
-/* ================= النجوم ================= */
+button{
+    -webkit-tap-highlight-color:transparent;
+}
+
+
+/* =====================================================
+   النجوم
+===================================================== */
 
 .star{
     position:fixed;
+
     width:2px;
     height:2px;
-    background:white;
+
+    background:#fff;
+
     border-radius:50%;
-    opacity:.5;
+
+    opacity:.45;
+
     z-index:-1;
+
     animation:twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle{
+
     from{
         opacity:.15;
         transform:scale(.7);
     }
+
     to{
-        opacity:1;
+        opacity:.9;
         transform:scale(1.5);
     }
+
 }
 
-/* ================= القلوب ================= */
+
+/* =====================================================
+   القلوب الطائرة
+===================================================== */
 
 .float{
     position:fixed;
+
     bottom:-50px;
+
     pointer-events:none;
+
     z-index:20;
+
     animation:floatUp 8s linear forwards;
 }
 
 @keyframes floatUp{
 
     0%{
-        transform:translateY(0) rotate(0);
+        transform:
+            translateY(0)
+            rotate(0);
+
         opacity:0;
     }
 
@@ -76,13 +148,19 @@ body{
     }
 
     100%{
-        transform:translateY(-110vh) rotate(360deg);
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
         opacity:0;
     }
 
 }
 
-/* ================= عام ================= */
+
+/* =====================================================
+   الحاوية
+===================================================== */
 
 .container{
     width:min(1050px,92%);
@@ -90,7 +168,7 @@ body{
 }
 
 section{
-    padding:100px 0;
+    padding:90px 0;
 }
 
 .title{
@@ -101,451 +179,900 @@ section{
 .title h2{
     font-size:clamp(30px,5vw,45px);
     margin-bottom:10px;
+
+    color:var(--light);
 }
 
 .title p{
-    color:#aaa;
+    color:var(--muted);
 }
 
-/* ================= Hero ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
     min-height:100vh;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
 }
 
 .heroBox{
+
     width:min(850px,100%);
+
     padding:65px 30px;
+
     border-radius:40px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(18px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9,30,50,.72),
+            rgba(64,13,29,.58)
+        );
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(20px);
+
     box-shadow:
-        0 0 100px rgba(210,60,170,.12),
-        inset 0 0 40px rgba(255,255,255,.02);
+
+        0 0 100px rgba(72,12,30,.28),
+
+        inset 0 0 50px
+        rgba(255,255,255,.015);
 }
 
 .secretLabel{
+
     display:inline-block;
+
     padding:8px 20px;
+
     border-radius:30px;
-    background:rgba(255,255,255,.07);
-    color:#ddd;
+
+    background:
+        rgba(216,180,119,.08);
+
+    border:
+        1px solid
+        rgba(216,180,119,.2);
+
+    color:#dbc59f;
+
     margin-bottom:25px;
 }
 
 .hero h1{
-    font-size:clamp(55px,12vw,110px);
+
+    font-size:
+        clamp(55px,12vw,110px);
+
     margin-bottom:5px;
 }
 
 .gradient{
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #ff9fdf,
-        #d0aaff,
-        #fff
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            #f4eadb,
+            #d7b777,
+            #9a314a,
+            #f4eadb
+        );
+
     background-size:200%;
+
     -webkit-background-clip:text;
+
     color:transparent;
-    animation:shine 4s linear infinite;
+
+    animation:shine 5s linear infinite;
 }
 
 @keyframes shine{
+
     to{
         background-position:200%;
     }
+
 }
 
 .hero h2{
+
     font-size:30px;
+
     margin-bottom:20px;
+
+    color:#ead8bd;
 }
 
 .heroText{
-    color:#aaa;
+
+    color:#b7c0ca;
+
     font-size:18px;
+
     line-height:2;
+
     max-width:650px;
-    margin:auto auto 30px;
+
+    margin:
+        auto
+        auto
+        30px;
 }
 
+
+/* =====================================================
+   الأزرار
+===================================================== */
+
 .btn{
-    border:0;
+
+    border:1px solid
+        rgba(216,180,119,.25);
+
     color:white;
+
     font-family:inherit;
+
     font-weight:700;
+
     font-size:16px;
+
     padding:15px 28px;
+
     border-radius:18px;
+
     cursor:pointer;
-    background:linear-gradient(135deg,#a63d91,#6144b5);
-    box-shadow:0 10px 35px rgba(120,50,160,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            #64182b,
+            #8a2941
+        );
+
+    box-shadow:
+
+        0 10px 35px
+        rgba(72,10,28,.35);
+
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-4px) scale(1.03);
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(104,24,43,.45);
 }
 
-/* ================= رسالة ================= */
+.btn:active{
+
+    transform:scale(.96);
+}
+
+
+/* =====================================================
+   الرسالة
+===================================================== */
 
 .messageBox{
+
     max-width:850px;
+
     margin:auto;
+
     padding:40px;
+
     border-radius:30px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.09);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(9,30,50,.6),
+            rgba(75,16,31,.38)
+        );
+
+    border:
+        1px solid var(--border);
+
     line-height:2.1;
-    color:#ddd;
+
+    color:#d3d8de;
+
     text-align:center;
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.2);
 }
 
 .highlight{
-    color:#ffacdF;
+
+    color:#d9b77d;
+
     font-weight:800;
 }
 
-/* ================= بطاقات ================= */
+
+/* =====================================================
+   البطاقات
+===================================================== */
 
 .grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:20px;
 }
 
 .card{
+
     padding:30px;
+
     border-radius:27px;
+
     text-align:center;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.09);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(12,34,56,.65),
+            rgba(73,14,31,.45)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,119,.12);
+
     transition:.3s;
+
     cursor:pointer;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    background:rgba(255,255,255,.075);
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(216,180,119,.3);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(15,42,68,.75),
+            rgba(91,19,39,.58)
+        );
+}
+
+.card:active{
+
+    transform:scale(.97);
 }
 
 .cardIcon{
+
     font-size:48px;
+
     margin-bottom:18px;
 }
 
 .card h3{
+
     margin-bottom:12px;
+
+    color:#e3c38b;
 }
 
 .card p{
-    color:#aaa;
+
+    color:#aeb7c1;
+
     line-height:1.9;
 }
 
-/* ================= العداد ================= */
+
+/* =====================================================
+   عداد الحب
+===================================================== */
 
 .infinityBox{
+
     max-width:800px;
+
     margin:auto;
+
     padding:40px 25px;
+
     border-radius:35px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.1);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8,29,48,.72),
+            rgba(67,13,28,.58)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,119,.16);
+
     text-align:center;
 }
 
 .infinity{
+
     font-size:120px;
+
     line-height:1;
-    background:linear-gradient(135deg,#ff72b7,#b989ff,#7fc8ff);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #d7b777,
+            #8e2942,
+            #9db5cb
+        );
+
     -webkit-background-clip:text;
+
     color:transparent;
+
     animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
+
     0%,100%{
         transform:scale(1);
     }
+
     50%{
         transform:scale(1.08);
     }
+
 }
 
 .loveNumber{
+
     font-size:45px;
+
     font-weight:800;
+
     margin:15px 0;
+
+    color:#e0c18a;
 }
 
 .loveText{
-    color:#aaa;
+
+    color:#aeb8c4;
+
     line-height:2;
 }
 
-/* ================= اختبار ================= */
+
+/* =====================================================
+   الاختبار
+===================================================== */
 
 .quiz{
+
     max-width:750px;
+
     margin:auto;
+
     padding:35px;
-    background:rgba(255,255,255,.045);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(10,31,51,.7),
+            rgba(69,14,30,.5)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,119,.13);
+
     border-radius:30px;
-    border:1px solid rgba(255,255,255,.1);
+
     text-align:center;
 }
 
 .question{
+
     font-size:21px;
+
     margin-bottom:25px;
+
+    color:#eadcc7;
 }
 
 .answers{
+
     display:grid;
+
     gap:12px;
 }
 
 .answer{
+
     padding:15px;
+
     border-radius:16px;
-    border:1px solid rgba(255,255,255,.1);
-    background:rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(216,180,119,.12);
+
+    background:
+
+        rgba(255,255,255,.035);
+
     color:white;
+
     font-family:inherit;
+
     cursor:pointer;
+
     transition:.25s;
 }
 
 .answer:hover{
+
     transform:scale(1.02);
-    background:rgba(255,255,255,.1);
+
+    background:
+        rgba(104,24,43,.3);
+
+    border-color:
+        rgba(216,180,119,.25);
+}
+
+.answer:active{
+
+    transform:scale(.97);
 }
 
 .quizResult{
+
     margin-top:20px;
+
     min-height:35px;
-    color:#ffb6df;
+
+    color:#d8b477;
+
     font-weight:700;
 }
 
-/* ================= الخط الزمني ================= */
+
+/* =====================================================
+   الخط الزمني
+===================================================== */
 
 .timeline{
+
     max-width:800px;
+
     margin:auto;
+
     position:relative;
 }
 
 .timeline:before{
+
     content:"";
+
     position:absolute;
+
     right:20px;
+
     top:0;
+
     bottom:0;
+
     width:2px;
-    background:linear-gradient(
-        transparent,
-        #c05aaf,
-        transparent
-    );
+
+    background:
+
+        linear-gradient(
+            transparent,
+            #742139,
+            #d8b477,
+            transparent
+        );
 }
 
 .timeItem{
+
     position:relative;
+
     margin-bottom:30px;
+
     padding-right:55px;
 }
 
 .dot{
+
     position:absolute;
+
     right:11px;
+
     top:5px;
+
     width:20px;
+
     height:20px;
+
     border-radius:50%;
-    background:#e47bc2;
-    box-shadow:0 0 20px #e47bc2;
+
+    background:#7d233a;
+
+    box-shadow:
+        0 0 20px
+        rgba(125,35,58,.8);
 }
 
 .timeCard{
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.08);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(10,31,51,.62),
+            rgba(70,14,30,.45)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,119,.1);
+
     border-radius:25px;
+
     padding:25px;
 }
 
 .timeCard h3{
+
     margin-bottom:8px;
+
+    color:#d8b477;
 }
 
 .timeCard p{
-    color:#aaa;
+
+    color:#aeb8c4;
+
     line-height:1.9;
 }
 
-/* ================= لعبة القلب ================= */
+
+/* =====================================================
+   لعبة القلب
+===================================================== */
 
 .heartGame{
+
     text-align:center;
 }
 
 .bigHeart{
+
     font-size:120px;
+
     cursor:pointer;
+
     display:inline-block;
+
     user-select:none;
+
     transition:.12s;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(126,31,55,.55)
+        );
+}
+
+.bigHeart:hover{
+
+    transform:scale(1.08);
 }
 
 .bigHeart:active{
+
     transform:scale(.78);
 }
 
 .heartCount{
+
     font-size:32px;
+
     margin-top:10px;
+
+    color:#d8b477;
 }
 
-/* ================= الرسائل المخفية ================= */
+
+/* =====================================================
+   الرسائل السرية
+===================================================== */
 
 .hiddenGrid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:20px;
 }
 
 .secretCard{
+
     min-height:180px;
+
     padding:30px;
+
     border-radius:25px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.09);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8,29,48,.65),
+            rgba(75,16,31,.48)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,119,.1);
+
     text-align:center;
+
     cursor:pointer;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     transition:.3s;
 }
 
 .secretCard:hover{
-    transform:translateY(-7px);
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(216,180,119,.25);
+}
+
+.secretCard:active{
+
+    transform:scale(.97);
 }
 
 .secretContent{
-    color:#ffb6df;
+
+    color:#d8b477;
+
     line-height:2;
 }
 
-/* ================= الشعر ================= */
+
+/* =====================================================
+   الشعر
+===================================================== */
 
 .poem{
+
     max-width:850px;
-    margin:0 auto 25px;
+
+    margin:
+        0 auto 25px;
+
     padding:40px 25px;
+
     text-align:center;
+
     border-radius:30px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.09);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(9,30,50,.65),
+            rgba(72,14,30,.45)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,119,.12);
 }
 
 .poem h3{
+
     margin-bottom:20px;
+
+    color:#d8b477;
 }
 
 .poemText{
+
     font-family:"Amiri",serif;
+
     font-size:25px;
+
     line-height:2;
+
+    color:#eadfd1;
 }
 
-/* ================= وعد ================= */
+
+/* =====================================================
+   الوعد
+===================================================== */
 
 .promise{
+
     max-width:850px;
+
     margin:auto;
+
     text-align:center;
+
     padding:45px 30px;
+
     border-radius:35px;
+
     background:
+
         linear-gradient(
             135deg,
-            rgba(255,100,180,.08),
-            rgba(100,80,220,.08)
+            rgba(72,14,30,.42),
+            rgba(8,31,52,.65)
         );
-    border:1px solid rgba(255,255,255,.1);
+
+    border:
+        1px solid
+        rgba(216,180,119,.15);
 }
 
 .promise h3{
+
     font-size:30px;
+
     margin-bottom:20px;
+
+    color:#d8b477;
 }
 
 .promise p{
-    color:#ccc;
+
+    color:#c5ccd3;
+
     line-height:2;
+
     font-size:18px;
 }
 
-/* ================= النهاية ================= */
+
+/* =====================================================
+   النهاية
+===================================================== */
 
 .final{
+
     min-height:80vh;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
 }
 
 .finalBox{
+
     max-width:850px;
 }
 
 .final h2{
-    font-size:clamp(40px,7vw,70px);
+
+    font-size:
+        clamp(40px,7vw,70px);
+
     margin-bottom:20px;
 }
 
 .finalText{
-    color:#bbb;
+
+    color:#b9c1ca;
+
     font-size:19px;
+
     line-height:2.2;
 }
 
 .finalWord{
+
     margin-top:30px;
+
     font-family:"Amiri",serif;
+
     font-size:35px;
-    color:#ffb5df;
+
+    color:#d8b477;
 }
 
-/* ================= الانفجار ================= */
+
+/* =====================================================
+   مؤثرات الاحتفال
+===================================================== */
 
 .spark{
+
     position:fixed;
+
     pointer-events:none;
+
     z-index:100;
+
     font-size:25px;
-    animation:spark 1.3s forwards;
+
+    animation:
+        spark 1.3s forwards;
 }
 
 @keyframes spark{
 
     0%{
+
         opacity:1;
-        transform:translate(0,0) scale(1);
+
+        transform:
+            translate(0,0)
+            scale(1);
     }
 
     100%{
+
         opacity:0;
+
         transform:
             translate(var(--x),var(--y))
             scale(.1);
@@ -553,7 +1080,10 @@ section{
 
 }
 
-/* ================= Responsive ================= */
+
+/* =====================================================
+   الموبايل
+===================================================== */
 
 @media(max-width:700px){
 
@@ -583,16 +1113,25 @@ section{
         font-size:22px;
     }
 
+    .hero h2{
+        font-size:24px;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -611,15 +1150,27 @@ section{
 </h2>
 
 <p class="heroText">
+
 يمكن كثير ناس يحكولك إن العلاقات ما بتدوم،
 وإن كل كلمة حلوة بالنهاية بتطلع كذب...
+
+<br><br>
+
 عشان هيك أنا ما عملتلك هالموقع عشان أطلب منك تصدقي الكلام.
+
 <br>
+
 عملته عشان تعرفي شو موجود بقلبي.
+
 </p>
 
-<button class="btn" onclick="scrollToId('truth')">
+<button
+    class="btn"
+    type="button"
+    onclick="scrollToId('truth')">
+
 ابدئي من هون ❤️
+
 </button>
 
 </div>
@@ -627,7 +1178,9 @@ section{
 </section>
 
 
-<!-- ================= الحقيقة ================= -->
+<!-- =====================================================
+     الحقيقة
+===================================================== -->
 
 <section id="truth">
 
@@ -643,6 +1196,7 @@ section{
 
 </div>
 
+
 <div class="messageBox">
 
 أنا بعرف إنكِ ممكن تسمعي من صاحباتك أو بنات خالاتك
@@ -652,11 +1206,14 @@ section{
 <br><br>
 
 وأنا ما بدي أقولك:
+
 <strong class="highlight">
 "لا تصدقيهم وصدقي كلامي."
 </strong>
 
-لأني بالنهاية الكلام سهل.
+<br><br>
+
+لأن الكلام سهل.
 
 <br><br>
 
@@ -666,9 +1223,13 @@ section{
 
 كل اللي بقدر أقوله اليوم هو:
 
+<br>
+
 <strong class="highlight">
+
 أنا دخلت هالعلاقة وأنا صادق معك،
 ومش شايفك مرحلة مؤقتة بحياتي.
+
 </strong>
 
 <br><br>
@@ -682,7 +1243,9 @@ section{
 </section>
 
 
-<!-- ================= ثلاث حقائق ================= -->
+<!-- =====================================================
+     البطاقات
+===================================================== -->
 
 <section>
 
@@ -698,9 +1261,13 @@ section{
 
 </div>
 
+
 <div class="grid">
 
-<div class="card" onclick="revealCard(1)">
+
+<div
+    class="card"
+    onclick="revealCard(1)">
 
 <div class="cardIcon">
 👑
@@ -717,7 +1284,9 @@ section{
 </div>
 
 
-<div class="card" onclick="revealCard(2)">
+<div
+    class="card"
+    onclick="revealCard(2)">
 
 <div class="cardIcon">
 ❤️
@@ -734,7 +1303,9 @@ section{
 </div>
 
 
-<div class="card" onclick="revealCard(3)">
+<div
+    class="card"
+    onclick="revealCard(3)">
 
 <div class="cardIcon">
 ∞
@@ -750,12 +1321,15 @@ section{
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- ================= الحب اللانهائي ================= -->
+<!-- =====================================================
+     عداد الحب
+===================================================== -->
 
 <section>
 
@@ -771,17 +1345,24 @@ section{
 
 </div>
 
+
 <div class="infinityBox">
 
 <div class="infinity">
 ∞
 </div>
 
-<div class="loveNumber" id="loveNumber">
+<div
+    class="loveNumber"
+    id="loveNumber">
+
 0%
+
 </div>
 
-<p class="loveText" id="loveText">
+<p
+    class="loveText"
+    id="loveText">
 
 هذا العداد مجرد لعبة...
 لأن الحب الحقيقي ما بنقاس بالنسبة المئوية.
@@ -793,8 +1374,15 @@ section{
 
 </p>
 
-<button class="btn" style="margin-top:25px" onclick="increaseLove()">
+
+<button
+    class="btn"
+    type="button"
+    style="margin-top:25px"
+    onclick="increaseLove()">
+
 زيدي الحب ❤️
+
 </button>
 
 </div>
@@ -802,7 +1390,9 @@ section{
 </section>
 
 
-<!-- ================= الاختبار ================= -->
+<!-- =====================================================
+     الاختبار
+===================================================== -->
 
 <section>
 
@@ -822,37 +1412,73 @@ section{
 <div class="quiz">
 
 <div class="question">
-إذا سألنا قلب محمد: مين كانت البداية ومين النهاية؟
+
+إذا سألنا قلب محمد:
+مين كانت البداية ومين النهاية؟
+
 </div>
+
 
 <div class="answers">
 
-<button class="answer" onclick="answer(false)">
+
+<button
+    class="answer"
+    type="button"
+    onclick="answer(false)">
+
 مجرد مرحلة
+
 </button>
 
-<button class="answer" onclick="answer(false)">
+
+<button
+    class="answer"
+    type="button"
+    onclick="answer(false)">
+
 شيء مؤقت
+
 </button>
 
-<button class="answer" onclick="answer(true)">
+
+<button
+    class="answer"
+    type="button"
+    onclick="answer(true)">
+
 روضة ❤️
+
 </button>
 
-<button class="answer" onclick="answer(false)">
+
+<button
+    class="answer"
+    type="button"
+    onclick="answer(false)">
+
 ما بعرف 😂
+
 </button>
+
 
 </div>
 
-<div class="quizResult" id="quizResult"></div>
+
+<div
+    class="quizResult"
+    id="quizResult">
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= الخط الزمني ================= -->
+<!-- =====================================================
+     الخط الزمني
+===================================================== -->
 
 <section>
 
@@ -871,6 +1497,7 @@ section{
 
 <div class="timeline">
 
+
 <div class="timeItem">
 
 <div class="dot"></div>
@@ -882,8 +1509,10 @@ section{
 </h3>
 
 <p>
+
 أنا بحكيلك إني أحبك،
 وإنتِ إلك كامل الحق تصدقي أو تستني وتشوفي.
+
 </p>
 
 </div>
@@ -902,9 +1531,11 @@ section{
 </h3>
 
 <p>
+
 إذا بقيت كلماتي مثل ما هي،
 وصارت أفعالي تؤكدها،
 وقتها الكلام بصير أقل أهمية.
+
 </p>
 
 </div>
@@ -923,21 +1554,29 @@ section{
 </h3>
 
 <p>
+
 إذا رجعنا نشوف هالموقع بعد سنين،
 بتمنى نضحك ونقول:
+
+<br>
+
 "شوفي قديش كان محمد يحاول يثبتلك إنه جاد." 😂❤️
+
 </p>
 
 </div>
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- ================= لعبة القلب ================= -->
+<!-- =====================================================
+     لعبة القلب
+===================================================== -->
 
 <section>
 
@@ -956,24 +1595,44 @@ section{
 
 <div class="heartGame">
 
-<div class="bigHeart" onclick="heartClick()">
+
+<div
+    class="bigHeart"
+    onclick="heartClick()">
+
 ❤️
+
 </div>
 
-<div class="heartCount" id="heartCount">
+
+<div
+    class="heartCount"
+    id="heartCount">
+
 0
+
 </div>
 
-<p style="color:#aaa;margin-top:10px">
+
+<p
+    style="
+        color:#9faab6;
+        margin-top:10px;
+    ">
+
 اضغطي وشوفي كم مرة رح يختار روضة.
+
 </p>
+
 
 </div>
 
 </section>
 
 
-<!-- ================= الرسائل السرية ================= -->
+<!-- =====================================================
+     الرسائل السرية
+===================================================== -->
 
 <section>
 
@@ -986,399 +1645,3 @@ section{
 <p>
 كل وحدة فيها شيء مختلف
 </p>
-
-</div>
-
-
-<div class="hiddenGrid">
-
-<div class="secretCard" onclick="secretCard(1)">
-
-<div class="secretContent" id="s1">
-🔒<br>
-الرسالة الأولى
-</div>
-
-</div>
-
-
-<div class="secretCard" onclick="secretCard(2)">
-
-<div class="secretContent" id="s2">
-🔒<br>
-الرسالة الثانية
-</div>
-
-</div>
-
-
-<div class="secretCard" onclick="secretCard(3)">
-
-<div class="secretContent" id="s3">
-🔒<br>
-الرسالة الثالثة
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= الشعر ================= -->
-
-<section>
-
-<div class="title">
-
-<h2>
-📜 لأن الكلام العادي ما بكفي
-</h2>
-
-<p>
-لروضة، أول الحكاية وآخرها
-</p>
-
-</div>
-
-
-<div class="poem">
-
-<h3>
-الأولى 👑
-</h3>
-
-<div class="poemText">
-
-روضةُ، يا أولَ الأسماءِ في مُهَجي<br>
-ويا آخرَ الحلمِ إن طالَ بي السهرُ<br>
-ما جئتُ أطلبُ من الدنيا سوى أثرٍ<br>
-يبقى من الودِّ إن مرّت بنا العُمُرُ<br>
-فإن سألوني: من اختارَها القلبُ؟<br>
-أقولُ: التي في فؤادي ما لها بدلُ ❤️
-
-</div>
-
-</div>
-
-
-<div class="poem">
-
-<h3>
-الثانية 🌙
-</h3>
-
-<div class="poemText">
-
-أحببتُ فيكِ من الأشياءِ أجملَها<br>
-صوتَ الحضورِ، وصدقَ القلبِ، والنظرا<br>
-وإن تغيّرَتِ الأيامُ من حولنا<br>
-يبقى لكِ في فؤادي منزلٌ أبدَا<br>
-ما كنتُ أبحثُ عن حبٍّ يمرُّ بنا<br>
-بل كنتُ أبحثُ عن شيءٍ لهُ أثرا<br>
-فجئتِ أنتِ... وصارَ القلبُ يعرفُهُ<br>
-وصارَ بعدَكِ لا يرضى لهُ بدلا ❤️
-
-</div>
-
-</div>
-
-
-<div class="poem">
-
-<h3>
-الثالثة ♾️
-</h3>
-
-<div class="poemText">
-
-وإن قالَ قائلٌ: إن الهوى ينتهي<br>
-أقولُ: بعضُ الهوى عمرٌ لهُ أمدُ<br>
-لكنَّ حبًّا سكنَ القلبَ من صدقٍ<br>
-لا تنتهي فيهِ الأيامُ والعددُ<br>
-روضةُ، إذا كانَ للحبِّ أولُهُ<br>
-فأنتِ عندي نهاياتٌ لها أبدُ ❤️
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= الوعد ================= -->
-
-<section>
-
-<div class="promise">
-
-<h3>
-🤍 شيء واحد بوعدك فيه
-</h3>
-
-<p>
-
-مش بوعدك إني أعرف شو رح يصير بعد سنة أو خمس سنين،
-لأن محدا بيعرف المستقبل.
-
-<br><br>
-
-بس بوعدك إني ما أتعامل مع مشاعرك كأنها لعبة،
-ولا أعتبر وجودك شيء مضمون،
-ولا أخلي كلام الناس يكون هو اللي يحددلك مين أنا.
-
-<br><br>
-
-<strong style="color:#ffb4df">
-خلي الأيام تحكم عليّ.
-</strong>
-
-<br><br>
-
-لأن إذا كان كلامي صادق،
-رح تلاقي أفعالي مع الوقت بتحكي نفس الكلام.
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= النهاية ================= -->
-
-<section class="final">
-
-<div class="finalBox">
-
-<h2 class="gradient">
-حبيبتي الأولى والأخيرة ❤️
-</h2>
-
-<p class="finalText">
-
-روضة...
-
-<br><br>
-
-أنا ما بقدر أطلب منكِ تصدقي كلامي لمجرد إني حكيته.
-
-<br>
-
-ولا بقدر أضمنلك شو رح يصير بالمستقبل.
-
-<br><br>
-
-بس بقدر أحكيلك شو موجود بقلبي اليوم:
-
-<br>
-
-<strong style="color:#ffb5df">
-إنتِ أول حب دخل قلبي بالطريقة هاي،
-وإنتِ الشخص اللي ما بشوفه كمرحلة وتنتهي.
-</strong>
-
-<br><br>
-
-ومهما مر الوقت،
-ما رح أنسى إنكِ كنتِ جزءًا من أجمل فصل بحياتي.
-
-<br><br>
-
-وإذا الأيام أعطتنا فرصة نكمل،
-فأنا ما بدي أكون الشخص اللي قال كلامًا حلوًا ثم اختفى...
-
-<br>
-
-<strong style="color:#ffb5df">
-بدي أكون الشخص اللي بقيت أفعاله تشبه كلامه.
-</strong>
-
-</p>
-
-<div class="finalWord">
-روضة... ما كانت مرحلة. كانت الحكاية. ♾️❤️
-</div>
-
-<br><br>
-
-<button class="btn" onclick="finalSurprise()">
-آخر مفاجأة 👑
-</button>
-
-</div>
-
-</section>
-
-</div>
-
-
-<script>
-
-/* ================= النجوم ================= */
-
-for(let i=0;i<130;i++){
-
-    const star=document.createElement("div");
-
-    star.className="star";
-
-    star.style.left=Math.random()*100+"vw";
-
-    star.style.top=Math.random()*100+"vh";
-
-    star.style.animationDelay=
-        Math.random()*3+"s";
-
-    document.body.appendChild(star);
-
-}
-
-
-/* ================= القلوب الطائرة ================= */
-
-setInterval(()=>{
-
-    const f=document.createElement("div");
-
-    f.className="float";
-
-    const emojis=[
-        "❤️",
-        "🤍",
-        "💗",
-        "👑",
-        "✨"
-    ];
-
-    f.textContent=
-        emojis[Math.floor(Math.random()*emojis.length)];
-
-    f.style.left=
-        Math.random()*100+"vw";
-
-    f.style.fontSize=
-        (15+Math.random()*22)+"px";
-
-    document.body.appendChild(f);
-
-    setTimeout(()=>{
-        f.remove();
-    },8000);
-
-},1100);
-
-
-/* ================= التنقل ================= */
-
-function scrollToId(id){
-
-    document.getElementById(id)
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-/* ================= البطاقات ================= */
-
-function revealCard(n){
-
-    const messages={
-
-        1:
-        "بالنسبة إليكِ، إنتِ مش مجرد شخص حبيته... إنتِ الشخص اللي أخذ مكانًا خاصًا بقلبي. 👑",
-
-        2:
-        "أنا ما بديكِ تصدقي كلامي لأن الموقع حلو؛ بدي الأيام والأفعال هي اللي تخليكِ تصدقيه.",
-
-        3:
-        "إذا الحب له بداية، فبدايتي كانت معكِ. وإذا له نهاية، فأنا ما شايفها. ♾️❤️"
-
-    };
-
-    document.getElementById("c"+n).textContent=
-        messages[n];
-
-    celebration(8);
-
-}
-
-
-/* ================= عداد الحب ================= */
-
-let love=0;
-
-function increaseLove(){
-
-    love+=10;
-
-    if(love>100){
-        love=100;
-    }
-
-    document.getElementById("loveNumber").textContent=
-        love+"%";
-
-    if(love<30){
-
-        document.getElementById("loveText").innerHTML=
-        "لسه بالبداية... ❤️";
-
-    }
-
-    else if(love<70){
-
-        document.getElementById("loveText").innerHTML=
-        "المؤشر ارتفع... بس واضح إنه ما رح يقدر يقيسه فعليًا 😂❤️";
-
-    }
-
-    else if(love<100){
-
-        document.getElementById("loveText").innerHTML=
-        "قربنا من 100%... والمشكلة إن الحب الحقيقي أكبر من الرقم. ❤️";
-
-    }
-
-    else{
-
-        document.getElementById("loveText").innerHTML=
-        "100%؟ 😂 هذا بس الحد الأعلى للعداد... أما الحب الحقيقي فـ ♾️❤️";
-
-    }
-
-    celebration(5);
-
-}
-
-
-/* ================= الاختبار ================= */
-
-function answer(correct){
-
-    const result=
-        document.getElementById("quizResult");
-
-    if(correct){
-
-        result.innerHTML=
-            "صح 😂❤️ من البداية للنهاية: روضة.";
-
-        celebration(18);
-
-    }else{
-
-        result.innerHTML=
-            "لاااا 😂 ركزي شوي... الجواب أسهل مما تتخيلي.";
-
-    }
-
-}
-
-
-/* ================= القلب ================= */
-
-let h
