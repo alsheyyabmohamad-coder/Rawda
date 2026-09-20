@@ -4,23 +4,18 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>روضة | الحكاية التي لا تنتهي 👑</title>
+<title>روضة | حكاية لا تشبه غيرها 👑</title>
 
 <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap"
-    rel="stylesheet"
->
+href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap"
+rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   PALETTE
-   كحلي أساسي جداً + خمري خفيف
+   COLORS
 ========================================================= */
 
 :root{
@@ -38,11 +33,11 @@
     --gold-light:#ead8b8;
 
     --white:#f7f5f1;
-    --text:#d4dce5;
-    --muted:#91a0af;
+    --text:#d5dfe8;
+    --muted:#8fa0b0;
 
-    --glass:rgba(9,31,51,.72);
-    --border:rgba(214,180,119,.15);
+    --glass:rgba(7,29,48,.76);
+    --border:rgba(214,180,119,.14);
 }
 
 
@@ -66,42 +61,41 @@ body{
 
     color:var(--white);
 
-    min-height:100vh;
-
     background:
 
         radial-gradient(
-            circle at 12% 8%,
-            rgba(19,65,103,.38),
-            transparent 28%
+            circle at 15% 10%,
+            rgba(18,62,98,.42),
+            transparent 27%
         ),
 
         radial-gradient(
-            circle at 88% 72%,
-            rgba(8,42,72,.42),
+            circle at 85% 65%,
+            rgba(8,48,78,.35),
             transparent 30%
         ),
 
         radial-gradient(
             circle at 70% 15%,
-            rgba(74,16,32,.16),
+            rgba(74,16,32,.14),
             transparent 22%
         ),
 
         linear-gradient(
             135deg,
-            var(--navy-0) 0%,
-            var(--navy-1) 38%,
-            var(--navy-2) 72%,
-            #050d18 100%
+            var(--navy-0),
+            var(--navy-1),
+            var(--navy-2)
         );
+
+    min-height:100vh;
 
     overflow-x:hidden;
 }
 
 
 /* =========================================================
-   النجوم
+   BACKGROUND STARS
 ========================================================= */
 
 .star{
@@ -113,13 +107,13 @@ body{
 
     border-radius:50%;
 
-    background:#ffffff;
+    background:white;
 
-    opacity:.45;
-
-    z-index:-1;
+    opacity:.4;
 
     pointer-events:none;
+
+    z-index:-1;
 
     animation:twinkle 3s infinite alternate;
 }
@@ -132,26 +126,26 @@ body{
     }
 
     to{
-        opacity:.85;
-        transform:scale(1.5);
+        opacity:.9;
+        transform:scale(1.4);
     }
 
 }
 
 
 /* =========================================================
-   القلوب الطائرة
+   FLOATING HEARTS
 ========================================================= */
 
-.float{
+.floatHeart{
 
     position:fixed;
 
-    bottom:-60px;
+    bottom:-50px;
 
     pointer-events:none;
 
-    z-index:50;
+    z-index:100;
 
     animation:floatUp 8s linear forwards;
 }
@@ -182,7 +176,7 @@ body{
 
 
 /* =========================================================
-   CONTAINER
+   GENERAL
 ========================================================= */
 
 .container{
@@ -194,29 +188,93 @@ body{
 
 section{
 
-    padding:90px 0;
+    padding:100px 0;
 }
 
-.title{
+.sectionTitle{
 
     text-align:center;
 
     margin-bottom:45px;
 }
 
-.title h2{
+.sectionTitle h2{
 
     font-size:
-        clamp(30px,5vw,45px);
+        clamp(30px,5vw,46px);
 
     color:var(--gold-light);
 
     margin-bottom:10px;
 }
 
-.title p{
+.sectionTitle p{
 
     color:var(--muted);
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn{
+
+    border:
+        1px solid
+        rgba(214,180,119,.24);
+
+    color:white;
+
+    font-family:inherit;
+
+    font-weight:700;
+
+    font-size:16px;
+
+    padding:15px 28px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #071d32,
+            #123957
+        );
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.35);
+
+    transition:.25s;
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #0b2945,
+            #174665
+        );
+
+    box-shadow:
+        0 18px 45px rgba(4,35,60,.65);
+}
+
+.btn:active{
+
+    transform:scale(.94);
 }
 
 
@@ -235,58 +293,56 @@ section{
     justify-content:center;
 
     text-align:center;
+
+    position:relative;
 }
 
 .heroBox{
 
-    width:min(850px,100%);
+    width:min(900px,100%);
 
     padding:65px 30px;
 
-    border-radius:40px;
+    border-radius:42px;
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(8,31,52,.88),
-            rgba(5,22,38,.82)
+            rgba(8,31,52,.9),
+            rgba(4,20,35,.84)
         );
 
     border:
         1px solid
-        rgba(214,180,119,.15);
+        rgba(214,180,119,.16);
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(22px);
 
     box-shadow:
 
-        0 30px 100px
-        rgba(0,0,0,.45),
+        0 35px 100px rgba(0,0,0,.48),
 
-        0 0 90px
-        rgba(8,50,85,.25),
-
-        inset 0 0 40px
+        inset 0 0 50px
         rgba(255,255,255,.015);
 }
 
-.secretLabel{
+.smallTop{
 
     display:inline-block;
 
-    padding:8px 20px;
+    padding:8px 18px;
 
     border-radius:30px;
 
-    background:
-        rgba(214,180,119,.07);
+    color:var(--gold);
 
     border:
         1px solid
         rgba(214,180,119,.18);
 
-    color:var(--gold);
+    background:
+        rgba(214,180,119,.05);
 
     margin-bottom:25px;
 }
@@ -294,9 +350,11 @@ section{
 .hero h1{
 
     font-size:
-        clamp(55px,12vw,110px);
+        clamp(60px,13vw,115px);
 
-    margin-bottom:5px;
+    line-height:1;
+
+    margin-bottom:10px;
 }
 
 .gradient{
@@ -305,10 +363,10 @@ section{
 
         linear-gradient(
             90deg,
-            #f4eee4,
+            #f5f0e8,
             #d6b477,
-            #b9d1e5,
-            #f4eee4
+            #bdd3e6,
+            #f5f0e8
         );
 
     background-size:200%;
@@ -332,108 +390,199 @@ section{
 
 .hero h2{
 
-    font-size:30px;
+    color:#dce5ed;
+
+    font-size:27px;
 
     margin-bottom:20px;
-
-    color:#d9e3ed;
 }
 
-.heroText{
+.heroDescription{
 
-    color:#b6c2ce;
+    max-width:680px;
 
-    font-size:18px;
+    margin:auto;
+
+    color:#aebdca;
 
     line-height:2;
 
-    max-width:650px;
+    font-size:18px;
 
-    margin:
-        auto
-        auto
-        30px;
+    margin-bottom:30px;
+}
+
+.scrollHint{
+
+    margin-top:20px;
+
+    color:#728596;
+
+    font-size:13px;
 }
 
 
 /* =========================================================
-   BUTTON
+   DOORS
 ========================================================= */
 
-.btn{
+.doors{
 
-    border:
+    display:grid;
 
-        1px solid
-        rgba(214,180,119,.25);
+    grid-template-columns:
+        repeat(4,1fr);
 
-    color:#fff;
+    gap:18px;
+}
 
-    font-family:inherit;
+.door{
 
-    font-weight:700;
+    min-height:230px;
 
-    font-size:16px;
+    border-radius:30px;
 
-    padding:15px 28px;
+    padding:25px 18px;
 
-    border-radius:18px;
+    text-align:center;
 
     cursor:pointer;
 
     background:
 
         linear-gradient(
-            135deg,
-            #071d32,
-            #123957
+            145deg,
+            rgba(9,36,59,.9),
+            rgba(5,23,40,.86)
         );
 
-    box-shadow:
+    border:
+        1px solid
+        rgba(214,180,119,.1);
 
-        0 10px 35px
-        rgba(0,15,30,.5),
+    transition:.35s;
 
-        inset 0 0 15px
-        rgba(214,180,119,.04);
+    position:relative;
 
-    transition:
-        transform .25s,
-        box-shadow .25s,
-        background .25s;
+    overflow:hidden;
 }
 
-.btn:hover{
+.door::after{
 
-    transform:
-        translateY(-4px)
-        scale(1.03);
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
 
     background:
+        rgba(74,16,32,.25);
 
-        linear-gradient(
-            135deg,
-            #0b2945,
-            #174665
-        );
+    border-radius:50%;
 
-    box-shadow:
+    top:-70px;
 
-        0 15px 45px
-        rgba(4,35,60,.65);
+    left:-70px;
+
+    transition:.4s;
 }
 
-.btn:active{
+.door:hover{
 
-    transform:scale(.95);
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(214,180,119,.3);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+}
+
+.door:hover::after{
+
+    transform:scale(2);
+}
+
+.doorIcon{
+
+    font-size:50px;
+
+    margin-bottom:18px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.door h3{
+
+    color:var(--gold);
+
+    margin-bottom:10px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.door p{
+
+    color:#9eafbd;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    position:relative;
+
+    z-index:2;
 }
 
 
 /* =========================================================
-   MESSAGE
+   DOOR RESULT
 ========================================================= */
 
-.messageBox{
+.doorResult{
+
+    margin-top:25px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8,35,57,.9),
+            rgba(5,23,40,.88)
+        );
+
+    border:
+        1px solid
+        rgba(214,180,119,.12);
+
+    min-height:90px;
+
+    color:#c9d5df;
+
+    line-height:2;
+
+    transition:.3s;
+}
+
+
+/* =========================================================
+   MESSAGE MACHINE
+========================================================= */
+
+.machine{
 
     max-width:850px;
 
@@ -441,44 +590,192 @@ section{
 
     padding:40px;
 
-    border-radius:30px;
+    border-radius:35px;
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(8,31,52,.86),
-            rgba(6,24,41,.82)
+            rgba(8,33,55,.9),
+            rgba(5,22,38,.86)
         );
 
     border:
         1px solid
         rgba(214,180,119,.12);
 
-    line-height:2.1;
-
-    color:var(--text);
-
     text-align:center;
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.25);
 }
 
-.highlight{
+.machineScreen{
 
-    color:var(--gold);
+    min-height:150px;
 
-    font-weight:800;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    border-radius:24px;
+
+    background:
+        rgba(1,12,22,.55);
+
+    border:
+        1px solid
+        rgba(110,150,180,.1);
+
+    color:#d8e1e9;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-bottom:25px;
+}
+
+.machineButtons{
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
 }
 
 
 /* =========================================================
-   CARDS
+   INTERACTIVE QUIZ
 ========================================================= */
 
-.grid{
+.quiz{
+
+    max-width:780px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border-radius:32px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8,34,56,.9),
+            rgba(5,23,40,.85)
+        );
+
+    border:
+        1px solid
+        rgba(214,180,119,.11);
+}
+
+.quizProgress{
+
+    height:7px;
+
+    border-radius:20px;
+
+    background:#071522;
+
+    margin-bottom:25px;
+
+    overflow:hidden;
+}
+
+.quizProgressFill{
+
+    height:100%;
+
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #153f61,
+            var(--gold)
+        );
+
+    transition:.4s;
+}
+
+.quizQuestion{
+
+    text-align:center;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#e1e8ee;
+
+    margin-bottom:25px;
+}
+
+.quizAnswers{
+
+    display:grid;
+
+    gap:12px;
+}
+
+.quizAnswer{
+
+    border:
+        1px solid
+        rgba(214,180,119,.1);
+
+    background:
+        rgba(7,28,46,.8);
+
+    color:#e7edf2;
+
+    padding:15px;
+
+    border-radius:17px;
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.quizAnswer:hover{
+
+    background:
+        rgba(16,55,83,.9);
+
+    transform:translateY(-2px);
+}
+
+.quizResult{
+
+    text-align:center;
+
+    min-height:40px;
+
+    margin-top:20px;
+
+    color:var(--gold);
+
+    font-weight:700;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MEMORY CARDS
+========================================================= */
+
+.memories{
 
     display:grid;
 
@@ -488,72 +785,68 @@ section{
     gap:20px;
 }
 
-.card{
+.memory{
+
+    min-height:260px;
 
     padding:30px;
 
-    border-radius:27px;
-
-    text-align:center;
+    border-radius:30px;
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(9,35,58,.82),
-            rgba(5,24,42,.82)
+            rgba(9,35,57,.86),
+            rgba(5,23,40,.84)
         );
 
     border:
         1px solid
-        rgba(214,180,119,.10);
-
-    transition:.3s;
+        rgba(214,180,119,.1);
 
     cursor:pointer;
 
-    user-select:none;
+    transition:.35s;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 }
 
-.card:hover{
+.memory:hover{
 
     transform:
-        translateY(-8px);
+        translateY(-8px)
+        rotate(-1deg);
 
     border-color:
         rgba(214,180,119,.27);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(12,44,71,.9),
-            rgba(6,27,46,.9)
-        );
 }
 
-.card:active{
+.memoryIcon{
 
-    transform:scale(.97);
-}
-
-.cardIcon{
-
-    font-size:48px;
+    font-size:52px;
 
     margin-bottom:18px;
 }
 
-.card h3{
+.memory h3{
 
     color:var(--gold);
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-.card p{
+.memory p{
 
-    color:#aebbc8;
+    color:#9fafbd;
 
     line-height:1.9;
 }
@@ -563,464 +856,7 @@ section{
    LOVE METER
 ========================================================= */
 
-.infinityBox{
-
-    max-width:800px;
-
-    margin:auto;
-
-    padding:40px 25px;
-
-    border-radius:35px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,34,57,.9),
-            rgba(5,24,42,.86)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.13);
-
-    text-align:center;
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.3);
-}
-
-.infinity{
-
-    font-size:120px;
-
-    line-height:1;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #d6b477,
-            #b8cfe3,
-            #7da3c2
-        );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.08);
-    }
-
-}
-
-.loveNumber{
-
-    font-size:45px;
-
-    font-weight:800;
-
-    margin:15px 0;
-
-    color:var(--gold);
-}
-
-.loveText{
-
-    color:#9eacba;
-
-    line-height:2;
-}
-
-
-/* =========================================================
-   QUIZ
-========================================================= */
-
-.quiz{
-
-    max-width:750px;
-
-    margin:auto;
-
-    padding:35px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,33,55,.9),
-            rgba(5,23,40,.85)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.11);
-
-    border-radius:30px;
-
-    text-align:center;
-}
-
-.question{
-
-    font-size:21px;
-
-    margin-bottom:25px;
-
-    color:#dce5ed;
-}
-
-.answers{
-
-    display:grid;
-
-    gap:12px;
-}
-
-.answer{
-
-    padding:15px;
-
-    border-radius:16px;
-
-    border:
-        1px solid
-        rgba(214,180,119,.10);
-
-    background:
-        rgba(8,33,54,.75);
-
-    color:white;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.answer:hover{
-
-    transform:scale(1.02);
-
-    background:
-        rgba(18,57,87,.85);
-
-    border-color:
-        rgba(214,180,119,.25);
-}
-
-.answer:active{
-
-    transform:scale(.97);
-}
-
-.quizResult{
-
-    margin-top:20px;
-
-    min-height:35px;
-
-    color:var(--gold);
-
-    font-weight:700;
-}
-
-
-/* =========================================================
-   TIMELINE
-========================================================= */
-
-.timeline{
-
-    max-width:800px;
-
-    margin:auto;
-
-    position:relative;
-}
-
-.timeline:before{
-
-    content:"";
-
-    position:absolute;
-
-    right:20px;
-
-    top:0;
-
-    bottom:0;
-
-    width:2px;
-
-    background:
-
-        linear-gradient(
-            transparent,
-            #245274,
-            #7b233b,
-            #245274,
-            transparent
-        );
-}
-
-.timeItem{
-
-    position:relative;
-
-    margin-bottom:30px;
-
-    padding-right:55px;
-}
-
-.dot{
-
-    position:absolute;
-
-    right:11px;
-
-    top:5px;
-
-    width:20px;
-
-    height:20px;
-
-    border-radius:50%;
-
-    background:#123c5e;
-
-    border:
-        2px solid
-        var(--gold);
-
-    box-shadow:
-        0 0 20px
-        rgba(38,91,128,.75);
-}
-
-.timeCard{
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,34,57,.86),
-            rgba(5,24,41,.82)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.09);
-
-    border-radius:25px;
-
-    padding:25px;
-}
-
-.timeCard h3{
-
-    margin-bottom:8px;
-
-    color:var(--gold);
-}
-
-.timeCard p{
-
-    color:#aab8c5;
-
-    line-height:1.9;
-}
-
-
-/* =========================================================
-   HEART GAME
-========================================================= */
-
-.heartGame{
-
-    text-align:center;
-}
-
-.bigHeart{
-
-    font-size:120px;
-
-    cursor:pointer;
-
-    display:inline-block;
-
-    user-select:none;
-
-    transition:.12s;
-
-    filter:
-        drop-shadow(
-            0 0 22px
-            rgba(91,22,42,.6)
-        );
-}
-
-.bigHeart:hover{
-
-    transform:scale(1.08);
-}
-
-.bigHeart:active{
-
-    transform:scale(.78);
-}
-
-.heartCount{
-
-    font-size:32px;
-
-    margin-top:10px;
-
-    color:var(--gold);
-}
-
-
-/* =========================================================
-   SECRET CARDS
-========================================================= */
-
-.hiddenGrid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.secretCard{
-
-    min-height:180px;
-
-    padding:30px;
-
-    border-radius:25px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,34,57,.86),
-            rgba(5,23,40,.84)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.1);
-
-    text-align:center;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    transition:.3s;
-
-    user-select:none;
-}
-
-.secretCard:hover{
-
-    transform:
-        translateY(-7px);
-
-    border-color:
-        rgba(214,180,119,.25);
-}
-
-.secretCard:active{
-
-    transform:scale(.97);
-}
-
-.secretContent{
-
-    color:var(--gold);
-
-    line-height:2;
-}
-
-
-/* =========================================================
-   POEMS
-========================================================= */
-
-.poem{
-
-    max-width:850px;
-
-    margin:
-        0 auto 25px;
-
-    padding:40px 25px;
-
-    text-align:center;
-
-    border-radius:30px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,33,55,.88),
-            rgba(5,23,40,.84)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.1);
-}
-
-.poem h3{
-
-    margin-bottom:20px;
-
-    color:var(--gold);
-}
-
-.poemText{
-
-    font-family:"Amiri",serif;
-
-    font-size:25px;
-
-    line-height:2;
-
-    color:#e3e9ee;
-}
-
-
-/* =========================================================
-   PROMISE
-========================================================= */
-
-.promise{
+.meterBox{
 
     max-width:850px;
 
@@ -1035,32 +871,245 @@ section{
     background:
 
         linear-gradient(
-            135deg,
-            rgba(7,32,53,.9),
-            rgba(7,25,43,.86)
+            145deg,
+            rgba(8,34,57,.9),
+            rgba(5,22,38,.86)
         );
 
     border:
         1px solid
-        rgba(214,180,119,.14);
+        rgba(214,180,119,.12);
 }
 
-.promise h3{
+.infinity{
 
-    font-size:30px;
+    font-size:120px;
 
-    margin-bottom:20px;
+    line-height:1;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d6b477,
+            #bdd3e6,
+            #7899b5
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+.meterNumber{
+
+    font-size:45px;
 
     color:var(--gold);
+
+    font-weight:800;
+
+    margin:15px 0;
 }
 
-.promise p{
+.meterBar{
 
-    color:#c0cbd5;
+    max-width:600px;
+
+    height:14px;
+
+    margin:20px auto;
+
+    border-radius:20px;
+
+    background:#061321;
+
+    overflow:hidden;
+}
+
+.meterFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #163d5c,
+            #7b263e,
+            var(--gold)
+        );
+
+    transition:.5s;
+}
+
+.meterDescription{
+
+    color:#a6b5c2;
 
     line-height:2;
+}
 
-    font-size:18px;
+
+/* =========================================================
+   STAR HUNT
+========================================================= */
+
+.starGame{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:35px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(7,32,53,.9),
+            rgba(4,21,36,.88)
+        );
+
+    border:
+        1px solid
+        rgba(214,180,119,.1);
+
+    text-align:center;
+}
+
+.starField{
+
+    position:relative;
+
+    height:300px;
+
+    margin-top:25px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(18,58,87,.25),
+            transparent 60%
+        ),
+
+        #030c17;
+
+    border:
+        1px solid
+        rgba(120,160,190,.08);
+}
+
+.hiddenStar{
+
+    position:absolute;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    opacity:.65;
+
+    transition:.2s;
+}
+
+.hiddenStar:hover{
+
+    transform:scale(1.4);
+
+    opacity:1;
+}
+
+.starMessage{
+
+    min-height:40px;
+
+    margin-top:18px;
+
+    color:var(--gold);
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   POEM
+========================================================= */
+
+.poemBox{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:50px 30px;
+
+    text-align:center;
+
+    border-radius:40px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8,34,56,.91),
+            rgba(5,23,40,.87)
+        );
+
+    border:
+        1px solid
+        rgba(214,180,119,.13);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.3);
+}
+
+.poemTitle{
+
+    color:var(--gold);
+
+    font-size:28px;
+
+    margin-bottom:25px;
+}
+
+.poem{
+
+    font-family:"Amiri",serif;
+
+    font-size:
+        clamp(22px,3vw,29px);
+
+    line-height:2.15;
+
+    color:#e3e9ee;
+}
+
+.poem em{
+
+    color:var(--gold);
+
+    font-style:normal;
 }
 
 
@@ -1070,7 +1119,7 @@ section{
 
 .final{
 
-    min-height:80vh;
+    min-height:90vh;
 
     display:flex;
 
@@ -1084,34 +1133,142 @@ section{
 .finalBox{
 
     max-width:850px;
+
+    padding:55px 30px;
+
+    border-radius:42px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(8,34,57,.88),
+            rgba(5,22,38,.84)
+        );
+
+    border:
+        1px solid
+        rgba(214,180,119,.13);
 }
 
 .final h2{
 
     font-size:
-        clamp(40px,7vw,70px);
+        clamp(42px,7vw,72px);
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-.finalText{
+.final p{
 
-    color:#b7c3ce;
-
-    font-size:19px;
+    color:#b7c4cf;
 
     line-height:2.2;
+
+    font-size:18px;
 }
 
 .finalWord{
 
-    margin-top:30px;
-
     font-family:"Amiri",serif;
 
-    font-size:35px;
+    font-size:38px;
 
     color:var(--gold);
+
+    margin-top:30px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,5,12,.82);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:500;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.popup.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+.popupBox{
+
+    max-width:600px;
+
+    width:100%;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #071c30,
+            #041322
+        );
+
+    border:
+        1px solid
+        rgba(214,180,119,.2);
+
+    transform:scale(.85);
+
+    transition:.3s;
+}
+
+.popup.active .popupBox{
+
+    transform:scale(1);
+}
+
+.popupBox h3{
+
+    color:var(--gold);
+
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.popupBox p{
+
+    color:#c4d0da;
+
+    line-height:2;
 }
 
 
@@ -1125,34 +1282,28 @@ section{
 
     pointer-events:none;
 
-    z-index:100;
+    z-index:700;
 
-    font-size:25px;
+    font-size:24px;
 
-    animation:
-        spark 1.3s forwards;
+    animation:spark 1.3s forwards;
 }
 
 @keyframes spark{
 
     0%{
-
         opacity:1;
-
         transform:
             translate(0,0)
             scale(1);
     }
 
     100%{
-
         opacity:0;
-
         transform:
             translate(var(--x),var(--y))
             scale(.1);
     }
-
 }
 
 
@@ -1160,14 +1311,26 @@ section{
    MOBILE
 ========================================================= */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
     section{
-        padding:70px 0;
+        padding:75px 0;
     }
 
-    .grid,
-    .hiddenGrid{
+    .doors{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .memories{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .doors{
         grid-template-columns:1fr;
     }
 
@@ -1175,21 +1338,17 @@ section{
         padding:45px 20px;
     }
 
-    .messageBox,
-    .promise{
+    .machine,
+    .quiz,
+    .starGame,
+    .meterBox,
+    .poemBox,
+    .finalBox{
         padding:30px 20px;
     }
 
     .infinity{
         font-size:90px;
-    }
-
-    .poemText{
-        font-size:22px;
-    }
-
-    .hero h2{
-        font-size:24px;
     }
 
 }
@@ -1212,8 +1371,8 @@ section{
 
 <div class="heroBox">
 
-<div class="secretLabel">
-🔐 رسالة لا تُفتح إلا لروضة
+<div class="smallTop">
+🔐 ملف خاص — لا يُفتح إلا لروضة
 </div>
 
 <h1 class="gradient">
@@ -1221,97 +1380,32 @@ section{
 </h1>
 
 <h2>
-الحكاية التي لا تنتهي 👑❤️
+الحكاية اللي ما تشبه أي حكاية 👑
 </h2>
 
-<p class="heroText">
+<p class="heroDescription">
 
-يمكن كثير ناس يحكولك إن العلاقات ما بتدوم،
-وإن كل كلمة حلوة بالنهاية بتطلع كذب...
-
-<br><br>
-
-عشان هيك أنا ما عملتلك هالموقع عشان أطلب منك تصدقي الكلام.
+مش رح أطلب منكِ تصدقي كل كلمة هون.
 
 <br>
 
-عملته عشان تعرفي شو موجود بقلبي.
+خلي الموقع يحكيلك...
+وخلي الأيام هي اللي تحكم.
 
 </p>
 
 <button
-    class="btn"
-    id="startBtn"
-    type="button">
+class="btn"
+id="enterBtn"
+type="button">
 
-ابدئي من هون ❤️
+ادخلي الحكاية ❤️
 
 </button>
 
+<div class="scrollHint">
+↓ في أشياء كثيرة مخبّاية تحت
 </div>
-
-</section>
-
-
-<!-- =====================================================
-     TRUTH
-===================================================== -->
-
-<section id="truth">
-
-<div class="title">
-
-<h2>
-قبل أي شيء...
-</h2>
-
-<p>
-في شيء لازم يكون واضح
-</p>
-
-</div>
-
-
-<div class="messageBox">
-
-أنا بعرف إنكِ ممكن تسمعي من صاحباتك أو بنات خالاتك
-إن العلاقات ما بتدوم،
-وإن الشب ممكن يحكي كلام حلو وبعدين يتغير.
-
-<br><br>
-
-وأنا ما بدي أقولك:
-
-<strong class="highlight">
-"لا تصدقيهم وصدقي كلامي."
-</strong>
-
-<br><br>
-
-لأن الكلام سهل.
-
-<br><br>
-
-أنا بديكِ تتركي الأيام هي اللي تحكم.
-
-<br><br>
-
-كل اللي بقدر أقوله اليوم هو:
-
-<br>
-
-<strong class="highlight">
-
-أنا دخلت هالعلاقة وأنا صادق معك،
-ومش شايفك مرحلة مؤقتة بحياتي.
-
-</strong>
-
-<br><br>
-
-وإذا الأيام أثبتت شيء،
-بدي يكون إن الكلام اللي حكيته لكِ
-كان أصدق شيء قلته.
 
 </div>
 
@@ -1319,83 +1413,103 @@ section{
 
 
 <!-- =====================================================
-     THREE CARDS
+     DOORS
 ===================================================== -->
 
-<section>
+<section id="doorsSection">
 
-<div class="title">
+<div class="sectionTitle">
 
 <h2>
-ثلاث أشياء عني وعن روضة ❤️
+أربعة أبواب لروضة 👑
 </h2>
 
 <p>
-اضغطي على كل بطاقة
+إنتِ اختاري من وين تبدأ الحكاية
 </p>
 
 </div>
 
 
-<div class="grid">
+<div class="doors">
 
 
-<div
-    class="card"
-    id="card1">
+<div class="door" data-door="heart">
 
-<div class="cardIcon">
-👑
-</div>
-
-<h3>
-الأولى
-</h3>
-
-<p id="c1">
-اضغطي لكشفها
-</p>
-
-</div>
-
-
-<div
-    class="card"
-    id="card2">
-
-<div class="cardIcon">
+<div class="doorIcon">
 ❤️
 </div>
 
 <h3>
-الثانية
+باب القلب
 </h3>
 
-<p id="c2">
-اضغطي لكشفها
+<p>
+شيء من اللي مخبيه القلب
 </p>
+
+</div>
+
+
+<div class="door" data-door="secret">
+
+<div class="doorIcon">
+🔐
+</div>
+
+<h3>
+الباب السري
+</h3>
+
+<p>
+رسالة ما بتطلع بسهولة
+</p>
+
+</div>
+
+
+<div class="door" data-door="poem">
+
+<div class="doorIcon">
+📜
+</div>
+
+<h3>
+باب الشعر
+</h3>
+
+<p>
+لأن روضة بتحب الشعر
+</p>
+
+</div>
+
+
+<div class="door" data-door="future">
+
+<div class="doorIcon">
+♾️
+</div>
+
+<h3>
+باب الحكاية
+</h3>
+
+<p>
+شيء عن الوقت والأيام
+</p>
+
+</div>
+
 
 </div>
 
 
 <div
-    class="card"
-    id="card3">
+class="doorResult"
+id="doorResult">
 
-<div class="cardIcon">
-∞
-</div>
-
-<h3>
-الثالثة
-</h3>
-
-<p id="c3">
-اضغطي لكشفها
-</p>
-
-</div>
-
+اختاري بابًا... 👀
 
 </div>
 
@@ -1403,62 +1517,57 @@ section{
 
 
 <!-- =====================================================
-     LOVE METER
+     MESSAGE MACHINE
 ===================================================== -->
 
 <section>
 
-<div class="title">
+<div class="sectionTitle">
 
 <h2>
-عداد الحب الرسمي ❤️
+🎰 ماكينة الرسائل
 </h2>
 
 <p>
-حاولنا نحسبه... وفشل النظام 😂
+كل ضغطة تطلعلك رسالة مختلفة
 </p>
 
 </div>
 
 
-<div class="infinityBox">
-
-<div class="infinity">
-∞
-</div>
+<div class="machine">
 
 <div
-    class="loveNumber"
-    id="loveNumber">
+class="machineScreen"
+id="machineScreen">
 
-0%
+اضغطي على الزر...
+يمكن تطلع رسالة ما كنتِ متوقعتها. ❤️
 
 </div>
 
-<p
-    class="loveText"
-    id="loveText">
 
-هذا العداد مجرد لعبة...
-لأن الحب الحقيقي ما بنقاس بالنسبة المئوية.
-
-<br>
-
-كل ما تحاولي توصلي للنهاية،
-بتكتشفي إنه ما إلها نهاية أصلاً. ❤️
-
-</p>
-
+<div class="machineButtons">
 
 <button
-    class="btn"
-    id="loveBtn"
-    type="button"
-    style="margin-top:25px">
+class="btn"
+id="randomMessage"
+type="button">
 
-زيدي الحب ❤️
+طلّعي رسالة 🎲
 
 </button>
+
+<button
+class="btn"
+id="specialMessage"
+type="button">
+
+رسالة خاصة 👑
+
+</button>
+
+</div>
 
 </div>
 
@@ -1471,14 +1580,14 @@ section{
 
 <section>
 
-<div class="title">
+<div class="sectionTitle">
 
 <h2>
-🧠 اختبار صغير لروضة
+🧠 قديش بتعرفي محمد؟
 </h2>
 
 <p>
-نشوف إذا عارفة الجواب 👀
+ثلاث أسئلة... نشوف النتيجة 😂
 </p>
 
 </div>
@@ -1486,149 +1595,15 @@ section{
 
 <div class="quiz">
 
-<div class="question">
+<div class="quizProgress">
 
-إذا سألنا قلب محمد:
-مين كانت البداية ومين النهاية؟
-
+<div
+class="quizProgressFill"
+id="quizProgress">
 </div>
-
-
-<div class="answers">
-
-
-<button
-    class="answer"
-    id="wrong1"
-    type="button">
-
-مجرد مرحلة
-
-</button>
-
-
-<button
-    class="answer"
-    id="wrong2"
-    type="button">
-
-شيء مؤقت
-
-</button>
-
-
-<button
-    class="answer"
-    id="correct"
-    type="button">
-
-روضة ❤️
-
-</button>
-
-
-<button
-    class="answer"
-    id="wrong3"
-    type="button">
-
-ما بعرف 😂
-
-</button>
-
 
 </div>
 
 
 <div
-    class="quizResult"
-    id="quizResult">
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     TIMELINE
-===================================================== -->
-
-<section>
-
-<div class="title">
-
-<h2>
-⏳ لو الأيام كتبت قصتنا...
-</h2>
-
-<p>
-مش مهم شو بصير اليوم، المهم شو بيضل مع الوقت.
-</p>
-
-</div>
-
-
-<div class="timeline">
-
-
-<div class="timeItem">
-
-<div class="dot"></div>
-
-<div class="timeCard">
-
-<h3>
-اليوم ❤️
-</h3>
-
-<p>
-
-أنا بحكيلك إني أحبك،
-وإنتِ إلك كامل الحق تصدقي أو تستني وتشوفي.
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="timeItem">
-
-<div class="dot"></div>
-
-<div class="timeCard">
-
-<h3>
-بعد فترة 🌙
-</h3>
-
-<p>
-
-إذا بقيت كلماتي مثل ما هي،
-وصارت أفعالي تؤكدها،
-وقتها الكلام بصير أقل أهمية.
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="timeItem">
-
-<div class="dot"></div>
-
-<div class="timeCard">
-
-<h3>
-بعد سنين ♾️
-</h3>
-
-<p>
-
-إذا رجعنا نشوف هالموقع بعد سنين،
-بتمنى نضح
+class="quizQuestion"
