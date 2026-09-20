@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>روضة | الحكاية التي لا تنتهي 👑❤️</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<title>روضة | الحكاية التي لا تنتهي 👑</title>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
-/* =====================================================
-   الألوان الأساسية
-   كحلي عميق + خمري غامق
-===================================================== */
+/* =========================================================
+   PALETTE
+   كحلي أساسي جداً + خمري خفيف
+========================================================= */
 
 :root{
-    --navy:#071525;
-    --navy2:#0b1d32;
-    --navy3:#102943;
 
-    --burgundy:#4b101f;
-    --burgundy2:#68182b;
-    --wine:#8b2942;
+    --navy-0:#020914;
+    --navy-1:#041120;
+    --navy-2:#071a2d;
+    --navy-3:#0a2239;
+    --navy-4:#10304d;
 
-    --gold:#d8b477;
-    --light:#f5e7d5;
+    --burgundy:#4a1020;
+    --burgundy-light:#68172b;
 
-    --white:#f8f5f1;
-    --muted:#aeb8c4;
+    --gold:#d6b477;
+    --gold-light:#ead8b8;
 
-    --glass:rgba(255,255,255,.045);
-    --border:rgba(216,180,119,.16);
+    --white:#f7f5f1;
+    --text:#d4dce5;
+    --muted:#91a0af;
+
+    --glass:rgba(9,31,51,.72);
+    --border:rgba(214,180,119,.15);
 }
 
 
-/* =====================================================
-   الأساس
-===================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -50,54 +61,65 @@ html{
 }
 
 body{
+
     font-family:"Cairo",sans-serif;
+
     color:var(--white);
 
+    min-height:100vh;
+
     background:
+
         radial-gradient(
-            circle at 15% 10%,
-            rgba(104,24,43,.38),
-            transparent 32%
+            circle at 12% 8%,
+            rgba(19,65,103,.38),
+            transparent 28%
         ),
 
         radial-gradient(
-            circle at 85% 75%,
-            rgba(15,48,78,.55),
-            transparent 35%
+            circle at 88% 72%,
+            rgba(8,42,72,.42),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 70% 15%,
+            rgba(74,16,32,.16),
+            transparent 22%
         ),
 
         linear-gradient(
             135deg,
-            #030a12 0%,
-            var(--navy) 45%,
-            #180a12 100%
+            var(--navy-0) 0%,
+            var(--navy-1) 38%,
+            var(--navy-2) 72%,
+            #050d18 100%
         );
 
     overflow-x:hidden;
 }
 
-button{
-    -webkit-tap-highlight-color:transparent;
-}
 
-
-/* =====================================================
+/* =========================================================
    النجوم
-===================================================== */
+========================================================= */
 
 .star{
+
     position:fixed;
 
     width:2px;
     height:2px;
 
-    background:#fff;
-
     border-radius:50%;
+
+    background:#ffffff;
 
     opacity:.45;
 
     z-index:-1;
+
+    pointer-events:none;
 
     animation:twinkle 3s infinite alternate;
 }
@@ -110,25 +132,26 @@ button{
     }
 
     to{
-        opacity:.9;
+        opacity:.85;
         transform:scale(1.5);
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    القلوب الطائرة
-===================================================== */
+========================================================= */
 
 .float{
+
     position:fixed;
 
-    bottom:-50px;
+    bottom:-60px;
 
     pointer-events:none;
 
-    z-index:20;
+    z-index:50;
 
     animation:floatUp 8s linear forwards;
 }
@@ -138,7 +161,7 @@ button{
     0%{
         transform:
             translateY(0)
-            rotate(0);
+            rotate(0deg);
 
         opacity:0;
     }
@@ -158,41 +181,51 @@ button{
 }
 
 
-/* =====================================================
-   الحاوية
-===================================================== */
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container{
+
     width:min(1050px,92%);
+
     margin:auto;
 }
 
 section{
+
     padding:90px 0;
 }
 
 .title{
+
     text-align:center;
+
     margin-bottom:45px;
 }
 
 .title h2{
-    font-size:clamp(30px,5vw,45px);
-    margin-bottom:10px;
 
-    color:var(--light);
+    font-size:
+        clamp(30px,5vw,45px);
+
+    color:var(--gold-light);
+
+    margin-bottom:10px;
 }
 
 .title p{
+
     color:var(--muted);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
+
     min-height:100vh;
 
     display:flex;
@@ -213,21 +246,28 @@ section{
     border-radius:40px;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(9,30,50,.72),
-            rgba(64,13,29,.58)
+            rgba(8,31,52,.88),
+            rgba(5,22,38,.82)
         );
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        rgba(214,180,119,.15);
 
     backdrop-filter:blur(20px);
 
     box-shadow:
 
-        0 0 100px rgba(72,12,30,.28),
+        0 30px 100px
+        rgba(0,0,0,.45),
 
-        inset 0 0 50px
+        0 0 90px
+        rgba(8,50,85,.25),
+
+        inset 0 0 40px
         rgba(255,255,255,.015);
 }
 
@@ -240,13 +280,13 @@ section{
     border-radius:30px;
 
     background:
-        rgba(216,180,119,.08);
+        rgba(214,180,119,.07);
 
     border:
         1px solid
-        rgba(216,180,119,.2);
+        rgba(214,180,119,.18);
 
-    color:#dbc59f;
+    color:var(--gold);
 
     margin-bottom:25px;
 }
@@ -262,17 +302,20 @@ section{
 .gradient{
 
     background:
+
         linear-gradient(
             90deg,
-            #f4eadb,
-            #d7b777,
-            #9a314a,
-            #f4eadb
+            #f4eee4,
+            #d6b477,
+            #b9d1e5,
+            #f4eee4
         );
 
     background-size:200%;
 
     -webkit-background-clip:text;
+
+    background-clip:text;
 
     color:transparent;
 
@@ -293,12 +336,12 @@ section{
 
     margin-bottom:20px;
 
-    color:#ead8bd;
+    color:#d9e3ed;
 }
 
 .heroText{
 
-    color:#b7c0ca;
+    color:#b6c2ce;
 
     font-size:18px;
 
@@ -313,16 +356,18 @@ section{
 }
 
 
-/* =====================================================
-   الأزرار
-===================================================== */
+/* =========================================================
+   BUTTON
+========================================================= */
 
 .btn{
 
-    border:1px solid
-        rgba(216,180,119,.25);
+    border:
 
-    color:white;
+        1px solid
+        rgba(214,180,119,.25);
+
+    color:#fff;
 
     font-family:inherit;
 
@@ -337,18 +382,25 @@ section{
     cursor:pointer;
 
     background:
+
         linear-gradient(
             135deg,
-            #64182b,
-            #8a2941
+            #071d32,
+            #123957
         );
 
     box-shadow:
 
         0 10px 35px
-        rgba(72,10,28,.35);
+        rgba(0,15,30,.5),
 
-    transition:.3s;
+        inset 0 0 15px
+        rgba(214,180,119,.04);
+
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        background .25s;
 }
 
 .btn:hover{
@@ -357,21 +409,29 @@ section{
         translateY(-4px)
         scale(1.03);
 
+    background:
+
+        linear-gradient(
+            135deg,
+            #0b2945,
+            #174665
+        );
+
     box-shadow:
 
-        0 15px 40px
-        rgba(104,24,43,.45);
+        0 15px 45px
+        rgba(4,35,60,.65);
 }
 
 .btn:active{
 
-    transform:scale(.96);
+    transform:scale(.95);
 }
 
 
-/* =====================================================
-   الرسالة
-===================================================== */
+/* =========================================================
+   MESSAGE
+========================================================= */
 
 .messageBox{
 
@@ -387,35 +447,36 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(9,30,50,.6),
-            rgba(75,16,31,.38)
+            rgba(8,31,52,.86),
+            rgba(6,24,41,.82)
         );
 
     border:
-        1px solid var(--border);
+        1px solid
+        rgba(214,180,119,.12);
 
     line-height:2.1;
 
-    color:#d3d8de;
+    color:var(--text);
 
     text-align:center;
 
     box-shadow:
         0 20px 70px
-        rgba(0,0,0,.2);
+        rgba(0,0,0,.25);
 }
 
 .highlight{
 
-    color:#d9b77d;
+    color:var(--gold);
 
     font-weight:800;
 }
 
 
-/* =====================================================
-   البطاقات
-===================================================== */
+/* =========================================================
+   CARDS
+========================================================= */
 
 .grid{
 
@@ -439,17 +500,19 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(12,34,56,.65),
-            rgba(73,14,31,.45)
+            rgba(9,35,58,.82),
+            rgba(5,24,42,.82)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.12);
+        rgba(214,180,119,.10);
 
     transition:.3s;
 
     cursor:pointer;
+
+    user-select:none;
 }
 
 .card:hover{
@@ -458,14 +521,14 @@ section{
         translateY(-8px);
 
     border-color:
-        rgba(216,180,119,.3);
+        rgba(214,180,119,.27);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(15,42,68,.75),
-            rgba(91,19,39,.58)
+            rgba(12,44,71,.9),
+            rgba(6,27,46,.9)
         );
 }
 
@@ -483,22 +546,22 @@ section{
 
 .card h3{
 
-    margin-bottom:12px;
+    color:var(--gold);
 
-    color:#e3c38b;
+    margin-bottom:12px;
 }
 
 .card p{
 
-    color:#aeb7c1;
+    color:#aebbc8;
 
     line-height:1.9;
 }
 
 
-/* =====================================================
-   عداد الحب
-===================================================== */
+/* =========================================================
+   LOVE METER
+========================================================= */
 
 .infinityBox{
 
@@ -514,15 +577,19 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(8,29,48,.72),
-            rgba(67,13,28,.58)
+            rgba(8,34,57,.9),
+            rgba(5,24,42,.86)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.16);
+        rgba(214,180,119,.13);
 
     text-align:center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.3);
 }
 
 .infinity{
@@ -535,12 +602,14 @@ section{
 
         linear-gradient(
             135deg,
-            #d7b777,
-            #8e2942,
-            #9db5cb
+            #d6b477,
+            #b8cfe3,
+            #7da3c2
         );
 
     -webkit-background-clip:text;
+
+    background-clip:text;
 
     color:transparent;
 
@@ -567,20 +636,20 @@ section{
 
     margin:15px 0;
 
-    color:#e0c18a;
+    color:var(--gold);
 }
 
 .loveText{
 
-    color:#aeb8c4;
+    color:#9eacba;
 
     line-height:2;
 }
 
 
-/* =====================================================
-   الاختبار
-===================================================== */
+/* =========================================================
+   QUIZ
+========================================================= */
 
 .quiz{
 
@@ -594,13 +663,13 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(10,31,51,.7),
-            rgba(69,14,30,.5)
+            rgba(8,33,55,.9),
+            rgba(5,23,40,.85)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.13);
+        rgba(214,180,119,.11);
 
     border-radius:30px;
 
@@ -613,7 +682,7 @@ section{
 
     margin-bottom:25px;
 
-    color:#eadcc7;
+    color:#dce5ed;
 }
 
 .answers{
@@ -631,11 +700,10 @@ section{
 
     border:
         1px solid
-        rgba(216,180,119,.12);
+        rgba(214,180,119,.10);
 
     background:
-
-        rgba(255,255,255,.035);
+        rgba(8,33,54,.75);
 
     color:white;
 
@@ -651,10 +719,10 @@ section{
     transform:scale(1.02);
 
     background:
-        rgba(104,24,43,.3);
+        rgba(18,57,87,.85);
 
     border-color:
-        rgba(216,180,119,.25);
+        rgba(214,180,119,.25);
 }
 
 .answer:active{
@@ -668,15 +736,15 @@ section{
 
     min-height:35px;
 
-    color:#d8b477;
+    color:var(--gold);
 
     font-weight:700;
 }
 
 
-/* =====================================================
-   الخط الزمني
-===================================================== */
+/* =========================================================
+   TIMELINE
+========================================================= */
 
 .timeline{
 
@@ -705,8 +773,9 @@ section{
 
         linear-gradient(
             transparent,
-            #742139,
-            #d8b477,
+            #245274,
+            #7b233b,
+            #245274,
             transparent
         );
 }
@@ -734,11 +803,15 @@ section{
 
     border-radius:50%;
 
-    background:#7d233a;
+    background:#123c5e;
+
+    border:
+        2px solid
+        var(--gold);
 
     box-shadow:
         0 0 20px
-        rgba(125,35,58,.8);
+        rgba(38,91,128,.75);
 }
 
 .timeCard{
@@ -747,13 +820,13 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(10,31,51,.62),
-            rgba(70,14,30,.45)
+            rgba(8,34,57,.86),
+            rgba(5,24,41,.82)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.1);
+        rgba(214,180,119,.09);
 
     border-radius:25px;
 
@@ -764,20 +837,20 @@ section{
 
     margin-bottom:8px;
 
-    color:#d8b477;
+    color:var(--gold);
 }
 
 .timeCard p{
 
-    color:#aeb8c4;
+    color:#aab8c5;
 
     line-height:1.9;
 }
 
 
-/* =====================================================
-   لعبة القلب
-===================================================== */
+/* =========================================================
+   HEART GAME
+========================================================= */
 
 .heartGame{
 
@@ -798,8 +871,8 @@ section{
 
     filter:
         drop-shadow(
-            0 0 20px
-            rgba(126,31,55,.55)
+            0 0 22px
+            rgba(91,22,42,.6)
         );
 }
 
@@ -819,13 +892,13 @@ section{
 
     margin-top:10px;
 
-    color:#d8b477;
+    color:var(--gold);
 }
 
 
-/* =====================================================
-   الرسائل السرية
-===================================================== */
+/* =========================================================
+   SECRET CARDS
+========================================================= */
 
 .hiddenGrid{
 
@@ -849,13 +922,13 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(8,29,48,.65),
-            rgba(75,16,31,.48)
+            rgba(8,34,57,.86),
+            rgba(5,23,40,.84)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.1);
+        rgba(214,180,119,.1);
 
     text-align:center;
 
@@ -868,6 +941,8 @@ section{
     justify-content:center;
 
     transition:.3s;
+
+    user-select:none;
 }
 
 .secretCard:hover{
@@ -876,7 +951,7 @@ section{
         translateY(-7px);
 
     border-color:
-        rgba(216,180,119,.25);
+        rgba(214,180,119,.25);
 }
 
 .secretCard:active{
@@ -886,15 +961,15 @@ section{
 
 .secretContent{
 
-    color:#d8b477;
+    color:var(--gold);
 
     line-height:2;
 }
 
 
-/* =====================================================
-   الشعر
-===================================================== */
+/* =========================================================
+   POEMS
+========================================================= */
 
 .poem{
 
@@ -913,20 +988,20 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(9,30,50,.65),
-            rgba(72,14,30,.45)
+            rgba(8,33,55,.88),
+            rgba(5,23,40,.84)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.12);
+        rgba(214,180,119,.1);
 }
 
 .poem h3{
 
     margin-bottom:20px;
 
-    color:#d8b477;
+    color:var(--gold);
 }
 
 .poemText{
@@ -937,13 +1012,13 @@ section{
 
     line-height:2;
 
-    color:#eadfd1;
+    color:#e3e9ee;
 }
 
 
-/* =====================================================
-   الوعد
-===================================================== */
+/* =========================================================
+   PROMISE
+========================================================= */
 
 .promise{
 
@@ -961,13 +1036,13 @@ section{
 
         linear-gradient(
             135deg,
-            rgba(72,14,30,.42),
-            rgba(8,31,52,.65)
+            rgba(7,32,53,.9),
+            rgba(7,25,43,.86)
         );
 
     border:
         1px solid
-        rgba(216,180,119,.15);
+        rgba(214,180,119,.14);
 }
 
 .promise h3{
@@ -976,12 +1051,12 @@ section{
 
     margin-bottom:20px;
 
-    color:#d8b477;
+    color:var(--gold);
 }
 
 .promise p{
 
-    color:#c5ccd3;
+    color:#c0cbd5;
 
     line-height:2;
 
@@ -989,9 +1064,9 @@ section{
 }
 
 
-/* =====================================================
-   النهاية
-===================================================== */
+/* =========================================================
+   FINAL
+========================================================= */
 
 .final{
 
@@ -1021,7 +1096,7 @@ section{
 
 .finalText{
 
-    color:#b9c1ca;
+    color:#b7c3ce;
 
     font-size:19px;
 
@@ -1036,13 +1111,13 @@ section{
 
     font-size:35px;
 
-    color:#d8b477;
+    color:var(--gold);
 }
 
 
-/* =====================================================
-   مؤثرات الاحتفال
-===================================================== */
+/* =========================================================
+   SPARKS
+========================================================= */
 
 .spark{
 
@@ -1081,9 +1156,9 @@ section{
 }
 
 
-/* =====================================================
-   الموبايل
-===================================================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:700px){
 
@@ -1166,8 +1241,8 @@ section{
 
 <button
     class="btn"
-    type="button"
-    onclick="scrollToId('truth')">
+    id="startBtn"
+    type="button">
 
 ابدئي من هون ❤️
 
@@ -1179,7 +1254,7 @@ section{
 
 
 <!-- =====================================================
-     الحقيقة
+     TRUTH
 ===================================================== -->
 
 <section id="truth">
@@ -1244,7 +1319,7 @@ section{
 
 
 <!-- =====================================================
-     البطاقات
+     THREE CARDS
 ===================================================== -->
 
 <section>
@@ -1267,7 +1342,7 @@ section{
 
 <div
     class="card"
-    onclick="revealCard(1)">
+    id="card1">
 
 <div class="cardIcon">
 👑
@@ -1286,7 +1361,7 @@ section{
 
 <div
     class="card"
-    onclick="revealCard(2)">
+    id="card2">
 
 <div class="cardIcon">
 ❤️
@@ -1305,7 +1380,7 @@ section{
 
 <div
     class="card"
-    onclick="revealCard(3)">
+    id="card3">
 
 <div class="cardIcon">
 ∞
@@ -1328,7 +1403,7 @@ section{
 
 
 <!-- =====================================================
-     عداد الحب
+     LOVE METER
 ===================================================== -->
 
 <section>
@@ -1377,9 +1452,9 @@ section{
 
 <button
     class="btn"
+    id="loveBtn"
     type="button"
-    style="margin-top:25px"
-    onclick="increaseLove()">
+    style="margin-top:25px">
 
 زيدي الحب ❤️
 
@@ -1391,7 +1466,7 @@ section{
 
 
 <!-- =====================================================
-     الاختبار
+     QUIZ
 ===================================================== -->
 
 <section>
@@ -1424,8 +1499,8 @@ section{
 
 <button
     class="answer"
-    type="button"
-    onclick="answer(false)">
+    id="wrong1"
+    type="button">
 
 مجرد مرحلة
 
@@ -1434,8 +1509,8 @@ section{
 
 <button
     class="answer"
-    type="button"
-    onclick="answer(false)">
+    id="wrong2"
+    type="button">
 
 شيء مؤقت
 
@@ -1444,8 +1519,8 @@ section{
 
 <button
     class="answer"
-    type="button"
-    onclick="answer(true)">
+    id="correct"
+    type="button">
 
 روضة ❤️
 
@@ -1454,8 +1529,8 @@ section{
 
 <button
     class="answer"
-    type="button"
-    onclick="answer(false)">
+    id="wrong3"
+    type="button">
 
 ما بعرف 😂
 
@@ -1477,7 +1552,7 @@ section{
 
 
 <!-- =====================================================
-     الخط الزمني
+     TIMELINE
 ===================================================== -->
 
 <section>
@@ -1556,92 +1631,4 @@ section{
 <p>
 
 إذا رجعنا نشوف هالموقع بعد سنين،
-بتمنى نضحك ونقول:
-
-<br>
-
-"شوفي قديش كان محمد يحاول يثبتلك إنه جاد." 😂❤️
-
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     لعبة القلب
-===================================================== -->
-
-<section>
-
-<div class="title">
-
-<h2>
-💓 اسمعي قلب محمد
-</h2>
-
-<p>
-كل ضغطة إلها معنى
-</p>
-
-</div>
-
-
-<div class="heartGame">
-
-
-<div
-    class="bigHeart"
-    onclick="heartClick()">
-
-❤️
-
-</div>
-
-
-<div
-    class="heartCount"
-    id="heartCount">
-
-0
-
-</div>
-
-
-<p
-    style="
-        color:#9faab6;
-        margin-top:10px;
-    ">
-
-اضغطي وشوفي كم مرة رح يختار روضة.
-
-</p>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     الرسائل السرية
-===================================================== -->
-
-<section>
-
-<div class="title">
-
-<h2>
-🔐 ثلاث رسائل ما بتفتح إلا بالضغط
-</h2>
-
-<p>
-كل وحدة فيها شيء مختلف
-</p>
+بتمنى نضح
