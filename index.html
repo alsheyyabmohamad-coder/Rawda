@@ -1,54 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>روضة | حكاية لا تشبه غيرها 👑</title>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap"
-rel="stylesheet">
+<title>روضة | الحكاية التي لا تنتهي 👑</title>
 
 <style>
-
-/* =========================================================
-   COLORS
-========================================================= */
-
 :root{
-
-    --navy-0:#020914;
-    --navy-1:#041120;
-    --navy-2:#071a2d;
-    --navy-3:#0a2239;
-    --navy-4:#10304d;
-
+    --navy:#020914;
+    --navy2:#06182a;
+    --navy3:#0a2942;
+    --blue:#123e5e;
     --burgundy:#4a1020;
-    --burgundy-light:#68172b;
-
+    --burgundy2:#68172b;
     --gold:#d6b477;
-    --gold-light:#ead8b8;
-
+    --gold2:#ead8b8;
     --white:#f7f5f1;
-    --text:#d5dfe8;
-    --muted:#8fa0b0;
-
-    --glass:rgba(7,29,48,.76);
-    --border:rgba(214,180,119,.14);
+    --text:#cbd6df;
+    --muted:#8d9dac;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -56,1249 +32,693 @@ html{
 }
 
 body{
-
-    font-family:"Cairo",sans-serif;
-
+    min-height:100vh;
+    overflow-x:hidden;
     color:var(--white);
+    font-family:Arial,Tahoma,sans-serif;
 
     background:
-
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(18,62,98,.42),
-            transparent 27%
-        ),
-
-        radial-gradient(
-            circle at 85% 65%,
-            rgba(8,48,78,.35),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 70% 15%,
-            rgba(74,16,32,.14),
-            transparent 22%
-        ),
-
-        linear-gradient(
-            135deg,
-            var(--navy-0),
-            var(--navy-1),
-            var(--navy-2)
-        );
-
-    min-height:100vh;
-
-    overflow-x:hidden;
+        radial-gradient(circle at 15% 10%,rgba(18,62,94,.42),transparent 28%),
+        radial-gradient(circle at 85% 70%,rgba(18,62,94,.30),transparent 30%),
+        radial-gradient(circle at 70% 20%,rgba(74,16,32,.18),transparent 25%),
+        linear-gradient(135deg,var(--navy),#03111f,#071b2d);
 }
 
-
-/* =========================================================
-   BACKGROUND STARS
-========================================================= */
-
-.star{
-
-    position:fixed;
-
-    width:2px;
-    height:2px;
-
-    border-radius:50%;
-
-    background:white;
-
-    opacity:.4;
-
-    pointer-events:none;
-
-    z-index:-1;
-
-    animation:twinkle 3s infinite alternate;
+button{
+    font-family:inherit;
 }
-
-@keyframes twinkle{
-
-    from{
-        opacity:.15;
-        transform:scale(.7);
-    }
-
-    to{
-        opacity:.9;
-        transform:scale(1.4);
-    }
-
-}
-
-
-/* =========================================================
-   FLOATING HEARTS
-========================================================= */
-
-.floatHeart{
-
-    position:fixed;
-
-    bottom:-50px;
-
-    pointer-events:none;
-
-    z-index:100;
-
-    animation:floatUp 8s linear forwards;
-}
-
-@keyframes floatUp{
-
-    0%{
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity:0;
-    }
-
-}
-
-
-/* =========================================================
-   GENERAL
-========================================================= */
 
 .container{
-
     width:min(1050px,92%);
-
     margin:auto;
 }
 
 section{
-
-    padding:100px 0;
+    padding:90px 0;
 }
 
-.sectionTitle{
-
+.title{
     text-align:center;
-
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
-.sectionTitle h2{
-
-    font-size:
-        clamp(30px,5vw,46px);
-
-    color:var(--gold-light);
-
+.title h2{
+    color:var(--gold2);
+    font-size:clamp(30px,5vw,45px);
     margin-bottom:10px;
 }
 
-.sectionTitle p{
-
+.title p{
     color:var(--muted);
-
     line-height:1.8;
 }
 
+/* =========================
+   STARS
+========================= */
 
-/* =========================================================
-   BUTTON
-========================================================= */
+.star{
+    position:fixed;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    opacity:.5;
+    pointer-events:none;
+    z-index:-1;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.15;transform:scale(.7)}
+    to{opacity:.9;transform:scale(1.4)}
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.float{
+    position:fixed;
+    bottom:-60px;
+    pointer-events:none;
+    z-index:20;
+    animation:floatUp 8s linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+    10%{opacity:1}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn{
-
-    border:
-        1px solid
-        rgba(214,180,119,.24);
-
+    border:1px solid rgba(214,180,119,.25);
     color:white;
-
-    font-family:inherit;
-
-    font-weight:700;
-
-    font-size:16px;
-
-    padding:15px 28px;
-
-    border-radius:18px;
-
+    background:linear-gradient(135deg,#071d32,#123957);
+    padding:14px 25px;
+    border-radius:17px;
     cursor:pointer;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #071d32,
-            #123957
-        );
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.35);
-
+    font-size:16px;
+    font-weight:bold;
     transition:.25s;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 .btn:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #0b2945,
-            #174665
-        );
-
-    box-shadow:
-        0 18px 45px rgba(4,35,60,.65);
+    transform:translateY(-4px);
+    background:linear-gradient(135deg,#0b2945,#174665);
 }
 
 .btn:active{
-
     transform:scale(.94);
 }
 
-
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero{
-
     min-height:100vh;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
-    position:relative;
 }
 
 .heroBox{
-
-    width:min(900px,100%);
-
-    padding:65px 30px;
-
-    border-radius:42px;
+    width:100%;
+    padding:65px 25px;
+    border-radius:40px;
 
     background:
+        linear-gradient(145deg,
+        rgba(8,31,52,.92),
+        rgba(3,17,30,.88));
 
-        linear-gradient(
-            145deg,
-            rgba(8,31,52,.9),
-            rgba(4,20,35,.84)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.16);
-
-    backdrop-filter:blur(22px);
-
-    box-shadow:
-
-        0 35px 100px rgba(0,0,0,.48),
-
-        inset 0 0 50px
-        rgba(255,255,255,.015);
+    border:1px solid rgba(214,180,119,.16);
+    box-shadow:0 35px 100px rgba(0,0,0,.45);
+    backdrop-filter:blur(15px);
 }
 
-.smallTop{
-
+.label{
     display:inline-block;
-
     padding:8px 18px;
-
     border-radius:30px;
-
     color:var(--gold);
-
-    border:
-        1px solid
-        rgba(214,180,119,.18);
-
-    background:
-        rgba(214,180,119,.05);
-
+    border:1px solid rgba(214,180,119,.2);
+    background:rgba(214,180,119,.05);
     margin-bottom:25px;
 }
 
 .hero h1{
-
-    font-size:
-        clamp(60px,13vw,115px);
-
+    font-size:clamp(65px,14vw,120px);
     line-height:1;
+    margin-bottom:15px;
 
-    margin-bottom:10px;
-}
-
-.gradient{
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #f5f0e8,
-            #d6b477,
-            #bdd3e6,
-            #f5f0e8
-        );
+    background:linear-gradient(
+        90deg,
+        #fff,
+        var(--gold),
+        #c4d9eb,
+        #fff
+    );
 
     background-size:200%;
-
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
 
     animation:shine 5s linear infinite;
 }
 
 @keyframes shine{
-
-    to{
-        background-position:200%;
-    }
-
+    to{background-position:200%}
 }
 
 .hero h2{
-
     color:#dce5ed;
-
-    font-size:27px;
-
     margin-bottom:20px;
+    font-size:28px;
 }
 
-.heroDescription{
-
+.hero p{
     max-width:680px;
-
-    margin:auto;
-
+    margin:0 auto 30px;
     color:#aebdca;
-
     line-height:2;
-
     font-size:18px;
-
-    margin-bottom:30px;
 }
 
-.scrollHint{
+/* =========================
+   CARDS
+========================= */
 
-    margin-top:20px;
-
-    color:#728596;
-
-    font-size:13px;
-}
-
-
-/* =========================================================
-   DOORS
-========================================================= */
-
-.doors{
-
+.grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.door{
-
-    min-height:230px;
-
-    border-radius:30px;
-
-    padding:25px 18px;
-
+.card{
+    min-height:220px;
+    padding:30px 20px;
+    border-radius:28px;
     text-align:center;
-
     cursor:pointer;
 
     background:
+        linear-gradient(145deg,
+        rgba(9,36,59,.9),
+        rgba(4,21,36,.88));
 
-        linear-gradient(
-            145deg,
-            rgba(9,36,59,.9),
-            rgba(5,23,40,.86)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.1);
-
-    transition:.35s;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.door::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-
-    height:150px;
-
-    background:
-        rgba(74,16,32,.25);
-
-    border-radius:50%;
-
-    top:-70px;
-
-    left:-70px;
-
-    transition:.4s;
-}
-
-.door:hover{
-
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(214,180,119,.3);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.3);
-}
-
-.door:hover::after{
-
-    transform:scale(2);
-}
-
-.doorIcon{
-
-    font-size:50px;
-
-    margin-bottom:18px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.door h3{
-
-    color:var(--gold);
-
-    margin-bottom:10px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.door p{
-
-    color:#9eafbd;
-
-    font-size:14px;
-
-    line-height:1.8;
-
-    position:relative;
-
-    z-index:2;
-}
-
-
-/* =========================================================
-   DOOR RESULT
-========================================================= */
-
-.doorResult{
-
-    margin-top:25px;
-
-    padding:30px;
-
-    border-radius:28px;
-
-    text-align:center;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,35,57,.9),
-            rgba(5,23,40,.88)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.12);
-
-    min-height:90px;
-
-    color:#c9d5df;
-
-    line-height:2;
-
+    border:1px solid rgba(214,180,119,.11);
     transition:.3s;
 }
 
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(214,180,119,.3);
+}
 
-/* =========================================================
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:var(--gold);
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#a5b4c1;
+    line-height:1.9;
+}
+
+/* =========================
    MESSAGE MACHINE
-========================================================= */
+========================= */
 
 .machine{
-
     max-width:850px;
-
     margin:auto;
-
-    padding:40px;
-
-    border-radius:35px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(8,33,55,.9),
-            rgba(5,22,38,.86)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.12);
-
+    padding:35px;
+    border-radius:32px;
     text-align:center;
-}
-
-.machineScreen{
-
-    min-height:150px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:25px;
-
-    border-radius:24px;
 
     background:
-        rgba(1,12,22,.55);
+        linear-gradient(145deg,
+        rgba(8,34,56,.9),
+        rgba(4,21,36,.86));
 
-    border:
-        1px solid
-        rgba(110,150,180,.1);
-
-    color:#d8e1e9;
-
-    line-height:2;
-
-    font-size:18px;
-
-    margin-bottom:25px;
+    border:1px solid rgba(214,180,119,.12);
 }
 
-.machineButtons{
-
+.screen{
+    min-height:150px;
     display:flex;
-
-    gap:12px;
-
+    align-items:center;
     justify-content:center;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:23px;
 
+    background:rgba(1,10,18,.55);
+    border:1px solid rgba(120,160,190,.1);
+
+    color:#dbe4eb;
+    font-size:18px;
+    line-height:2;
+}
+
+.buttonRow{
+    display:flex;
+    gap:12px;
+    justify-content:center;
     flex-wrap:wrap;
 }
 
-
-/* =========================================================
-   INTERACTIVE QUIZ
-========================================================= */
+/* =========================
+   QUIZ
+========================= */
 
 .quiz{
-
-    max-width:780px;
-
+    max-width:800px;
     margin:auto;
-
     padding:35px;
-
     border-radius:32px;
 
     background:
+        linear-gradient(145deg,
+        rgba(8,34,56,.9),
+        rgba(4,21,36,.86));
 
-        linear-gradient(
-            145deg,
-            rgba(8,34,56,.9),
-            rgba(5,23,40,.85)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.11);
+    border:1px solid rgba(214,180,119,.11);
 }
 
-.quizProgress{
-
-    height:7px;
-
+.progress{
+    width:100%;
+    height:8px;
+    background:#061321;
     border-radius:20px;
-
-    background:#071522;
-
-    margin-bottom:25px;
-
     overflow:hidden;
+    margin-bottom:25px;
 }
 
-.quizProgressFill{
-
+.progressFill{
     height:100%;
-
     width:0%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #153f61,
-            var(--gold)
-        );
-
+    background:linear-gradient(90deg,#123e5e,var(--gold));
     transition:.4s;
 }
 
-.quizQuestion{
-
+.question{
     text-align:center;
-
-    font-size:22px;
-
+    font-size:21px;
     line-height:1.8;
-
-    color:#e1e8ee;
-
     margin-bottom:25px;
 }
 
-.quizAnswers{
-
+.answers{
     display:grid;
-
     gap:12px;
 }
 
-.quizAnswer{
-
-    border:
-        1px solid
-        rgba(214,180,119,.1);
-
-    background:
-        rgba(7,28,46,.8);
-
-    color:#e7edf2;
-
+.answer{
+    border:1px solid rgba(214,180,119,.1);
+    background:rgba(7,28,46,.8);
+    color:white;
     padding:15px;
-
-    border-radius:17px;
-
-    font-family:inherit;
-
+    border-radius:16px;
     cursor:pointer;
-
-    transition:.25s;
+    transition:.2s;
 }
 
-.quizAnswer:hover{
-
-    background:
-        rgba(16,55,83,.9);
-
+.answer:hover{
+    background:#103957;
     transform:translateY(-2px);
 }
 
 .quizResult{
-
     text-align:center;
-
-    min-height:40px;
-
-    margin-top:20px;
-
     color:var(--gold);
-
-    font-weight:700;
-
+    min-height:45px;
+    margin-top:20px;
     line-height:1.8;
 }
 
+/* =========================
+   METER
+========================= */
 
-/* =========================================================
-   MEMORY CARDS
-========================================================= */
-
-.memories{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.memory{
-
-    min-height:260px;
-
-    padding:30px;
-
-    border-radius:30px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(9,35,57,.86),
-            rgba(5,23,40,.84)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.1);
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    text-align:center;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-.memory:hover{
-
-    transform:
-        translateY(-8px)
-        rotate(-1deg);
-
-    border-color:
-        rgba(214,180,119,.27);
-}
-
-.memoryIcon{
-
-    font-size:52px;
-
-    margin-bottom:18px;
-}
-
-.memory h3{
-
-    color:var(--gold);
-
-    margin-bottom:10px;
-}
-
-.memory p{
-
-    color:#9fafbd;
-
-    line-height:1.9;
-}
-
-
-/* =========================================================
-   LOVE METER
-========================================================= */
-
-.meterBox{
-
+.meter{
     max-width:850px;
-
     margin:auto;
-
     text-align:center;
-
-    padding:45px 30px;
-
+    padding:40px 25px;
     border-radius:35px;
 
     background:
+        linear-gradient(145deg,
+        rgba(8,34,56,.9),
+        rgba(4,21,36,.86));
 
-        linear-gradient(
-            145deg,
-            rgba(8,34,57,.9),
-            rgba(5,22,38,.86)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.12);
+    border:1px solid rgba(214,180,119,.12);
 }
 
 .infinity{
-
     font-size:120px;
-
     line-height:1;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d6b477,
-            #bdd3e6,
-            #7899b5
-        );
-
+    background:linear-gradient(135deg,var(--gold),#bdd5e8,#7c9db8);
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
-
     animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-
-    50%{
-        transform:scale(1.08);
-    }
-
+    50%{transform:scale(1.08)}
 }
 
-.meterNumber{
-
+.percent{
     font-size:45px;
-
     color:var(--gold);
-
-    font-weight:800;
-
-    margin:15px 0;
+    font-weight:bold;
+    margin:15px;
 }
 
-.meterBar{
-
+.bar{
     max-width:600px;
-
     height:14px;
-
     margin:20px auto;
-
-    border-radius:20px;
-
     background:#061321;
-
+    border-radius:20px;
     overflow:hidden;
 }
 
-.meterFill{
-
-    width:0%;
-
+.fill{
+    width:0;
     height:100%;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #163d5c,
-            #7b263e,
-            var(--gold)
-        );
-
+    background:linear-gradient(
+        90deg,
+        #123e5e,
+        var(--burgundy2),
+        var(--gold)
+    );
     transition:.5s;
 }
 
-.meterDescription{
-
-    color:#a6b5c2;
-
+.meterText{
+    color:#a8b6c2;
     line-height:2;
+    margin-bottom:20px;
 }
 
+/* =========================
+   SECRET BOX
+========================= */
 
-/* =========================================================
-   STAR HUNT
-========================================================= */
+.secretGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-.starGame{
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:40px;
-
-    border-radius:35px;
+.secret{
+    min-height:230px;
+    padding:30px;
+    border-radius:28px;
+    text-align:center;
+    cursor:pointer;
 
     background:
+        linear-gradient(145deg,
+        rgba(9,35,57,.9),
+        rgba(4,21,36,.86));
 
-        linear-gradient(
-            145deg,
-            rgba(7,32,53,.9),
-            rgba(4,21,36,.88)
-        );
+    border:1px solid rgba(214,180,119,.1);
+    transition:.3s;
 
-    border:
-        1px solid
-        rgba(214,180,119,.1);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 
+.secret:hover{
+    transform:translateY(-8px);
+    border-color:rgba(214,180,119,.27);
+}
+
+.secretIcon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.secret h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.secret p{
+    color:#a5b4c1;
+    line-height:1.9;
+}
+
+/* =========================
+   STAR GAME
+========================= */
+
+.starGame{
+    max-width:850px;
+    margin:auto;
+    padding:35px;
+    border-radius:35px;
     text-align:center;
+
+    background:
+        linear-gradient(145deg,
+        rgba(7,32,53,.92),
+        rgba(3,18,31,.88));
+
+    border:1px solid rgba(214,180,119,.11);
 }
 
 .starField{
-
-    position:relative;
-
-    height:300px;
-
-    margin-top:25px;
-
+    height:320px;
+    margin-top:20px;
     border-radius:25px;
-
+    position:relative;
     overflow:hidden;
 
     background:
-
         radial-gradient(
-            circle at center,
-            rgba(18,58,87,.25),
+            circle,
+            rgba(18,62,94,.25),
             transparent 60%
         ),
-
-        #030c17;
-
-    border:
-        1px solid
-        rgba(120,160,190,.08);
+        #020a13;
 }
 
 .hiddenStar{
-
     position:absolute;
-
     font-size:25px;
-
     cursor:pointer;
-
-    opacity:.65;
-
+    opacity:.6;
     transition:.2s;
 }
 
 .hiddenStar:hover{
-
-    transform:scale(1.4);
-
+    transform:scale(1.5);
     opacity:1;
 }
 
-.starMessage{
-
-    min-height:40px;
-
-    margin-top:18px;
-
+.starResult{
     color:var(--gold);
-
-    line-height:1.9;
+    min-height:45px;
+    margin-top:15px;
+    line-height:1.8;
 }
 
-
-/* =========================================================
+/* =========================
    POEM
-========================================================= */
+========================= */
 
 .poemBox{
-
     max-width:900px;
-
     margin:auto;
-
-    padding:50px 30px;
-
+    padding:50px 25px;
+    border-radius:38px;
     text-align:center;
 
-    border-radius:40px;
-
     background:
+        linear-gradient(145deg,
+        rgba(8,34,56,.92),
+        rgba(4,21,36,.87));
 
-        linear-gradient(
-            145deg,
-            rgba(8,34,56,.91),
-            rgba(5,23,40,.87)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.13);
-
-    box-shadow:
-        0 25px 80px rgba(0,0,0,.3);
+    border:1px solid rgba(214,180,119,.13);
 }
 
 .poemTitle{
-
     color:var(--gold);
-
     font-size:28px;
-
     margin-bottom:25px;
 }
 
 .poem{
-
-    font-family:"Amiri",serif;
-
-    font-size:
-        clamp(22px,3vw,29px);
-
-    line-height:2.15;
-
-    color:#e3e9ee;
+    font-family:Georgia,"Times New Roman",serif;
+    color:#e2e9ef;
+    font-size:25px;
+    line-height:2.2;
 }
 
-.poem em{
-
+.poem span{
     color:var(--gold);
-
-    font-style:normal;
 }
 
-
-/* =========================================================
+/* =========================
    FINAL
-========================================================= */
+========================= */
 
 .final{
-
     min-height:90vh;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
 }
 
 .finalBox{
-
     max-width:850px;
-
     padding:55px 30px;
-
-    border-radius:42px;
+    border-radius:40px;
 
     background:
+        linear-gradient(145deg,
+        rgba(8,34,56,.9),
+        rgba(4,21,36,.86));
 
-        linear-gradient(
-            145deg,
-            rgba(8,34,57,.88),
-            rgba(5,22,38,.84)
-        );
-
-    border:
-        1px solid
-        rgba(214,180,119,.13);
+    border:1px solid rgba(214,180,119,.13);
 }
 
 .final h2{
-
-    font-size:
-        clamp(42px,7vw,72px);
-
+    font-size:clamp(42px,7vw,72px);
     margin-bottom:25px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        var(--gold),
+        #c3d8e8
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 .final p{
-
     color:#b7c4cf;
-
-    line-height:2.2;
-
     font-size:18px;
+    line-height:2.2;
 }
 
 .finalWord{
-
-    font-family:"Amiri",serif;
-
-    font-size:38px;
-
-    color:var(--gold);
-
     margin-top:30px;
-
+    color:var(--gold);
+    font-family:Georgia,serif;
+    font-size:38px;
     line-height:1.8;
 }
 
-
-/* =========================================================
+/* =========================
    POPUP
-========================================================= */
+========================= */
 
 .popup{
-
     position:fixed;
-
     inset:0;
-
-    background:
-        rgba(0,5,12,.82);
-
-    backdrop-filter:blur(10px);
+    z-index:500;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
 
-    z-index:500;
+    background:rgba(0,5,12,.82);
+    backdrop-filter:blur(10px);
 
     opacity:0;
-
     pointer-events:none;
 
     transition:.3s;
 }
 
-.popup.active{
-
+.popup.show{
     opacity:1;
-
     pointer-events:auto;
 }
 
 .popupBox{
-
-    max-width:600px;
-
-    width:100%;
-
-    padding:40px 30px;
-
+    width:min(600px,100%);
+    padding:40px 25px;
     text-align:center;
-
     border-radius:32px;
 
     background:
+        linear-gradient(145deg,#071c30,#041322);
 
-        linear-gradient(
-            145deg,
-            #071c30,
-            #041322
-        );
+    border:1px solid rgba(214,180,119,.2);
 
-    border:
-        1px solid
-        rgba(214,180,119,.2);
-
-    transform:scale(.85);
-
+    transform:scale(.8);
     transition:.3s;
 }
 
-.popup.active .popupBox{
-
+.popup.show .popupBox{
     transform:scale(1);
 }
 
 .popupBox h3{
-
     color:var(--gold);
-
     font-size:28px;
-
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .popupBox p{
-
     color:#c4d0da;
-
     line-height:2;
 }
 
-
-/* =========================================================
+/* =========================
    SPARKS
-========================================================= */
+========================= */
 
 .spark{
-
     position:fixed;
-
+    z-index:1000;
     pointer-events:none;
-
-    z-index:700;
-
-    font-size:24px;
-
+    font-size:25px;
     animation:spark 1.3s forwards;
 }
 
 @keyframes spark{
-
-    0%{
+    from{
         opacity:1;
-        transform:
-            translate(0,0)
-            scale(1);
+        transform:translate(0,0) scale(1);
     }
-
-    100%{
+    to{
         opacity:0;
         transform:
             translate(var(--x),var(--y))
@@ -1306,31 +726,14 @@ section{
     }
 }
 
-
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
-@media(max-width:800px){
+@media(max-width:750px){
 
-    section{
-        padding:75px 0;
-    }
-
-    .doors{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .memories{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:550px){
-
-    .doors{
+    .grid,
+    .secretGrid{
         grid-template-columns:1fr;
     }
 
@@ -1340,8 +743,8 @@ section{
 
     .machine,
     .quiz,
+    .meter,
     .starGame,
-    .meterBox,
     .poemBox,
     .finalBox{
         padding:30px 20px;
@@ -1351,17 +754,17 @@ section{
         font-size:90px;
     }
 
+    .poem{
+        font-size:21px;
+    }
 }
-
 </style>
 </head>
 
 
 <body>
 
-
 <div class="container">
-
 
 <!-- =====================================================
      HERO
@@ -1371,41 +774,26 @@ section{
 
 <div class="heroBox">
 
-<div class="smallTop">
-🔐 ملف خاص — لا يُفتح إلا لروضة
+<div class="label">
+🔐 ملف خاص — لروضة فقط
 </div>
 
-<h1 class="gradient">
+<h1>
 روضة
 </h1>
 
 <h2>
-الحكاية اللي ما تشبه أي حكاية 👑
+الحكاية التي لا تشبه غيرها 👑
 </h2>
 
-<p class="heroDescription">
-
-مش رح أطلب منكِ تصدقي كل كلمة هون.
-
-<br>
-
-خلي الموقع يحكيلك...
-وخلي الأيام هي اللي تحكم.
-
+<p>
+مش رح أطلب منكِ تصدقي كل كلمة هون...
+خلي الأيام هي اللي تحكم.
 </p>
 
-<button
-class="btn"
-id="enterBtn"
-type="button">
-
-ادخلي الحكاية ❤️
-
+<button class="btn" id="start">
+ابدئي الحكاية ❤️
 </button>
-
-<div class="scrollHint">
-↓ في أشياء كثيرة مخبّاية تحت
-</div>
 
 </div>
 
@@ -1413,103 +801,68 @@ type="button">
 
 
 <!-- =====================================================
-     DOORS
+     THREE CARDS
 ===================================================== -->
 
-<section id="doorsSection">
+<section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
-أربعة أبواب لروضة 👑
+ثلاث أشياء لازم تعرفيها
 </h2>
 
 <p>
-إنتِ اختاري من وين تبدأ الحكاية
+اضغطي على كل واحدة 👀
 </p>
 
 </div>
 
+<div class="grid">
 
-<div class="doors">
+<div class="card" id="card1">
 
-
-<div class="door" data-door="heart">
-
-<div class="doorIcon">
-❤️
-</div>
+<div class="icon">👑</div>
 
 <h3>
-باب القلب
+روضة
 </h3>
 
-<p>
-شيء من اللي مخبيه القلب
+<p id="cardText1">
+اضغطي لتعرفي ليش الاسم هذا مختلف.
 </p>
 
 </div>
 
 
-<div class="door" data-door="secret">
+<div class="card" id="card2">
 
-<div class="doorIcon">
-🔐
-</div>
+<div class="icon">❤️</div>
 
 <h3>
-الباب السري
+القلب
 </h3>
 
-<p>
-رسالة ما بتطلع بسهولة
+<p id="cardText2">
+اضغطي لتعرفي شو فيه.
 </p>
 
 </div>
 
 
-<div class="door" data-door="poem">
+<div class="card" id="card3">
 
-<div class="doorIcon">
-📜
-</div>
+<div class="icon">♾️</div>
 
 <h3>
-باب الشعر
+الحكاية
 </h3>
 
-<p>
-لأن روضة بتحب الشعر
+<p id="cardText3">
+اضغطي لتعرفي كيف بشوفها.
 </p>
 
 </div>
-
-
-<div class="door" data-door="future">
-
-<div class="doorIcon">
-♾️
-</div>
-
-<h3>
-باب الحكاية
-</h3>
-
-<p>
-شيء عن الوقت والأيام
-</p>
-
-</div>
-
-
-</div>
-
-
-<div
-class="doorResult"
-id="doorResult">
-
-اختاري بابًا... 👀
 
 </div>
 
@@ -1522,49 +875,32 @@ id="doorResult">
 
 <section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
 🎰 ماكينة الرسائل
 </h2>
 
 <p>
-كل ضغطة تطلعلك رسالة مختلفة
+كل كبسة ممكن تطلع شيء مختلف.
 </p>
 
 </div>
 
-
 <div class="machine">
 
-<div
-class="machineScreen"
-id="machineScreen">
-
-اضغطي على الزر...
-يمكن تطلع رسالة ما كنتِ متوقعتها. ❤️
-
+<div class="screen" id="screen">
+اضغطي الزر وخلي الحظ يختار الرسالة 😂❤️
 </div>
 
+<div class="buttonRow">
 
-<div class="machineButtons">
-
-<button
-class="btn"
-id="randomMessage"
-type="button">
-
-طلّعي رسالة 🎲
-
+<button class="btn" id="randomBtn">
+رسالة عشوائية 🎲
 </button>
 
-<button
-class="btn"
-id="specialMessage"
-type="button">
-
+<button class="btn" id="specialBtn">
 رسالة خاصة 👑
-
 </button>
 
 </div>
@@ -1580,30 +916,430 @@ type="button">
 
 <section>
 
-<div class="sectionTitle">
+<div class="title">
 
 <h2>
 🧠 قديش بتعرفي محمد؟
 </h2>
 
 <p>
-ثلاث أسئلة... نشوف النتيجة 😂
+ثلاث أسئلة فقط.
+</p>
+
+</div>
+
+<div class="quiz">
+
+<div class="progress">
+
+<div class="progressFill" id="progress">
+</div>
+
+</div>
+
+<div class="question" id="question">
+جاهزة؟ 👀
+</div>
+
+<div class="answers" id="answers">
+</div>
+
+<div class="quizResult" id="quizResult">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOVE METER
+===================================================== -->
+
+<section>
+
+<div class="title">
+
+<h2>
+❤️ عداد الحب
+</h2>
+
+<p>
+خلينا نحاول نحسب المستحيل.
+</p>
+
+</div>
+
+<div class="meter">
+
+<div class="infinity">
+∞
+</div>
+
+<div class="percent" id="percent">
+0%
+</div>
+
+<div class="bar">
+
+<div class="fill" id="fill">
+</div>
+
+</div>
+
+<p class="meterText" id="meterText">
+واضح إن النظام مش جاهز لهالمهمة 😂
+</p>
+
+<button class="btn" id="loveBtn">
+زيدي النسبة ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECRET BOXES
+===================================================== -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🔐 الصناديق السرية
+</h2>
+
+<p>
+كل صندوق فيه جملة مختلفة.
+</p>
+
+</div>
+
+<div class="secretGrid">
+
+<div class="secret" id="secret1">
+
+<div class="secretIcon">
+🔒
+</div>
+
+<h3>
+الصندوق الأول
+</h3>
+
+<p id="secretText1">
+اضغطي للفتح
 </p>
 
 </div>
 
 
-<div class="quiz">
+<div class="secret" id="secret2">
 
-<div class="quizProgress">
+<div class="secretIcon">
+🌙
+</div>
 
-<div
-class="quizProgressFill"
-id="quizProgress">
+<h3>
+الصندوق الثاني
+</h3>
+
+<p id="secretText2">
+اضغطي للفتح
+</p>
+
+</div>
+
+
+<div class="secret" id="secret3">
+
+<div class="secretIcon">
+👑
+</div>
+
+<h3>
+الصندوق الثالث
+</h3>
+
+<p id="secretText3">
+اضغطي للفتح
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STAR GAME
+===================================================== -->
+
+<section>
+
+<div class="title">
+
+<h2>
+⭐ مهمة النجوم
+</h2>
+
+<p>
+في خمس نجوم مخبّاية بالمربع.
+</p>
+
+</div>
+
+<div class="starGame">
+
+<p style="color:#a8b6c2">
+العثور على كل النجوم يفتح الرسالة الأخيرة.
+</p>
+
+<div class="starField" id="starField">
+</div>
+
+<div class="starResult" id="starResult">
+0 / 5 ⭐
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     POEM
+===================================================== -->
+
+<section>
+
+<div class="title">
+
+<h2>
+📜 شيء من الشعر لروضة
+</h2>
+
+<p>
+لأن بعض الكلام ما بكفيه الكلام العادي.
+</p>
+
+</div>
+
+<div class="poemBox">
+
+<div class="poemTitle">
+إلى روضة، برنسس الحكاية 👑
+</div>
+
+<div class="poem">
+
+روضةُ، يا اسمًا إذا مرَّ في فمي<br>
+تبدّلَ في صوتي الكلامُ إلى شعرِ<br><br>
+
+ويا من لها في القلبِ بيتٌ ومَنزلٌ<br>
+وإن طالَ دربي، ما تبدّلَ لي أمرِ<br><br>
+
+أراكِ البدايةَ حين يبدأُ خاطري<br>
+وأراكِ في آخرِ الحكاياتِ في فكري<br><br>
+
+وما قلتُ يومًا إن الطريقَ سهلٌ لنا<br>
+ولكنني أختارُ الصدقَ في أمري<br><br>
+
+فإن قالوا: <span>الحكاياتُ تنتهي</span><br>
+أقولُ: بعضُ الحكايا تُخلّدُ في العمرِ<br><br>
+
+روضةُ، إن سألوا: من تكونينَ لي؟<br>
+أقولُ: <span>التي صارت من الروحِ جزءًا،</span><br>
+وصارتْ ليَ الدارَا. ❤️
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+<div class="finalBox">
+
+<h2>
+ما كانت مرحلة ❤️
+</h2>
+
+<p>
+
+روضة...
+
+<br><br>
+
+أنا ما بقدر أعرف شو رح يكتب المستقبل،
+ولا بدي أوعدك بشيء ما بقدر أتحكم فيه.
+
+<br><br>
+
+لكن بقدر أخلي أفعالي مع الوقت
+تحكي عن الكلام اللي قلته.
+
+<br><br>
+
+واليوم، الشيء اللي بعرفه:
+
+<br><br>
+
+<strong style="color:#d6b477">
+إنتِ شخص غالي عليّ،
+ومكانك بحكايتي مش عادي.
+</strong>
+
+</p>
+
+<div class="finalWord">
+
+روضة... 👑❤️
+
+<br>
+
+الحكاية لسه ما خلصت.
+
+<br>
+
+♾️
+
+</div>
+
+<button
+class="btn"
+id="finalBtn"
+style="margin-top:30px">
+
+المفاجأة الأخيرة 🎁
+
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- =====================================================
+     POPUP
+===================================================== -->
+
+<div class="popup" id="popup">
+
+<div class="popupBox">
+
+<h3>
+👑 رسالة أخيرة لروضة
+</h3>
+
+<p id="popupText">
+</p>
+
+<br>
+
+<button class="btn" id="closeBtn">
+إغلاق ❤️
+</button>
+
 </div>
 
 </div>
 
 
-<div
-class="quizQuestion"
+<script>
+
+/* =====================================================
+   EVERYTHING STARTS HERE
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+console.log("RAWDA WEBSITE: READY");
+
+
+/* =====================================================
+   CREATE BACKGROUND STARS
+===================================================== */
+
+for(let i=0;i<120;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=
+        Math.random()*100+"vw";
+
+    star.style.top=
+        Math.random()*100+"vh";
+
+    star.style.animationDelay=
+        Math.random()*3+"s";
+
+    document.body.appendChild(star);
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+setInterval(function(){
+
+    const heart=document.createElement("div");
+
+    heart.className="float";
+
+    const emojis=[
+        "❤️",
+        "🤍",
+        "💗",
+        "✨",
+        "👑"
+    ];
+
+    heart.textContent=
+        emojis[
+            Math.floor(
+                Math.random()*emojis.length
+            )
+        ];
+
+    heart.style.left=
+        Math.random()*100+"vw";
+
+    heart.style.fontSize=
+        (15+Math.random()*20)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+        heart.remove();
+    },8000);
+
+},1300);
+
+
+/* =====================================================
+   CELEBRATION
+===================================================== */
+
+function celebrate(amount){
+
+    for(let i=0;i<amount;i++){
+
+        setTimeout(function(){
+
+            const spark=
